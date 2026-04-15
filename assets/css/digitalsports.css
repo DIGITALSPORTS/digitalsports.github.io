@@ -42,11 +42,13 @@
 .portfolio-carousel {
 	position: relative;
 	width: 100%;
+	background: #000000;
 }
 
 .carousel-viewport {
 	overflow: hidden;
 	width: 100%;
+	background: #000000;
 }
 
 .carousel-track {
@@ -64,6 +66,23 @@
 	display: block;
 	width: 100%;
 	height: auto;
+}
+
+.carousel-slide a {
+	display: block;
+	overflow: hidden;
+}
+
+.carousel-slide img {
+	display: block;
+	width: 100%;
+	height: auto;
+	transform: scale(1);
+	transition: transform 0.25s ease;
+}
+
+.carousel-slide a:hover img {
+	transform: scale(1.035);
 }
 
 /* Inline carousel arrows */
@@ -106,12 +125,18 @@
 }
 
 .carousel-counter {
-	margin-top: 1rem;
+	width: 100%;
+	margin-top: 0;
+	padding: 0.9rem 1.25rem;
+	background: #111111;
+	color: #ffffff;
 	text-align: center;
-	font-size: 0.95rem;
-	letter-spacing: 0.06em;
+	font-size: 0.9rem;
+	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	opacity: 0.75;
+	font-family: inherit;
+	line-height: 1.4;
+	box-sizing: border-box;
 }
 
 @media screen and (max-width: 736px) {
