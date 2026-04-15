@@ -172,7 +172,6 @@
 
 /*===================OVERRIDE MASSIVELY DEFAULTS===================*/
 /* Wider desktop layout */
-/* Wider desktop layout */
 @media screen and (min-width: 981px) {
 	#main,
 	#nav,
@@ -190,20 +189,3 @@
 }
 
 /* Tighten up project header spacings */
-.project-header {
-	margin: 0 0 2.5rem 0;
-	text-align: center;
-}
-
-.project-header .date {
-	margin-bottom: 0.75rem;
-}
-
-.project-header h1 {
-	margin-bottom: 0.75rem;
-}
-
-.project-header p {
-	margin-top: 0;
-	margin-bottom: 0;
-}

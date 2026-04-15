@@ -2,12 +2,12 @@
 title: Gasworks
 layout: project-image
 nav_section: portfolio
-subtitle: Level Design + Gameplay Scripting in UE4
+subtitle: Source Engine - Multiplayer Level Design
 game: Black Mesa
 discipline: Level Design
 order: 2
 date_text: 2013
-hero_image: /images/gasworks/gasworks-01.jpg
+hero_image: /images/gasworks/gasworks-hero.jpg
 card_image: /images/gasworks/gasworks-01.jpg
 excerpt_text: Industrial combat space focused on verticality, pacing, and environmental storytelling.
 summary: A level focused on guiding players through a dense industrial space while balancing spectacle, navigation, and encounter clarity.
@@ -23,12 +23,16 @@ facts:
 gallery:
   - style: full
     image: /images/gasworks/gasworks-02.jpg
-  - style: thumb
+  - style: full
     image: /images/gasworks/gasworks-03.jpg
-  - style: thumb
+  - style: full
     image: /images/gasworks/gasworks-04.jpg
   - style: full
     image: /images/gasworks/gasworks-05.jpg
+  - style: full
+    image: /images/gasworks/gasworks-06.jpg
+  - style: full
+    image: /images/gasworks/gasworks-07.jpg
 ---
 
 ## Overview

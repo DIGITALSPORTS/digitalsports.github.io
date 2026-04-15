@@ -4,26 +4,30 @@ layout: default
 
 <article class="post project-page project-page-image">
 
+	<header class="major project-header">
+		<h1>{{ page.title }}</h1>
+	</header>
+
 	{% if page.hero_image %}
 		<div class="project-hero">
 			<img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}" />
 		</div>
 	{% endif %}
 
-	<header class="project-header">
-		{% if page.date_text %}
-			<div class="project-date">{{ page.date_text }}</div>
-		{% endif %}
+	{% if page.subtitle or page.date_text %}
+		<header class="major project-subheader">
+			{% if page.subtitle %}
+				<p>{{ page.subtitle }}</p>
+			{% endif %}
 
-		<h1>{{ page.title }}</h1>
-
-		{% if page.subtitle %}
-			<p class="project-subtitle">{{ page.subtitle }}</p>
-		{% endif %}
-	</header>
+			{% if page.date_text %}
+				<span class="date">{{ page.date_text }}</span>
+			{% endif %}
+		</header>
+	{% endif %}
 
 	{% if page.summary or page.facts %}
-		<section class="project-meta">
+		<section class="project-meta-details">
 			{% if page.summary %}
 				<p class="project-summary">{{ page.summary }}</p>
 			{% endif %}
