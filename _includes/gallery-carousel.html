@@ -1,0 +1,23 @@
+<div class="portfolio-carousel" data-carousel>
+	<button class="carousel-arrow carousel-arrow-left" type="button" aria-label="Previous image" data-carousel-prev>
+		&#10094;
+	</button>
+
+	<div class="carousel-track">
+		{% for item in include.items %}
+			<div class="carousel-slide{% if forloop.first %} is-active{% endif %}" data-carousel-slide>
+				<a
+					href="{{ item.image | relative_url }}"
+					class="glightbox"
+					data-gallery="{{ page.title | slugify }}"
+				>
+					<img src="{{ item.image | relative_url }}" alt="{{ item.alt | default: page.title }}" />
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+
+	<button class="carousel-arrow carousel-arrow-right" type="button" aria-label="Next image" data-carousel-next>
+		&#10095;
+	</button>
+</div>

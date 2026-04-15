@@ -1,4 +1,16 @@
 /*===================CHON CUSTOM THINGS===================*/
+/* Hero image */
+.project-page-image .project-hero {
+	margin-bottom: 2rem;
+}
+
+.project-page-image .project-hero img {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+
 /* Gallery */
 .portfolio-gallery {
 	display: grid;
@@ -22,59 +34,63 @@
 	}
 }
 
-/* Scrolling Gallery */
-.project-page-image .project-hero {
-	margin-bottom: 2rem;
-}
-
-.project-page-image .project-hero img {
-	display: block;
-	width: 100%;
-	height: auto;
-}
-
-.project-summary {
-	font-size: 1.1rem;
-	margin-bottom: 2rem;
-}
-
-.project-facts {
-	list-style: none;
-	padding-left: 0;
-	margin: 0 0 2rem 0;
-}
-
-.project-facts li {
-	margin-bottom: 0.5rem;
-}
-
+/* Carousel gallery */
 .project-gallery-section {
 	margin-top: 4rem;
 }
 
-.portfolio-scroll-gallery {
+.portfolio-carousel {
+	position: relative;
 	display: flex;
-	flex-direction: column;
-	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
 
-.scroll-gallery-item img {
+.carousel-track {
+	width: 100%;
+}
+
+.carousel-slide {
+	display: none;
+}
+
+.carousel-slide.is-active {
+	display: block;
+}
+
+.carousel-slide img {
 	display: block;
 	width: 100%;
 	height: auto;
+}
+
+.carousel-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 2;
 	border: 0;
+	background: rgba(0, 0, 0, 0.45);
+	color: #ffffff;
+	width: 3rem;
+	height: 3rem;
+	cursor: pointer;
+	font-size: 1.5rem;
+	line-height: 1;
+	border-radius: 999px;
 }
 
-.scroll-gallery-item-narrow {
-	max-width: 70%;
-	margin-left: auto;
-	margin-right: auto;
+.carousel-arrow:hover {
+	background: rgba(0, 0, 0, 0.65);
 }
 
-@media screen and (max-width: 736px) {
-	.scroll-gallery-item-narrow {
-		max-width: 100%;
-	}
+.carousel-arrow-left {
+	left: 1rem;
+}
+
+.carousel-arrow-right {
+	right: 1rem;
 }
 
 /*===================OVERRIDE MASSIVELY DEFAULTS===================*/
