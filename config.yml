@@ -1,0 +1,13 @@
+title: Chon Kemp
+description: Level Designer / Programmer
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
