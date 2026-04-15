@@ -3,7 +3,6 @@ title: Gasworks
 subtitle: Level Design + Gameplay Scripting in UE4
 game: Black Mesa
 discipline: Level Design
-order: 2
 date_text: 2013
 hero_image: /images/pic01.jpg
 card_image: /images/pic01.jpg
