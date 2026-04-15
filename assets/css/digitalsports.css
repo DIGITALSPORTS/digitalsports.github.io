@@ -1,3 +1,5 @@
+/*===================CHON CUSTOM THINGS===================*/
+/* Gallery */
 .portfolio-gallery {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -18,4 +20,97 @@
 	.portfolio-gallery {
 		grid-template-columns: 1fr;
 	}
+}
+
+/* Scrolling Gallery */
+.project-page-image .project-hero {
+	margin-bottom: 2rem;
+}
+
+.project-page-image .project-hero img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.project-summary {
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
+}
+
+.project-facts {
+	list-style: none;
+	padding-left: 0;
+	margin: 0 0 2rem 0;
+}
+
+.project-facts li {
+	margin-bottom: 0.5rem;
+}
+
+.project-gallery-section {
+	margin-top: 4rem;
+}
+
+.portfolio-scroll-gallery {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.scroll-gallery-item img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border: 0;
+}
+
+.scroll-gallery-item-narrow {
+	max-width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width: 736px) {
+	.scroll-gallery-item-narrow {
+		max-width: 100%;
+	}
+}
+
+/*===================OVERRIDE MASSIVELY DEFAULTS===================*/
+/* Wider desktop layout */
+/* Wider desktop layout */
+@media screen and (min-width: 981px) {
+	#main,
+	#nav,
+	#footer,
+	#copyright {
+		width: calc(100% - 6rem);
+		max-width: 100rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#main > .post {
+		padding: 6rem 5rem 5rem 5rem;
+	}
+}
+
+/* Tighten up project header spacings */
+.project-header {
+	margin: 0 0 2.5rem 0;
+	text-align: center;
+}
+
+.project-header .date {
+	margin-bottom: 0.75rem;
+}
+
+.project-header h1 {
+	margin-bottom: 0.75rem;
+}
+
+.project-header p {
+	margin-top: 0;
+	margin-bottom: 0;
 }

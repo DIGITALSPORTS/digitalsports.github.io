@@ -1,0 +1,13 @@
+<div class="portfolio-scroll-gallery">
+	{% for item in include.items %}
+		<div class="scroll-gallery-item {% if item.style == 'narrow' %}scroll-gallery-item-narrow{% endif %}">
+			<a
+				href="{{ item.image | relative_url }}"
+				class="glightbox"
+				data-gallery="{{ page.title | slugify }}"
+			>
+				<img src="{{ item.image | relative_url }}" alt="{{ item.alt | default: '' }}" />
+			</a>
+		</div>
+	{% endfor %}
+</div>

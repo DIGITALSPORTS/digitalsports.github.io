@@ -2,38 +2,49 @@
 layout: default
 ---
 
-<article class="post">
-	<header class="major">
-		{% if page.date_text %}
-			<span class="date">{{ page.date_text }}</span>
-		{% endif %}
-		<h1>{{ page.title }}</h1>
-		<p>{{ page.subtitle }}</p>
-	</header>
+<article class="post project-page project-page-image">
 
 	{% if page.hero_image %}
-		<span class="image main">
+		<div class="project-hero">
 			<img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}" />
-		</span>
+		</div>
 	{% endif %}
 
-	{% if page.summary %}
-		<p>{{ page.summary }}</p>
+	<header class="project-header">
+		{% if page.date_text %}
+			<div class="project-date">{{ page.date_text }}</div>
+		{% endif %}
+
+		<h1>{{ page.title }}</h1>
+
+		{% if page.subtitle %}
+			<p class="project-subtitle">{{ page.subtitle }}</p>
+		{% endif %}
+	</header>
+
+	{% if page.summary or page.facts %}
+		<section class="project-meta">
+			{% if page.summary %}
+				<p class="project-summary">{{ page.summary }}</p>
+			{% endif %}
+
+			{% if page.facts %}
+				<ul class="project-facts">
+					{% for fact in page.facts %}
+						<li><strong>{{ fact.label }}:</strong> {{ fact.value }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</section>
 	{% endif %}
 
-	{% if page.facts %}
-		<ul>
-			{% for fact in page.facts %}
-				<li><strong>{{ fact.label }}:</strong> {{ fact.value }}</li>
-			{% endfor %}
-		</ul>
-	{% endif %}
-
-	{{ content }}
+	<div class="project-body">
+		{{ content }}
+	</div>
 
 	{% if page.gallery %}
-		<hr />
-		<h2>Gallery</h2>
-		{% include gallery.html items=page.gallery %}
+		<section class="project-gallery-section">
+			{% include gallery-scroll.html items=page.gallery %}
+		</section>
 	{% endif %}
 </article>
