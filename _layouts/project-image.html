@@ -4,15 +4,15 @@ layout: default
 
 <article class="post project-page project-page-image">
 
-	<header class="major project-header">
-		<h1>{{ page.title }}</h1>
-	</header>
-
 	{% if page.hero_image %}
 		<div class="project-hero">
 			<img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}" />
 		</div>
 	{% endif %}
+	
+	<header class="major project-header">
+		<h1>{{ page.title }}</h1>
+	</header>
 
 	{% if page.subtitle or page.date_text %}
 		<header class="major project-subheader">
