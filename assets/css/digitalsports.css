@@ -1,37 +1,55 @@
 /*===================CHON CUSTOM THINGS===================*/
-/* Hero image */
-.project-page-image .project-hero {
-	margin-bottom: 2rem;
+/* Full-width hero above padded article */
+#main > .project-hero-full {
+	padding: 0 !important;
+	margin: 0 0 0 0;
+	width: 100%;
+	max-width: 90rem;
 }
 
-.project-page-image .project-hero img {
+.project-hero-full img {
 	display: block;
 	width: 100%;
 	max-width: 100%;
 	height: auto;
 }
 
-/* Gallery */
-.portfolio-gallery {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 2rem;
-	margin-top: 2rem;
+/* Single metadata block under hero */
+.project-page-image .project-meta-header {
+	text-align: center;
+	margin: 0 0 2rem 0;
+	padding: 0;
 }
 
-.gallery-item-full {
-	grid-column: 1 / -1;
+.project-page-image .project-meta-header h1 {
+	margin: 0 0 0.75rem 0;
 }
 
-.gallery-item p {
-	margin-top: 0.75rem;
-	font-size: 0.95rem;
+.project-page-image .project-meta-header .project-subtitle {
+	margin: 0 0 0.75rem 0;
 }
 
-@media screen and (max-width: 736px) {
-	.portfolio-gallery {
-		grid-template-columns: 1fr;
-	}
+.project-page-image .project-meta-header .date {
+	margin: 0;
+}
+
+/* Tighten space before content */
+.project-meta-details {
+	margin: 0 0 2rem 0;
+}
+
+.project-summary {
+	margin-bottom: 1.5rem;
+}
+
+.project-facts {
+	list-style: none;
+	padding-left: 0;
+	margin: 0 0 1.5rem 0;
+}
+
+.project-facts li {
+	margin-bottom: 0.5rem;
 }
 
 /* Carousel gallery */

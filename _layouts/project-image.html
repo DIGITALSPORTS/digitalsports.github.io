@@ -2,29 +2,25 @@
 layout: default
 ---
 
+{% if page.hero_image %}
+	<div class="project-hero project-hero-full">
+		<img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}" />
+	</div>
+{% endif %}
+
 <article class="post project-page project-page-image">
 
-	{% if page.hero_image %}
-		<div class="project-hero">
-			<img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}" />
-		</div>
-	{% endif %}
-	
-	<header class="major project-header">
+	<header class="project-meta-header">
 		<h1>{{ page.title }}</h1>
+
+		{% if page.subtitle %}
+			<p class="project-subtitle">{{ page.subtitle }}</p>
+		{% endif %}
+
+		{% if page.date_text %}
+			<span class="date">{{ page.date_text }}</span>
+		{% endif %}
 	</header>
-
-	{% if page.subtitle or page.date_text %}
-		<header class="major project-subheader">
-			{% if page.subtitle %}
-				<p>{{ page.subtitle }}</p>
-			{% endif %}
-
-			{% if page.date_text %}
-				<span class="date">{{ page.date_text }}</span>
-			{% endif %}
-		</header>
-	{% endif %}
 
 	{% if page.summary or page.facts %}
 		<section class="project-meta-details">
