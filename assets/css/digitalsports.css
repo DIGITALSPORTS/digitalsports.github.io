@@ -1,0 +1,21 @@
+.portfolio-gallery {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 2rem;
+	margin-top: 2rem;
+}
+
+.gallery-item-full {
+	grid-column: 1 / -1;
+}
+
+.gallery-item p {
+	margin-top: 0.75rem;
+	font-size: 0.95rem;
+}
+
+@media screen and (max-width: 736px) {
+	.portfolio-gallery {
+		grid-template-columns: 1fr;
+	}
+}

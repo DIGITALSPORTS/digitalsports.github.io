@@ -5,6 +5,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+		<link rel="stylesheet" href="{{ '/assets/css/digitalsports.css' | relative_url }}" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 		<noscript><link rel="stylesheet" href="{{ '/assets/css/noscript.css' | relative_url }}" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -58,6 +60,14 @@
 		<script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
 		<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
 		<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				GLightbox({
+					selector: '.glightbox'
+				});
+			});
+		</script>
 
 	</body>
 </html>

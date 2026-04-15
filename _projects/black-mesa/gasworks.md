@@ -1,40 +1,50 @@
 ---
 title: Gasworks
+layout: project-image
 subtitle: Level Design + Gameplay Scripting in UE4
 game: Black Mesa
 discipline: Level Design
+order: 2
 date_text: 2013
-hero_image: /images/pic01.jpg
-card_image: /images/pic01.jpg
-excerpt_text: A stealth-focused prototype built to explore player routing, enemy awareness, and readable spaces.
-video_url: https://www.youtube.com/embed/YOUR_VIDEO_ID
+hero_image: /images/gasworks/gasworks-01.jpg
+card_image: /images/gasworks/gasworks-01.jpg
+excerpt_text: Industrial combat space focused on verticality, pacing, and environmental storytelling.
+summary: A level focused on guiding players through a dense industrial space while balancing spectacle, navigation, and encounter clarity.
+
+facts:
+  - label: Project
+    value: Black Mesa
+  - label: Role
+    value: Level Design / Scripting
+  - label: Tools
+    value: Hammer, scripting, gameplay iteration
+
+gallery:
+  - style: full
+    image: /images/gasworks/gasworks-02.jpg
+    caption: Wide establishing shot of the upper refinery approach.
+  - style: thumb
+    image: /images/gasworks/gasworks-03.jpg
+    caption: Early combat beat focused on cover readability.
+  - style: thumb
+    image: /images/gasworks/gasworks-04.jpg
+    caption: Mid-level landmark used for player orientation.
+  - style: full
+    image: /images/gasworks/gasworks-05.jpg
+    caption: Lower traversal route with clearer player guidance.
 ---
 
 ## Overview
 
-This prototype was built to explore stealth gameplay in a compact, replayable space.
-The goal was to encourage player observation, route planning, and deliberate movement.
+Gasworks was built to create a memorable industrial play space with strong visual identity and readable progression.
 
 ## My Contribution
 
-- Designed the level layout
-- Scripted gameplay interactions
-- Tuned enemy patrol routes and sightlines
-- Iterated on player readability and navigation cues
+- Designed and iterated on layout
+- Built encounter spaces
+- Tuned player flow and visual guidance
+- Supported scripting and gameplay implementation
 
 ## Design Goals
 
-The main design goal was to create a readable stealth space with multiple viable routes.
-I wanted players to feel pressured, but not confused.
-
-## Challenges
-
-Early versions of the layout caused players to lose their bearings.
-To fix that, I improved visual landmarks, adjusted lighting contrast, and used enemy placement to gently pull attention toward intended routes.
-
-## Tools Used
-
-- Unreal Engine 4
-- Blueprints
-- C++
-- Blockout and iteration in-editor
+The key goal was to make the space feel large and layered without making navigation confusing.

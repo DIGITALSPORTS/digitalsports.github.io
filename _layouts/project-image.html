@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<article class="post">
+	<header class="major">
+		{% if page.date_text %}
+			<span class="date">{{ page.date_text }}</span>
+		{% endif %}
+		<h1>{{ page.title }}</h1>
+		<p>{{ page.subtitle }}</p>
+	</header>
+
+	{% if page.hero_image %}
+		<span class="image main">
+			<img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}" />
+		</span>
+	{% endif %}
+
+	{% if page.summary %}
+		<p>{{ page.summary }}</p>
+	{% endif %}
+
+	{% if page.facts %}
+		<ul>
+			{% for fact in page.facts %}
+				<li><strong>{{ fact.label }}:</strong> {{ fact.value }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{{ content }}
+
+	{% if page.gallery %}
+		<hr />
+		<h2>Gallery</h2>
+		{% include gallery.html items=page.gallery %}
+	{% endif %}
+</article>

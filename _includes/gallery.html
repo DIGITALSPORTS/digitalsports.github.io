@@ -1,0 +1,20 @@
+<div class="portfolio-gallery">
+	{% for item in include.items %}
+		<div class="gallery-item {% if item.style == 'full' %}gallery-item-full{% endif %}">
+			<a
+				href="{{ item.image | relative_url }}"
+				class="glightbox"
+				data-gallery="{{ include.gallery_name | default: page.slug | default: page.title | slugify }}"
+				data-title="{{ item.caption | escape }}"
+			>
+				<span class="image fit">
+					<img src="{{ item.image | relative_url }}" alt="{{ item.alt | default: '' }}" />
+				</span>
+			</a>
+
+			{% if item.caption %}
+				<p>{{ item.caption }}</p>
+			{% endif %}
+		</div>
+	{% endfor %}
+</div>
