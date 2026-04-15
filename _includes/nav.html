@@ -1,15 +1,18 @@
 <nav id="nav">
 	<ul class="links">
-		<li{% if page.url == '/' %} class="active"{% endif %}>
-			<a href="{{ '/' | relative_url }}">Projects</a>
+		<li{% if page.nav_section == 'portfolio' %} class="active"{% endif %}>
+			<a href="{{ '/' | relative_url }}">Portfolio</a>
 		</li>
-		<li{% if page.url == '/about/' %} class="active"{% endif %}>
+
+		<li{% if page.nav_section == 'about' %} class="active"{% endif %}>
 			<a href="{{ '/about/' | relative_url }}">About</a>
 		</li>
-		<li{% if page.url == '/contact/' %} class="active"{% endif %}>
+
+		<li{% if page.nav_section == 'contact' %} class="active"{% endif %}>
 			<a href="{{ '/contact/' | relative_url }}">Contact</a>
 		</li>
 	</ul>
+
 	<ul class="icons">
 		<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 		<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>

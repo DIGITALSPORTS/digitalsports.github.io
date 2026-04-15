@@ -1,6 +1,7 @@
 ---
 title: Gasworks
 layout: project-image
+nav_section: portfolio
 subtitle: Level Design + Gameplay Scripting in UE4
 game: Black Mesa
 discipline: Level Design
@@ -22,16 +23,12 @@ facts:
 gallery:
   - style: full
     image: /images/gasworks/gasworks-02.jpg
-    caption: Wide establishing shot of the upper refinery approach.
   - style: thumb
     image: /images/gasworks/gasworks-03.jpg
-    caption: Early combat beat focused on cover readability.
   - style: thumb
     image: /images/gasworks/gasworks-04.jpg
-    caption: Mid-level landmark used for player orientation.
   - style: full
     image: /images/gasworks/gasworks-05.jpg
-    caption: Lower traversal route with clearer player guidance.
 ---
 
 ## Overview
