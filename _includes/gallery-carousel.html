@@ -1,23 +1,29 @@
 <div class="portfolio-carousel" data-carousel>
 	<button class="carousel-arrow carousel-arrow-left" type="button" aria-label="Previous image" data-carousel-prev>
-		&#10094;
+		<span aria-hidden="true">&#10094;</span>
 	</button>
 
-	<div class="carousel-track">
-		{% for item in include.items %}
-			<div class="carousel-slide{% if forloop.first %} is-active{% endif %}" data-carousel-slide>
-				<a
-					href="{{ item.image | relative_url }}"
-					class="glightbox"
-					data-gallery="{{ page.title | slugify }}"
-				>
-					<img src="{{ item.image | relative_url }}" alt="{{ item.alt | default: page.title }}" />
-				</a>
-			</div>
-		{% endfor %}
+	<div class="carousel-viewport">
+		<div class="carousel-track" data-carousel-track>
+			{% for item in include.items %}
+				<div class="carousel-slide{% if forloop.first %} is-active{% endif %}" data-carousel-slide>
+					<a
+						href="{{ item.image | relative_url }}"
+						class="glightbox"
+						data-gallery="{{ page.title | slugify }}"
+					>
+						<img src="{{ item.image | relative_url }}" alt="{{ item.alt | default: page.title }}" />
+					</a>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 
 	<button class="carousel-arrow carousel-arrow-right" type="button" aria-label="Next image" data-carousel-next>
-		&#10095;
+		<span aria-hidden="true">&#10095;</span>
 	</button>
+
+	<div class="carousel-counter" data-carousel-counter>
+		1 / {{ include.items.size }}
+	</div>
 </div>
