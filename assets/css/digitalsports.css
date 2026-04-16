@@ -300,12 +300,8 @@ body {
    Homepage portfolio grid
 ========================= */
 
-.posts > .portfolio-card {
-	padding: 2.5rem 2.5rem 2rem 2.5rem;
-}
-
-.posts > .portfolio-card header {
-	margin-bottom: 1rem;
+#main > .posts > .portfolio-card {
+	padding: 2rem;
 }
 
 .posts > .portfolio-card header h2 {
@@ -315,7 +311,8 @@ body {
 }
 
 .posts > .portfolio-card .image.fit {
-	margin-bottom: 1.25rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 }
 
 .posts > .portfolio-card p {
