@@ -1,0 +1,13 @@
+<nav class="portfolio-subnav">
+	<ul>
+		<li{% if include.current == "all" %} class="active"{% endif %}>
+			<a href="{{ '/' | relative_url }}">All</a>
+		</li>
+		<li{% if include.current == "black-mesa" %} class="active"{% endif %}>
+			<a href="{{ '/portfolio/black-mesa/' | relative_url }}">Black Mesa</a>
+		</li>
+		<li{% if include.current == "rogue-point" %} class="active"{% endif %}>
+			<a href="{{ '/portfolio/rogue-point/' | relative_url }}">Rogue Point</a>
+		</li>
+	</ul>
+</nav>

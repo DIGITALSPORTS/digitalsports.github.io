@@ -1,0 +1,14 @@
+---
+layout: default
+title: Rogue Point
+permalink: /portfolio/rogue-point/
+nav_section: portfolio
+portfolio_group: rogue-point
+---
+
+<header class="major">
+	<h1>Rogue Point</h1>
+</header>
+
+{% assign rogue_point_projects = site.projects | where: "game", "Rogue Point" %}
+{% include project-grid.html projects=rogue_point_projects %}

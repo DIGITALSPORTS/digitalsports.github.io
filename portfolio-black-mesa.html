@@ -1,0 +1,14 @@
+---
+layout: default
+title: Black Mesa
+permalink: /portfolio/black-mesa/
+nav_section: portfolio
+portfolio_group: black-mesa
+---
+
+<header class="major">
+	<h1>Black Mesa</h1>
+</header>
+
+{% assign black_mesa_projects = site.projects | where: "game", "Black Mesa" %}
+{% include project-grid.html projects=black_mesa_projects %}

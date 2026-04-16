@@ -1,0 +1,18 @@
+<section class="posts">
+	{% assign sorted_projects = include.projects | sort: "order" | reverse %}
+	{% for project in sorted_projects %}
+	<article class="portfolio-card">
+		<header>
+			<h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+		</header>
+
+		{% if project.card_image %}
+			<a href="{{ project.url | relative_url }}" class="image fit">
+				<img src="{{ project.card_image | relative_url }}" alt="{{ project.title }}" />
+			</a>
+		{% endif %}
+
+		<p>{{ project.excerpt_text }}</p>
+	</article>
+	{% endfor %}
+</section>

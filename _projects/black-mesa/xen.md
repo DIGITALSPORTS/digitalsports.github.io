@@ -3,6 +3,7 @@ title: Xen
 layout: project-image
 order: 4
 nav_section: portfolio
+portfolio_group: black-mesa
 subtitle: Source Engine - Singleplayer Level Design
 game: Black Mesa
 discipline: Level Design

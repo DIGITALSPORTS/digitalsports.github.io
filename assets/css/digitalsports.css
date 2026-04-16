@@ -315,3 +315,25 @@ body {
 .post.featured header.major p {
 	margin-bottom: 0;
 }
+
+/* =========================
+   Two-row Massively nav
+========================= */
+
+#nav.site-nav {
+	height: auto !important;
+	overflow: visible !important;
+}
+
+#nav.site-nav .site-nav-main,
+#nav.site-nav .site-nav-sub {
+	display: block;
+}
+
+#nav.site-nav .site-nav-sub {
+	border-top: solid 2px rgba(255, 255, 255, 0.08);
+}
+
+#nav.site-nav .subnav-links {
+	width: 100%;
+}

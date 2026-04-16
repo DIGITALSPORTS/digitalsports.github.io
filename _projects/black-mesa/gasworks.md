@@ -3,6 +3,7 @@ title: Gasworks
 layout: project-image
 order: 1
 nav_section: portfolio
+portfolio_group: black-mesa
 subtitle: Source Engine - Multiplayer Level Design
 game: Black Mesa
 discipline: Level Design

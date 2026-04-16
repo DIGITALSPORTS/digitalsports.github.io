@@ -1,8 +1,9 @@
 ---
 title: Oilrig
 layout: project-image
-order: 2
+order: 8
 nav_section: portfolio
+portfolio_group: rogue-point
 subtitle: UE4 - Cooperative Level Design
 game: Rogue Point
 discipline: Level Design
