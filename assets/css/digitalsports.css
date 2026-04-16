@@ -323,17 +323,32 @@ body {
 #nav.site-nav {
 	height: auto !important;
 	overflow: visible !important;
+	display: flex;
+	flex-wrap: wrap;
 }
 
-#nav.site-nav .site-nav-main,
-#nav.site-nav .site-nav-sub {
-	display: block;
+#nav.site-nav a {
+	border-bottom-color: transparent !important;
 }
 
-#nav.site-nav .site-nav-sub {
-	border-top: solid 2px rgba(255, 255, 255, 0.08);
+#nav.site-nav > .links {
+	flex: 1 1 auto;
 }
 
-#nav.site-nav .subnav-links {
-	width: 100%;
+#nav.site-nav > .icons {
+	flex: 0 0 auto;
+	margin-left: auto;
+}
+
+#nav.site-nav > .subnav-links {
+	flex: 0 0 100%;
+	border-top: 0 !important;
+}
+
+#nav.site-nav > .subnav-links li {
+	border-left: 0 !important;
+}
+
+#nav.site-nav > .subnav-links a {
+	border-bottom-color: transparent !important;
 }
