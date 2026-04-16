@@ -5,7 +5,6 @@ nav_section: portfolio
 subtitle: Source Engine - Multiplayer Level Design
 game: Black Mesa
 discipline: Level Design
-order: 2
 date_text: 2013
 hero_image: /images/gasworks/gasworks-hero.jpg
 card_image: /images/gasworks/gasworks-01.jpg
