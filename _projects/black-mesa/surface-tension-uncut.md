@@ -8,8 +8,8 @@ game: Black Mesa
 discipline: Level Design
 date_text: 2015
 hero_image: /images/stu/stu-hero.jpg
-card_image: /images/stu/stu-01.jpg
-excerpt_text: Industrial combat space focused on verticality, pacing, and environmental storytelling.
+card_image: /images/stu/stu-hero.jpg
+excerpt_text: A chaotic series of tightly scripted outdoor singleplayer levels centered around an all-out war between alien and human forces.
 
 stu_gallery:
   - image: /images/stu/stu-02.jpg

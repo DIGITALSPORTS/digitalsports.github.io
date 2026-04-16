@@ -8,8 +8,8 @@ game: Black Mesa
 discipline: Level Design
 date_text: 2019
 hero_image: /images/interloper/interloper-hero.jpg
-card_image: /images/interloper/interloper-01.jpg
-excerpt_text: Industrial combat space focused on verticality, pacing, and environmental storytelling.
+card_image: /images/interloper/interloper-hero.jpg
+excerpt_text: A deep slog through the guts of the mysterious Tower factory at the end of Gordon Freeman's lengthy Xenian adventure. Featuring large scripted combat encounters, and interesting traversal and exploration through an alien industrial environment.
 
 garg_chase_gallery:
   - image: /images/interloper/interloper-02.jpg

@@ -8,8 +8,8 @@ game: Black Mesa
 discipline: Level Design
 date_text: 2019
 hero_image: /images/gonarch/gonarch-hero.jpg
-card_image: /images/gonarch/gonarch-01.jpg
-excerpt_text: Industrial combat space focused on verticality, pacing, and environmental storytelling.
+card_image: /images/gonarch/gonarch-hero.jpg
+excerpt_text: An epic game of cat and mouse between the tenacious Gordon Freeman and the instinctive and deadly Gonarch. A series of exciting scripted encounters culminating in a harrowing boss fight.
 
 gonarch_gallery:
   - image: /images/gonarch/gonarch-02.jpg

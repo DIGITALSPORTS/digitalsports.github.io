@@ -8,8 +8,8 @@ game: Black Mesa
 discipline: Level Design
 date_text: 2013
 hero_image: /images/gasworks/gasworks-hero.jpg
-card_image: /images/gasworks/gasworks-01.jpg
-excerpt_text: Industrial combat space focused on verticality, pacing, and environmental storytelling.
+card_image: /images/gasworks/gasworks-hero.jpg
+excerpt_text: A vast and vertical industrial multiplayer level with long-sight lines and varied combat, designed for larger player counts.
 
 gasworks_gallery:
   - image: /images/gasworks/gasworks-02.jpg

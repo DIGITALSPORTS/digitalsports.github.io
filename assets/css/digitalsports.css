@@ -263,3 +263,55 @@ body.is-preload:before {
 body {
 	background-color: #1b2a22;
 }
+
+/* =========================
+   Homepage portfolio grid
+========================= */
+
+.posts > .portfolio-card {
+	padding: 2.5rem 2.5rem 2rem 2.5rem;
+}
+
+.posts > .portfolio-card header {
+	margin-bottom: 1rem;
+}
+
+.posts > .portfolio-card header h2 {
+	margin: 0;
+	font-size: 1.6rem;
+	line-height: 1.2;
+}
+
+.posts > .portfolio-card .image.fit {
+	margin-bottom: 1.25rem;
+}
+
+.posts > .portfolio-card p {
+	margin-bottom: 0;
+}
+
+/* Tighten general posts grid spacing a little */
+.posts {
+	margin-top: 0;
+}
+
+.posts article {
+	margin-bottom: 0;
+}
+
+.post.featured {
+	padding-top: 3rem !important;
+	padding-bottom: 2.5rem !important;
+}
+
+.post.featured header.major {
+	margin-bottom: 1.5rem;
+}
+
+.post.featured header.major h2 {
+	margin-bottom: 0.75rem;
+}
+
+.post.featured header.major p {
+	margin-bottom: 0;
+}

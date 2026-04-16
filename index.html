@@ -16,11 +16,8 @@ nav_section: portfolio
 <section class="posts">
 	{% assign sorted_projects = site.projects | sort: "order" | reverse %}
 	{% for project in sorted_projects %}
-	<article>
+	<article class="portfolio-card">
 		<header>
-			{% if project.date_text %}
-				<span class="date">{{ project.date_text }}</span>
-			{% endif %}
 			<h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
 		</header>
 
@@ -31,10 +28,6 @@ nav_section: portfolio
 		{% endif %}
 
 		<p>{{ project.excerpt_text }}</p>
-
-		<ul class="actions special">
-			<li><a href="{{ project.url | relative_url }}" class="button">View Project</a></li>
-		</ul>
 	</article>
 	{% endfor %}
 </section>

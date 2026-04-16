@@ -8,8 +8,8 @@ game: Black Mesa
 discipline: Level Design
 date_text: 2019
 hero_image: /images/xen/xen-hero.jpg
-card_image: /images/xen/xen-01.jpg
-excerpt_text: Industrial combat space focused on verticality, pacing, and environmental storytelling.
+card_image: /images/xen/xen-hero.jpg
+excerpt_text: The legendary introduction to Gordon Freeman's singleplayer journey across a mysterious and beautiful alien dimension. Packed full of exploration, puzzles, interesting traversal, and deep environmental storytelling.
 
 islands_gallery:
   - image: /images/xen/xen-02.jpg

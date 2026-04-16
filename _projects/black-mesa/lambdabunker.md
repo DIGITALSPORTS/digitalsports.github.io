@@ -8,8 +8,8 @@ game: Black Mesa
 discipline: Level Design
 date_text: 2013
 hero_image: /images/lambdabunker/lambdabunker-hero.jpg
-card_image: /images/lambdabunker/lambdabunker-01.jpg
-excerpt_text: Industrial combat space focused on verticality, pacing, and environmental storytelling.
+card_image: /images/lambdabunker/lambdabunker-hero.jpg
+excerpt_text: A tight, indoor destroyed bunker multiplayer level with frentic combat and silky smooth flow.
 
 lambdabunker_gallery:
   - image: /images/lambdabunker/lambdabunker-02.jpg
