@@ -10,7 +10,7 @@
 					<a
 						href="{{ item.image | relative_url }}"
 						class="glightbox"
-						data-gallery="{{ page.title | slugify }}"
+						data-gallery="{{ include.gallery_name | default: page.title | slugify }}"
 					>
 						<img src="{{ item.image | relative_url }}" alt="{{ item.alt | default: page.title }}" />
 					</a>
