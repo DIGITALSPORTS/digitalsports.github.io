@@ -391,3 +391,15 @@ body {
 #nav.site-nav > .subnav-links a {
 	border-bottom-color: transparent !important;
 }
+
+/* =========================
+   Text template date
+========================= */
+
+.project-text header.major > .date {
+	margin: 0;
+}
+
+.project-text .image.main {
+	margin: 1rem 0;
+}

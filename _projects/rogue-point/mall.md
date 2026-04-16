@@ -1,7 +1,7 @@
 ---
 title: Checkpoint Mall
 layout: project-image
-order: 7
+order: 14
 nav_section: portfolio
 portfolio_group: rogue-point
 subtitle: UE4 - Cooperative Level Design

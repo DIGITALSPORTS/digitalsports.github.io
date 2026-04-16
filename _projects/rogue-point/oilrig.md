@@ -1,7 +1,7 @@
 ---
 title: Oilrig
 layout: project-image
-order: 8
+order: 15
 nav_section: portfolio
 portfolio_group: rogue-point
 subtitle: UE4 - Cooperative Level Design
