@@ -250,9 +250,16 @@
 	}
 
 	#main > .post {
-		padding: 5rem;
+		padding: 4rem;
 	}
 }
 
 /* Tighten up project header spacings */
 /* Tighten project title / subtitle spacing */
+body.is-preload:before {
+	background: #1b2a22 !important; /* your dark green */
+}
+
+body {
+	background-color: #1b2a22;
+}
