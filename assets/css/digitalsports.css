@@ -325,6 +325,16 @@ body {
 	overflow: visible !important;
 	display: flex;
 	flex-wrap: wrap;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: rgba(30, 37, 45, 0.85);
+	backdrop-filter: blur(6px);
+}
+
+#wrapper,
+#main {
+	overflow: visible !important;
 }
 
 #nav.site-nav a {
