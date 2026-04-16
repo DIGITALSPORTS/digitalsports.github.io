@@ -236,6 +236,35 @@
 	border-radius: 999px !important;
 }
 
+.project-pagination {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 2rem;
+	margin-top: 4rem;
+	padding-top: 2rem;
+	border-top: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Pagination links */
+.project-pagination-prev,
+.project-pagination-next {
+	flex: 1 1 0;
+}
+
+.project-pagination-next {
+	text-align: right;
+}
+
+.project-pagination a {
+	text-decoration: none;
+	border-bottom: 0;
+}
+
+.project-pagination a:hover {
+	text-decoration: underline;
+}
+
 /*===================OVERRIDE MASSIVELY DEFAULTS===================*/
 /* Wider desktop layout */
 @media screen and (min-width: 981px) {
