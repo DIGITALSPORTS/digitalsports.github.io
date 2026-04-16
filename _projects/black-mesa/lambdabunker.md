@@ -1,6 +1,7 @@
 ---
 title: Lambdabunker
 layout: project-image
+order: 2
 nav_section: portfolio
 subtitle: Source Engine - Multiplayer Level Design
 game: Black Mesa

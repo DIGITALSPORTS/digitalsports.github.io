@@ -1,6 +1,7 @@
 ---
 title: Gonarch's Lair
 layout: project-image
+order: 5
 nav_section: portfolio
 subtitle: Source Engine - Singleplayer Level Design
 game: Black Mesa

@@ -1,9 +1,11 @@
 title: Chon Kemp
 description: Level Designer / Programmer
+
 collections:
   projects:
     output: true
     permalink: /projects/:path/
+    sort_by: order
 
 defaults:
   - scope:
@@ -11,3 +13,4 @@ defaults:
       type: "projects"
     values:
       layout: project
+      nav_section: portfolio

@@ -1,6 +1,7 @@
 ---
 title: Interloper
 layout: project-image
+order: 6
 nav_section: portfolio
 subtitle: Source Engine - Singleplayer Level Design
 game: Black Mesa

@@ -14,7 +14,7 @@ nav_section: portfolio
 </article>
 
 <section class="posts">
-	{% assign sorted_projects = site.projects | sort: "order" %}
+	{% assign sorted_projects = site.projects | sort: "order" | reverse %}
 	{% for project in sorted_projects %}
 	<article>
 		<header>

@@ -1,6 +1,7 @@
 ---
 title: Surface Tension Uncut
 layout: project-image
+order: 3
 nav_section: portfolio
 subtitle: Source Engine - Singleplayer Level Design
 game: Black Mesa
