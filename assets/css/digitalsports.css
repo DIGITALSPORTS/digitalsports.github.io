@@ -1,17 +1,65 @@
 /*===================CHON CUSTOM THINGS===================*/
-/* Full-width hero above padded article */
-#main > .project-hero-full {
+/* =========================
+   Custom project hero + title bar
+========================= */
+#main > div.project-hero-full,
+#main > div.project-title-bar {
 	padding: 0 !important;
-	margin: 0 0 0 0;
+	border-top: 0 !important;
+	margin: 0 !important;
 	width: 100%;
 	max-width: 90rem;
 }
 
-.project-hero-full img {
+/* Hero image */
+#main > div.project-hero-full img {
 	display: block;
 	width: 100%;
 	max-width: 100%;
 	height: auto;
+}
+
+/* Dark title bar */
+#main > div.project-title-bar {
+	background: #161616;
+	color: #ffffff;
+}
+
+/* Force centered layout for contents */
+#main > div.project-title-bar .project-title-bar-inner {
+	padding: 1.5rem 2rem !important;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center !important;
+}
+
+/* Title */
+#main > div.project-title-bar .project-title-bar-inner h1 {
+	margin: 0 0 0.5rem 0;
+	color: #ffffff;
+	text-align: center !important;
+}
+
+/* Subtitle */
+#main > div.project-title-bar .project-title-bar-subtitle {
+	margin: 0 0 0.75rem 0;
+	color: rgba(255, 255, 255, 0.9);
+	text-align: center !important;
+}
+
+/* Date */
+#main > div.project-title-bar .date {
+	display: inline-block;
+	margin: 0;
+	color: #ffffff;
+}
+
+/* Softer Massively date lines on dark background */
+#main > div.project-title-bar .date:before,
+#main > div.project-title-bar .date:after {
+	border-top-color: rgba(255, 255, 255, 0.35);
 }
 
 /* Single metadata block under hero */
@@ -202,7 +250,7 @@
 	}
 
 	#main > .post {
-		padding: 6rem 5rem 5rem 5rem;
+		padding: 5rem;
 	}
 }
 
