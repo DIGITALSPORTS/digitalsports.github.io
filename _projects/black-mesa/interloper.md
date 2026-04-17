@@ -32,6 +32,8 @@ I was the chapter lead for Interloper, which was unfortunately the section of ou
 
 I personally built the Garg Chase and Tower Waste Processing levels (4 levels in total), as well as the chapter’s final Tower Portal set-piece. For the rest of the chapter, I was responsible for ensuring a smooth flow of gameplay ideas across its breadth, particularly with regards to puzzles and the “pacifist Vorts” mechanic, which I am particularly proud of. Artistically, across this chapter we attempted to convey the idea of progressing deeper into this mysterious giant living organism. We wanted to emphasise the “Interloper” aspect: that the player is behaving like a virus, an unwelcome foreign body rampaging around the factory and absolutely wrecking everything at every stage.
 
+{% include youtube.html id="PJ512HkE99Q" %}
+
 ## Garg Chase
 
 For the Garg Chase level, I feel this level illustrated how fun it can be to layer ideas across a game’s progression. In Half-Life, a Gargantua (Garg) is a massive enemy which chases you and cannot be defeated by conventional means, usually requiring a puzzle to overcome instead. In the original Half-Life, the 3 times you are embroiled in a Garg chase are reasonably similar, with little to differentiate them. We knew that for our version, we wanted Interloper’s Garg Chase to feel unique and extreme somehow, as a fitting send off to the Gargs. 
