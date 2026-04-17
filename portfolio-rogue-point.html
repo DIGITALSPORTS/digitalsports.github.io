@@ -8,7 +8,29 @@ portfolio_group: rogue-point
 
 <header class="major">
 	<h1>Rogue Point</h1>
+	<h3>Unreal Engine 4.27</h3>
+	<strong>Lead Level Designer and Programmer (2022-2026)</strong>
 </header>
+
+<section class="game-intro">
+	<div class="game-intro__content">
+		<div class="game-intro__text">
+			<p><strong>Rogue Point</strong> is a tactical rogue-lite shooter, and the first original game from indie studio Crowbar Collective, and published by Team17.</p>
+			<p>I wore many hats while working on Rogue Point. I managed the design department as the Lead Level Designer, but also handled a lot of the level design work myself too, contributing 2 levels to the 4 level Early Access release. I also worked alongside our Game Designer on a significant amount of the core gameplay and systems. I also worked with the code department, serving as a programmer myself, and functioning as a bridge between code and design. I built all of Rogue Point's level-based systems and actors.</p>
+		</div>
+
+		<div class="game-intro__media">
+			<img src="{{ '/images/black-mesa/hero.jpg' | relative_url }}" alt="Black Mesa screenshot" />
+			<a href="https://store.steampowered.com/app/362890/Black_Mesa/" target="_blank" rel="noopener">
+				View on Steam
+			</a>
+			&nbsp;|&nbsp;
+			<a href="https://www.crowbarcollective.com/" target="_blank" rel="noopener">
+				Crowbar Collective
+			</a>
+		</div>
+	</div>
+</section>
 
 {% assign rogue_point_projects = site.projects | where: "game", "Rogue Point" %}
 {% include project-grid.html projects=rogue_point_projects %}

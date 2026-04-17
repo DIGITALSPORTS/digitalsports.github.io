@@ -288,6 +288,36 @@
 	border: 0;
 }
 
+/* Game sections */
+.game-intro {
+	margin: 0 0 4rem 0;
+}
+
+.game-intro__content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	align-items: center;
+}
+
+.game-intro__text {
+	flex: 1 1 24rem;
+}
+
+.game-intro__text p {
+	margin-bottom: 1.25rem;
+}
+
+.game-intro__media {
+	flex: 1 1 20rem;
+}
+
+.game-intro__media img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 0.5rem;
+}
 /*===================OVERRIDE MASSIVELY DEFAULTS===================*/
 /* Wider desktop layout */
 @media screen and (min-width: 981px) {
@@ -480,4 +510,8 @@ hr {
 /* Font to lexend */
 body, input, textarea, select {
 	font-family: 'Lexend', sans-serif;
+}
+
+strong, b {
+    color: #ffffff;
 }

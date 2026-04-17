@@ -8,7 +8,30 @@ portfolio_group: black-mesa
 
 <header class="major">
 	<h1>Black Mesa</h1>
+	<h3>Source Engine</h3>
+	<strong>Lead Level Designer (2019-2022)</strong>
+	<strong>Level Designer (2013-2019)</strong>
 </header>
+
+<section class="game-intro">
+	<div class="game-intro__content">
+		<div class="game-intro__text">
+			<p><strong>Black Mesa</strong> is a fan reimagining of the original Half-Life, developed by Crowbar Collective. It modernises the classic experience with updated visuals, gameplay improvements, and a full reworking of the Xen chapters.</p>
+			<p>I firstly worked on Black Mesa as a Level Designer, and then later as the Lead Level Designer for Xen development and beyond. I contributed two multiplayer levels and numerous levels within the Xen chapters, as well as a vast amount of improvements and bug-fixes to the earlier Earthbound levels.</p>
+		</div>
+
+		<div class="game-intro__media">
+			<img src="{{ '/images/black-mesa/hero.jpg' | relative_url }}" alt="Black Mesa screenshot" />
+			<a href="https://store.steampowered.com/app/362890/Black_Mesa/" target="_blank" rel="noopener">
+				View on Steam
+			</a>
+			&nbsp;|&nbsp;
+			<a href="https://www.crowbarcollective.com/" target="_blank" rel="noopener">
+				Crowbar Collective
+			</a>
+		</div>
+	</div>
+</section>
 
 {% assign black_mesa_projects = site.projects | where: "game", "Black Mesa" %}
 {% include project-grid.html projects=black_mesa_projects %}
