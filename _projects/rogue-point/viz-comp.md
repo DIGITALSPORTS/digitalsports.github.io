@@ -8,8 +8,8 @@ subtitle: UE4 - Code
 game: Rogue Point
 discipline: Code
 date_text: 2026
-hero_image: /images/oilrig/oilrig-hero.jpg
-card_image: /images/oilrig/oilrig-hero.jpg
+hero_image: /images/rogue-point/viz-comp-01.jpg
+card_image: /images/rogue-point/viz-comp-01.jpg
 excerpt_text: A complex and twisting Oilrig at night.
 
 ---
@@ -19,6 +19,10 @@ There were several actors Level Designers would set up on Rogue Point that prove
 As we progressed through development this issue became more apparent, so I did some exploration into how the editor handles things like the guide cones on Spot Light actors.
 
 I thought it would be handy for designers to be able to add custom visualizations to things they created too, if so they desired, so I turned our version of this component into something that could be added to blueprint. I gave it a generic set of implementations so that it was as versatile as possible. The component simply stored several arrays of points, lines, boxes, grids and spheres. Designers could thus easily just pass their desired variables into these arrays, to easily setup editor visualization for their class.
+
+<div class="image main">
+	<img src="{{ '/images/rogue-point/viz-comp-01.jpg' | relative_url }}" alt="Oilrig at night" />
+</div>
 
 You could also specify a colour to draw the shape if so you desired, and if you didn’t, the system would randomly cycle through the colours of the rainbow!
 
