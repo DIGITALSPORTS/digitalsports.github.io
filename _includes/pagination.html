@@ -1,0 +1,39 @@
+{% assign project_list = site.projects | sort: 'order' %}
+{% assign current_index = nil %}
+
+{% for project in project_list %}
+	{% if project.url == page.url %}
+		{% assign current_index = forloop.index0 %}
+		{% break %}
+	{% endif %}
+{% endfor %}
+
+{% if current_index != nil %}
+	{% assign last_index = project_list.size | minus: 1 %}
+	{% assign prev_index = current_index | minus: 1 %}
+	{% assign next_index = current_index | plus: 1 %}
+
+	{% if prev_index >= 0 %}
+		{% assign previous_project = project_list[prev_index] %}
+	{% endif %}
+
+	{% if next_index <= last_index %}
+		{% assign next_project = project_list[next_index] %}
+	{% endif %}
+
+	{% if previous_project or next_project %}
+		<nav class="project-pagination">
+			<div class="project-pagination-prev">
+				{% if previous_project %}
+					<a href="{{ previous_project.url | relative_url }}">&larr; {{ previous_project.title }}</a>
+				{% endif %}
+			</div>
+
+			<div class="project-pagination-next">
+				{% if next_project %}
+					<a href="{{ next_project.url | relative_url }}">{{ next_project.title }} &rarr;</a>
+				{% endif %}
+			</div>
+		</nav>
+	{% endif %}
+{% endif %}
