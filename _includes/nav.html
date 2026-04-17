@@ -3,6 +3,9 @@
 		<li{% if page.nav_section == 'portfolio' %} class="active"{% endif %}>
 			<a href="{{ '/' | relative_url }}">Portfolio</a>
 		</li>
+		<li{% if page.nav_section == 'media' %} class="active"{% endif %}>
+			<a href="{{ '/media/' | relative_url }}">Media</a>
+		</li>
 		<li{% if page.nav_section == 'about' %} class="active"{% endif %}>
 			<a href="{{ '/about/' | relative_url }}">About</a>
 		</li>

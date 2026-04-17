@@ -318,6 +318,22 @@
 	height: auto;
 	border-radius: 0.5rem;
 }
+/* =========================
+   Media page
+========================= */
+.media-posts article {
+	padding: 2rem; /* match your tighter grid */
+}
+
+.media-posts .video-embed {
+	margin-bottom: 1rem;
+}
+
+.media-posts h2 {
+	margin: 0 0 0.5rem 0;
+	font-size: 1.3rem;
+	line-height: 1.2;
+}
 /*===================OVERRIDE MASSIVELY DEFAULTS===================*/
 /* Wider desktop layout */
 @media screen and (min-width: 981px) {

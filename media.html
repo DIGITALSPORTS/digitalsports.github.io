@@ -1,0 +1,53 @@
+---
+layout: default
+title: Media
+permalink: /media/
+nav_section: media
+
+media_items:
+  - title: Example Interview
+    youtube_id: dQw4w9WgXcQ
+    description: A discussion about level design, collaboration, and building Rogue Point.
+
+  - title: Example Preview
+    youtube_id: 9bZkp7q19f0
+    description: A gameplay preview featuring one of the maps I worked on.
+
+  - title: Example Feature
+    youtube_id: 3JZ_D3ELwOQ
+    description: A broader look at the studio and some of the projects I contributed to.
+---
+
+<article class="post">
+	<header class="major">
+		<h1>Media</h1>
+	</header>
+
+	<p>Across my time at Crowbar Collective, I've had the fortune to be able to feature in some pretty cool media.</p>
+
+	{% if page.media_items %}
+		<section class="posts media-posts">
+			{% for item in page.media_items %}
+				<article>
+					<div class="video-embed">
+						<iframe
+							src="https://www.youtube.com/embed/{{ item.youtube_id }}"
+							title="{{ item.title }}"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen>
+						</iframe>
+					</div>
+	
+					<header>
+						<h2>{{ item.title }}</h2>
+					</header>
+	
+					{% if item.description %}
+						<p>{{ item.description }}</p>
+					{% endif %}
+				</article>
+			{% endfor %}
+		</section>
+	{% endif %}
+</article>
