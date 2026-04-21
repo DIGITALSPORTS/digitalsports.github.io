@@ -531,3 +531,16 @@ body, input, textarea, select {
 strong, b {
     color: #ffffff;
 }
+
+/*===================OVERRIDE SYNTAX HIGHLIGHT DEFAULTS===================*/
+
+.highlight {
+    background: #111;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.highlight .k { color: #009966; } /* keywords */
+.highlight .s { color: #cccccc; } /* strings */
+.highlight .c { color: #666666; } /* comments */

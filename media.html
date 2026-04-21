@@ -5,17 +5,13 @@ permalink: /media/
 nav_section: media
 
 media_items:
-  - title: Example Interview
-    youtube_id: dQw4w9WgXcQ
-    description: A discussion about level design, collaboration, and building Rogue Point.
+  - title: Noclip Documentary
+    youtube_id: G_TcAxAKCAI
+    description:  Crowbar Collective talk about their 16 year journey rebuilding the original Half-Life.
 
-  - title: Example Preview
-    youtube_id: 9bZkp7q19f0
-    description: A gameplay preview featuring one of the maps I worked on.
-
-  - title: Example Feature
-    youtube_id: 3JZ_D3ELwOQ
-    description: A broader look at the studio and some of the projects I contributed to.
+  - title: Game Design Library
+    youtube_id: ESx-s-fL6Lc
+    description: An interview with the game developers behind Black Mesa, the remake of Half-Life, on their next game Rogue Point.
 ---
 
 <article class="post">
@@ -29,6 +25,12 @@ media_items:
 		<section class="posts media-posts">
 			{% for item in page.media_items %}
 				<article>
+					<header>
+						<h2>{{ item.title }}</h2>
+					</header>
+					{% if item.description %}
+						<p>{{ item.description }}</p>
+					{% endif %}
 					<div class="video-embed">
 						<iframe
 							src="https://www.youtube.com/embed/{{ item.youtube_id }}"
@@ -38,14 +40,6 @@ media_items:
 							allowfullscreen>
 						</iframe>
 					</div>
-	
-					<header>
-						<h2>{{ item.title }}</h2>
-					</header>
-	
-					{% if item.description %}
-						<p>{{ item.description }}</p>
-					{% endif %}
 				</article>
 			{% endfor %}
 		</section>
