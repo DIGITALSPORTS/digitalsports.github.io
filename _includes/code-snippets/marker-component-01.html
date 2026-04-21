@@ -1,0 +1,12 @@
+<pre class="code-block"><code><span class="code-macro">DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam</span><span class="code-punc">(</span><span class="code-func">FOnMarkerAppearanceChangedSignature</span><span class="code-punc">,</span> <span class="code-keyword">const</span> <span class="code-struct">FMarkerAppearance</span><span class="code-operator">&amp;</span><span class="code-punc">,</span> <span class="code-var">InAppearance</span><span class="code-punc">);</span> 
+
+<span class="code-keyword">void</span> <span class="code-class">UTangoMarkerComponent</span><span class="code-punc">::</span><span class="code-func">SetMarkerAppearance</span><span class="code-punc">(</span><span class="code-keyword">const</span> <span class="code-struct">FMarkerAppearance</span><span class="code-operator">&amp;</span> <span class="code-var">InMarkerAppearance</span><span class="code-punc">)</span>
+<span class="code-punc">{</span>
+  <span class="code-member">Appearance</span> <span class="code-operator">=</span> <span class="code-var">InMarkerAppearance</span><span class="code-punc">;</span>
+  <span class="code-func">OnRep_Appearance</span><span class="code-punc">();</span>
+<span class="code-punc">}</span>
+
+<span class="code-keyword">void</span> <span class="code-class">UTangoMarkerComponent</span><span class="code-punc">::</span><span class="code-func">OnRep_Appearance</span><span class="code-punc">()</span>
+<span class="code-punc">{</span>
+  <span class="code-member">OnAppearanceChanged</span><span class="code-punc">.</span><span class="code-func">Broadcast</span><span class="code-punc">(</span><span class="code-member">Appearance</span><span class="code-punc">);</span>
+<span class="code-punc">}</span></code></pre>

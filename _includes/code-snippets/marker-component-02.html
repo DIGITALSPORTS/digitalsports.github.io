@@ -1,0 +1,21 @@
+<pre class="code-block"><code><span class="code-keyword">void</span> <span class="code-class">UTangoMarkerWidget</span><span class="code-punc">::</span><span class="code-func">MarkerWidgetSetup</span><span class="code-punc">()</span>
+<span class="code-punc">{</span>
+  <span class="code-comment">// Bind to the marker component's appearance, and then manually update once for the first time</span>
+  <span class="code-member">MarkerComponent</span><span class="code-operator">-&gt;</span><span class="code-member">OnAppearanceChanged</span><span class="code-punc">.</span><span class="code-func">AddUniqueDynamic</span><span class="code-punc">(</span><span class="code-keyword">this</span><span class="code-punc">,</span> <span class="code-operator">&amp;</span><span class="code-class">ThisClass</span><span class="code-punc">::</span><span class="code-func">MarkerAppearanceChanged</span><span class="code-punc">);</span>
+  <span class="code-func">MarkerAppearanceChanged</span><span class="code-punc">(</span><span class="code-member">MarkerComponent</span><span class="code-operator">-&gt;</span><span class="code-member">Appearance</span><span class="code-punc">);</span>
+<span class="code-punc">}</span>
+
+<span class="code-keyword">void</span> <span class="code-class">UTangoMarkerWidget</span><span class="code-punc">::</span><span class="code-func">MarkerAppearanceChanged</span><span class="code-punc">(</span><span class="code-keyword">const</span> <span class="code-struct">FMarkerAppearance</span><span class="code-operator">&amp;</span> <span class="code-var">InAppearance</span><span class="code-punc">)</span>
+<span class="code-punc">{</span>
+  <span class="code-member">Appearance</span> <span class="code-operator">=</span> <span class="code-var">InAppearance</span><span class="code-punc">;</span>
+
+  <span class="code-comment">// Update our icon and tint if we are able to</span>
+  <span class="code-keyword">if</span><span class="code-punc">(</span><span class="code-func">IsValid</span><span class="code-punc">(</span><span class="code-member">Icon</span><span class="code-punc">)</span> <span class="code-operator">&amp;&amp;</span> <span class="code-operator">!</span><span class="code-member">Appearance</span><span class="code-punc">.</span><span class="code-struct">IconTexture</span><span class="code-punc">.</span><span class="code-func">IsNull</span><span class="code-punc">())</span>
+  <span class="code-punc">{</span>
+    <span class="code-member">Icon</span><span class="code-operator">-&gt;</span><span class="code-func">SetBrushFromLazyTexture</span><span class="code-punc">(</span><span class="code-member">Appearance</span><span class="code-punc">.</span><span class="code-struct">IconTexture</span><span class="code-punc">);</span>
+    <span class="code-member">Icon</span><span class="code-operator">-&gt;</span><span class="code-func">SetBrushTintColor</span><span class="code-punc">(</span><span class="code-member">Appearance</span><span class="code-punc">.</span><span class="code-struct">ColorTint</span><span class="code-punc">);</span>
+  <span class="code-punc">}</span>
+
+  <span class="code-comment">// Dispatch BP event so BPs can do additional updates if needed</span>
+  <span class="code-func">BP_MarkerAppearanceChanged</span><span class="code-punc">(</span><span class="code-member">Appearance</span><span class="code-punc">);</span>
+<span class="code-punc">}</span></code></pre>

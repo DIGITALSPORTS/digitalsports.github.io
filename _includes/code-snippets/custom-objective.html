@@ -1,0 +1,67 @@
+<pre class="code-block"><code><span class="code-comment">// The Custom Objective actor calls this function on all its "ObjectiveActor" components when it is setup</span>
+<span class="code-keyword">void</span> <span class="code-class">UTangoCustomObjectiveComponent</span><span class="code-punc">::</span><span class="code-func">SetupFromCustomObjective</span><span class="code-punc">(</span><span class="code-class">ATangoCustomObjective</span><span class="code-operator">*</span> <span class="code-var">InObjective</span><span class="code-punc">)</span>
+<span class="code-punc">{</span>
+  <span class="code-comment">// Setup vars</span>
+  <span class="code-member">CustomObjective</span> <span class="code-operator">=</span> <span class="code-var">InObjective</span><span class="code-punc">;</span>
+
+  <span class="code-comment">// Handle state</span>
+  <span class="code-member">ActorState</span> <span class="code-operator">=</span> <span class="code-struct">EObjectiveState</span><span class="code-punc">::</span><span class="code-struct">Inactive</span><span class="code-punc">;</span>
+  <span class="code-member">OnObjectiveSetup</span><span class="code-punc">.</span><span class="code-func">Broadcast</span><span class="code-punc">();</span>
+<span class="code-punc">}</span>
+
+<span class="code-comment">// The actor owning this component can call this function at its discretion (such as when a button is pressed)</span>
+<span class="code-keyword">void</span> <span class="code-class">UTangoCustomObjectiveComponent</span><span class="code-punc">::</span><span class="code-func">SetCompleted</span><span class="code-punc">()</span>
+<span class="code-punc">{</span>
+  <span class="code-comment">// Early exit if we weren't setup</span>
+  <span class="code-keyword">if</span><span class="code-punc">(</span><span class="code-operator">!</span><span class="code-func">IsValid</span><span class="code-punc">(</span><span class="code-member">CustomObjective</span><span class="code-punc">))</span>
+  <span class="code-punc">{</span>
+    <span class="code-macro">UE_LOG</span><span class="code-punc">(</span><span class="code-var">LogTangoObjectives</span><span class="code-punc">,</span> <span class="code-struct">Warning</span><span class="code-punc">,</span> 
+    <span class="code-macro">TEXT</span><span class="code-punc">(</span><span class="code-string">"%s Custom Objective Component did not have a valid Custom Objective Actor while trying to SetCompleted()!"</span><span class="code-punc">),</span>
+	<span class="code-operator">*</span><span class="code-func">GetOwner</span><span class="code-punc">()</span><span class="code-operator">-&gt;</span><span class="code-func">GetName</span><span class="code-punc">());</span>
+    <span class="code-keyword">return</span><span class="code-punc">;</span>
+  <span class="code-punc">}</span>
+  <span class="code-member">ActorState</span> <span class="code-operator">=</span> <span class="code-struct">EObjectiveState</span><span class="code-punc">::</span><span class="code-struct">Completed</span><span class="code-punc">;</span>
+  <span class="code-member">CustomObjective</span><span class="code-operator">-&gt;</span><span class="code-func">SetActorCompleted</span><span class="code-punc">(</span><span class="code-func">GetOwner</span><span class="code-punc">());</span>
+<span class="code-punc">}</span>
+
+<span class="code-comment">// This is what the Custom Objective actor does in response to any ObjectiveActor being completed</span>
+<span class="code-keyword">void</span> <span class="code-class">ATangoCustomObjective</span><span class="code-punc">::</span><span class="code-func">SetActorCompleted</span><span class="code-punc">(</span><span class="code-class">AActor</span><span class="code-operator">*</span> <span class="code-var">InActor</span><span class="code-punc">)</span>
+<span class="code-punc">{</span>
+  <span class="code-keyword">if</span><span class="code-punc">(</span><span class="code-operator">!</span><span class="code-func">IsValid</span><span class="code-punc">(</span><span class="code-var">InActor</span><span class="code-punc">)</span> <span class="code-operator">||</span> <span class="code-member">ObjectiveActors</span><span class="code-punc">.</span><span class="code-func">Contains</span><span class="code-punc">(</span><span class="code-var">InActor</span><span class="code-punc">)</span> <span class="code-operator">||</span> <span class="code-member">CompletedActors</span><span class="code-punc">.</span><span class="code-func">Contains</span><span class="code-punc">(</span><span class="code-var">InActor</span><span class="code-punc">))</span>
+  <span class="code-punc">{</span>
+    <span class="code-keyword">return</span><span class="code-punc">;</span>
+  <span class="code-punc">}</span>
+  <span class="code-macro">UE_LOG</span><span class="code-punc">(</span><span class="code-var">LogTangoObjectives</span><span class="code-punc">,</span> <span class="code-struct">Display</span><span class="code-punc">,</span> 
+    <span class="code-macro">TEXT</span><span class="code-punc">(</span><span class="code-string">"%s Actor was added to %s Custom Objective's CompletedActors!"</span><span class="code-punc">),</span> <span class="code-operator">*</span><span class="code-var">InActor</span><span class="code-operator">-&gt;</span><span class="code-func">GetName</span><span class="code-punc">(),</span> <span class="code-operator">*</span><span class="code-func">GetName</span><span class="code-punc">())</span>
+  <span class="code-member">CompletedActors</span><span class="code-punc">.</span><span class="code-func">AddUnique</span><span class="code-punc">(</span><span class="code-var">InActor</span><span class="code-punc">);</span>
+  <span class="code-func">OnRep_CompletedActors</span><span class="code-punc">();</span>
+  
+  <span class="code-comment">// Complete if necessary</span>
+  <span class="code-keyword">if</span><span class="code-punc">(</span><span class="code-member">CompletedActors</span><span class="code-punc">.</span><span class="code-func">Num</span><span class="code-punc">()</span> <span class="code-operator">==</span> <span class="code-member">ObjectiveActors</span><span class="code-punc">.</span><span class="code-func">Num</span><span class="code-punc">())</span>
+  <span class="code-punc">{</span>
+    <span class="code-macro">UE_LOG</span><span class="code-punc">(</span><span class="code-var">LogTangoObjectives</span><span class="code-punc">,</span> <span class="code-struct">Display</span><span class="code-punc">,</span> 
+      <span class="code-macro">TEXT</span><span class="code-punc">(</span><span class="code-string">"%s Custom Objective was completed!"</span><span class="code-punc">),</span> 
+	    <span class="code-operator">*</span><span class="code-func">GetName</span><span class="code-punc">())</span>
+    <span class="code-member">ObjectiveState</span> <span class="code-operator">=</span> <span class="code-struct">EObjectiveState</span><span class="code-punc">::</span><span class="code-struct">Completed</span><span class="code-punc">;</span>
+    <span class="code-func">OnRep_ObjectiveState</span><span class="code-punc">();</span>
+    <span class="code-keyword">if</span><span class="code-punc">(</span><span class="code-func">IsValid</span><span class="code-punc">(</span><span class="code-member">ObjectiveManager</span><span class="code-punc">))</span>
+    <span class="code-punc">{</span>
+      <span class="code-member">ObjectiveManager</span><span class="code-operator">-&gt;</span><span class="code-func">SetCustomObjectiveCompleted</span><span class="code-punc">(</span><span class="code-keyword">this</span><span class="code-punc">);</span>
+      <span class="code-comment">// For Raid layouts, the next objective activation (if there is one) is handled via the RaidMissionComponent</span>
+      <span class="code-keyword">if</span><span class="code-punc">(</span><span class="code-member">ObjectiveManager</span><span class="code-operator">-&gt;</span><span class="code-func">GetRandomizationParams</span><span class="code-punc">().</span><span class="code-member">LayoutType</span> <span class="code-operator">!=</span> <span class="code-struct">ELevelLayoutType</span><span class="code-punc">::</span><span class="code-struct">Raid</span><span class="code-punc">)</span>
+      <span class="code-punc">{</span>
+        <span class="code-member">ObjectiveManager</span><span class="code-operator">-&gt;</span><span class="code-func">SetActiveCustomObjective</span><span class="code-punc">(</span><span class="code-member">NextObjective</span><span class="code-punc">);</span>
+      <span class="code-punc">}</span>
+    <span class="code-punc">}</span>
+  <span class="code-punc">}</span>
+  <span class="code-keyword">else</span> <span class="code-comment">// If we haven't completed, attempt to announce the remaining count</span>
+  <span class="code-punc">{</span>
+    <span class="code-keyword">const</span> <span class="code-class">FName</span> <span class="code-var">CountAnnouncementName</span> <span class="code-operator">=</span> <span class="code-member">ProgressCountAnnouncements</span><span class="code-punc">.</span><span class="code-func">FindRef</span><span class="code-punc">(</span><span class="code-member">CompletedActors</span><span class="code-punc">.</span><span class="code-func">Num</span><span class="code-punc">());</span>
+    <span class="code-keyword">if</span><span class="code-punc">(</span><span class="code-var">CountAnnouncementName</span> <span class="code-operator">!=</span> <span class="code-struct">NAME_None</span> <span class="code-operator">&amp;&amp;</span> <span class="code-func">IsValid</span><span class="code-punc">(</span><span class="code-member">PlayerManager</span><span class="code-punc">))</span>
+    <span class="code-punc">{</span>
+      <span class="code-member">PlayerManager</span><span class="code-operator">-&gt;</span><span class="code-func">QueueAnnouncementFromTable</span><span class="code-punc">(</span><span class="code-var">CountAnnouncementName</span><span class="code-punc">);</span>
+    <span class="code-punc">}</span>
+  <span class="code-punc">}</span>
+
+  <span class="code-func">FlushNetDormancy</span><span class="code-punc">();</span>
+<span class="code-punc">}</span></code></pre>
