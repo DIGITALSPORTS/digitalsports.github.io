@@ -1,0 +1,65 @@
+<pre class="code-block"><code><span class="code-macro">UCLASS</span><span class="code-punc">(</span><span class="code-specifier">ClassGroup</span><span class="code-operator">=</span><span class="code-punc">(</span><span class="code-var">Visualization</span><span class="code-punc">),</span> <span class="code-specifier">meta</span><span class="code-operator">=</span><span class="code-punc">(</span><span class="code-specifier">BlueprintSpawnableComponent</span><span class="code-punc">,</span> <span class="code-specifier">DisplayName</span> <span class="code-operator">=</span> <span class="code-string">"Generic Visualizer Component"</span><span class="code-punc">))</span>
+<span class="code-keyword">class</span> <span class="code-specifier">TANGO_API</span> <span class="code-class">UTangoGenericVizComponent</span> <span class="code-punc">:</span> <span class="code-keyword">public</span> <span class="code-class">UActorComponent</span>
+<span class="code-punc">{</span>
+  <span class="code-macro">GENERATED_BODY</span><span class="code-punc">()</span>
+
+<span class="code-keyword">public</span><span class="code-punc">:</span>
+  <span class="code-func">UTangoGenericVizComponent</span><span class="code-punc">();</span>
+  
+  <span class="code-comment">/**</span>
+  <span class="code-comment">* Adds a visualization Point to this component.</span>
+  <span class="code-comment">*  <span class="code-decorator">@param</span>  <span class="code-param">InPoint</span>        Definition for the Point to draw.</span>
+  <span class="code-comment">*/</span>
+  <span class="code-macro">UFUNCTION</span><span class="code-punc">(</span><span class="code-specifier">BlueprintCallable</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Generic Viz Basics"</span><span class="code-punc">)</span>
+  <span class="code-keyword">void</span> <span class="code-func">AddPoint</span><span class="code-punc">(</span><span class="code-struct">FVizPoint</span> <span class="code-var">InPoint</span><span class="code-punc">);</span>
+
+  <span class="code-comment">/**</span>
+  <span class="code-comment">* Adds a visualization Line to this component.</span>
+  <span class="code-comment">*  <span class="code-decorator">@param</span>  <span class="code-param">InLine</span>        Definition for the Line to draw.</span>
+  <span class="code-comment">*/</span>
+  <span class="code-macro">UFUNCTION</span><span class="code-punc">(</span><span class="code-specifier">BlueprintCallable</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Generic Viz Basics"</span><span class="code-punc">)</span>
+  <span class="code-keyword">void</span> <span class="code-func">AddLine</span><span class="code-punc">(</span><span class="code-struct">FVizLine</span> <span class="code-var">InLine</span><span class="code-punc">);</span>
+  
+  <span class="code-comment">/**</span>
+  <span class="code-comment">* Adds a visualization Box to this component.</span>
+  <span class="code-comment">*  <span class="code-decorator">@param</span>  <span class="code-param">InBox</span>        Definition for the Box to draw.</span>
+  <span class="code-comment">*/</span>
+  <span class="code-macro">UFUNCTION</span><span class="code-punc">(</span><span class="code-specifier">BlueprintCallable</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Generic Viz Basics"</span><span class="code-punc">)</span>
+  <span class="code-keyword">void</span> <span class="code-func">AddBox</span><span class="code-punc">(</span><span class="code-struct">FVizBox</span> <span class="code-var">InBox</span><span class="code-punc">);</span>
+
+  <span class="code-comment">/**</span>
+  <span class="code-comment">* Adds a visualization Grid to this component.</span>
+  <span class="code-comment">*  <span class="code-decorator">@param</span>  <span class="code-param">InGrid</span>        Definition for the Grid to draw.</span>
+  <span class="code-comment">*/</span>
+  <span class="code-macro">UFUNCTION</span><span class="code-punc">(</span><span class="code-specifier">BlueprintCallable</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Generic Viz Basics"</span><span class="code-punc">)</span>
+  <span class="code-keyword">void</span> <span class="code-func">AddGrid</span><span class="code-punc">(</span><span class="code-struct">FVizGrid</span> <span class="code-var">InGrid</span><span class="code-punc">);</span>
+
+  <span class="code-comment">/**</span>
+  <span class="code-comment">* Adds a visualization Sphere to this component.</span>
+  <span class="code-comment">*  <span class="code-decorator">@param</span>  <span class="code-param">InSphere</span>        Definition for the Sphere to draw.</span>
+  <span class="code-comment">*/</span>
+  <span class="code-macro">UFUNCTION</span><span class="code-punc">(</span><span class="code-specifier">BlueprintCallable</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Generic Viz Basics"</span><span class="code-punc">)</span>
+  <span class="code-keyword">void</span> <span class="code-func">AddSphere</span><span class="code-punc">(</span><span class="code-struct">FVizSphere</span> <span class="code-var">InSphere</span><span class="code-punc">);</span>
+
+<span class="code-keyword">private</span><span class="code-punc">:</span>
+  <span class="code-comment">/** Definitions of Points to draw. */</span>
+  <span class="code-macro">UPROPERTY</span><span class="code-punc">(</span><span class="code-specifier">EditInstanceOnly</span><span class="code-punc">,</span> <span class="code-specifier">BlueprintGetter</span> <span class="code-operator">=</span> <span class="code-func">GetPoints</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Generic Viz Basics"</span><span class="code-punc">)</span>
+  <span class="code-class">TArray</span><span class="code-operator">&lt;</span><span class="code-struct">FVizPoint</span><span class="code-operator">&gt;</span> <span class="code-member">Points</span><span class="code-punc">;</span>
+  
+  <span class="code-comment">/** Definitions of Lines to draw. */</span>
+  <span class="code-macro">UPROPERTY</span><span class="code-punc">(</span><span class="code-specifier">EditInstanceOnly</span><span class="code-punc">,</span> <span class="code-specifier">BlueprintGetter</span> <span class="code-operator">=</span> <span class="code-func">GetLines</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Generic Viz Basics"</span><span class="code-punc">)</span>
+  <span class="code-class">TArray</span><span class="code-operator">&lt;</span><span class="code-struct">FVizLine</span><span class="code-operator">&gt;</span> <span class="code-member">Lines</span><span class="code-punc">;</span>
+
+  <span class="code-comment">/** Definitions of Boxes to draw. */</span>
+  <span class="code-macro">UPROPERTY</span><span class="code-punc">(</span><span class="code-specifier">EditInstanceOnly</span><span class="code-punc">,</span> <span class="code-specifier">BlueprintGetter</span> <span class="code-operator">=</span> <span class="code-func">GetBoxes</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Generic Viz Basics"</span><span class="code-punc">)</span>
+  <span class="code-class">TArray</span><span class="code-operator">&lt;</span><span class="code-struct">FVizBox</span><span class="code-operator">&gt;</span> <span class="code-member">Boxes</span><span class="code-punc">;</span>
+
+  <span class="code-comment">/** Definitions of Boxes to draw. */</span>
+  <span class="code-macro">UPROPERTY</span><span class="code-punc">(</span><span class="code-specifier">EditInstanceOnly</span><span class="code-punc">,</span> <span class="code-specifier">BlueprintGetter</span> <span class="code-operator">=</span> <span class="code-func">GetGrids</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Generic Viz Basics"</span><span class="code-punc">)</span>
+  <span class="code-class">TArray</span><span class="code-operator">&lt;</span><span class="code-struct">FVizGrid</span><span class="code-operator">&gt;</span> <span class="code-member">Grids</span><span class="code-punc">;</span>
+
+  <span class="code-comment">/** Definitions of Spheres to draw. */</span>
+  <span class="code-macro">UPROPERTY</span><span class="code-punc">(</span><span class="code-specifier">EditInstanceOnly</span><span class="code-punc">,</span> <span class="code-specifier">BlueprintGetter</span> <span class="code-operator">=</span> <span class="code-func">GetSpheres</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Generic Viz Basics"</span><span class="code-punc">)</span>
+  <span class="code-class">TArray</span><span class="code-operator">&lt;</span><span class="code-struct">FVizSphere</span><span class="code-operator">&gt;</span> <span class="code-member">Spheres</span><span class="code-punc">;</span>
+  
+<span class="code-punc">};</span></code></pre>
