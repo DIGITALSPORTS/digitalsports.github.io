@@ -24,6 +24,8 @@ Sitting at the top level of this system is the Level Layout actor class, which s
 	<img src="{{ '/images/rogue-point/randomisation-01.jpg' | relative_url }}" alt="Oilrig at night" />
 </div>
 
+## Areas
+
 The system's modularity allows designers divide the level into smaller areas, using an actor class called an Area Manager. Designers assign the Area Manager a custom gameplay tag, which becomes its unique identifier. Designers then place area-relevant gameplay actors such as: enemy spawners, objective spawners, blocker spawners, doors, etc, and allocate them to that Area Manager by setting their tag to match the desired manager. Setting up an individual area is consequently very resource efficient, as setup only needs to be handled once for that area, and it can then be utilised by any layout in any relevant way.
 
 Within the Level Layout actor, designers then simply specify how that layout should use each given area. For example, every Level Layout allows designers to specify any number of “spawn areas”, one of which will be randomly selected to spawn players at. Designing any Level Layout then becomes a straightforward matter of specifying and arranging its areas like a set of conceptual building blocks, and putting any required additional constraints on these. Designers do not need to think about implementation details such as which specific spawners to use in an area, how to pick which doors to lock, how many enemies to spawn and where, and things like that. The system handles this logic for them. It avoids bespoke and complex setups.
@@ -31,6 +33,8 @@ Within the Level Layout actor, designers then simply specify how that layout sho
 <div class="image main">
 	<img src="{{ '/images/rogue-point/randomisation-02.jpg' | relative_url }}" alt="Oilrig at night" />
 </div>
+
+## Setup
 
 Here is an example of the typical setup flow a designer might adopt when building a map using this system:
 <ol>
