@@ -4,13 +4,13 @@ layout: project-text
 order: 13
 nav_section: portfolio
 portfolio_group: rogue-point
-subtitle: UE4 - Code and Level Design
+subtitle: UE4 - Code and Level Design (Core Systems)
 game: Rogue Point
 discipline: Code and Level Design
 date_text: 2026
 hero_image: /images/rogue-point/randomisation-01.jpg
 card_image: /images/rogue-point/randomisation-01.jpg
-excerpt_text: A complex and twisting Oilrig at night.
+excerpt_text: The core system for populating Rogue Point's levels and randomizing them, while maintaining player direction and linearity. Enabled speedy designer prototyping and iteration.
 
 ---
 
@@ -24,7 +24,7 @@ Sitting at the top level of this system is the Level Layout actor class, which s
 	<img src="{{ '/images/rogue-point/randomisation-01.jpg' | relative_url }}" alt="Oilrig at night" />
 </div>
 
-## Areas
+## Area Managers
 
 The system's modularity allows designers divide the level into smaller areas, using an actor class called an Area Manager. Designers assign the Area Manager a custom gameplay tag, which becomes its unique identifier. Designers then place area-relevant gameplay actors such as: enemy spawners, objective spawners, blocker spawners, doors, etc, and allocate them to that Area Manager by setting their tag to match the desired manager. Setting up an individual area is consequently very resource efficient, as setup only needs to be handled once for that area, and it can then be utilised by any layout in any relevant way.
 
@@ -34,7 +34,7 @@ Within the Level Layout actor, designers then simply specify how that layout sho
 	<img src="{{ '/images/rogue-point/randomisation-02.jpg' | relative_url }}" alt="Oilrig at night" />
 </div>
 
-## Setup
+## Building a Layout
 
 Here is an example of the typical setup flow a designer might adopt when building a map using this system:
 <ol>

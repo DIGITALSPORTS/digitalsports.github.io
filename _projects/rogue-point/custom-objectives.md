@@ -4,13 +4,13 @@ layout: project-text
 order: 11
 nav_section: portfolio
 portfolio_group: rogue-point
-subtitle: UE4 - Code
+subtitle: UE4 - Code (Core Systems)
 game: Rogue Point
 discipline: Code
 date_text: 2026
 hero_image: /images/rogue-point/custom-objectives-01.jpg
 card_image: /images/rogue-point/custom-objectives-01.jpg
-excerpt_text: A complex and twisting Oilrig at night.
+excerpt_text: A framework for allowing Rogue Point's designers to populate bespoke mission objectives in a simple and reusable way.
 
 ---
 

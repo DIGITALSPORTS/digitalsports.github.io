@@ -4,13 +4,13 @@ layout: project-text
 order: 12
 nav_section: portfolio
 portfolio_group: rogue-point
-subtitle: UE4 - Code
+subtitle: UE4 - Code (Core Systems)
 game: Rogue Point
 discipline: Code
 date_text: 2026
 hero_image: /images/rogue-point/planning-01.jpg
 card_image: /images/rogue-point/planning-01.jpg
-excerpt_text: A complex and twisting Oilrig at night.
+excerpt_text: A centralised and designer-friendly system for managing the many ways we show Rogue Point's UI markers to players, and display them on the Planning Screen.
 
 ---
 

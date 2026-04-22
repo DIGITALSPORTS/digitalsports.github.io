@@ -4,13 +4,13 @@ layout: project-text
 order: 10
 nav_section: portfolio
 portfolio_group: rogue-point
-subtitle: UE4 - Code
+subtitle: UE4 - Code (Editor)
 game: Rogue Point
 discipline: Code
 date_text: 2026
 hero_image: /images/rogue-point/ld-menu-01.jpg
 card_image: /images/rogue-point/ld-menu-01.jpg
-excerpt_text: A complex and twisting Oilrig at night.
+excerpt_text: A custom menu for Rogue Point which extends UE4 "Play in Editor" menu, to reduce friction in testing Rogue Point and incorporate multiple handy features for designers and artists.
 
 ---
 

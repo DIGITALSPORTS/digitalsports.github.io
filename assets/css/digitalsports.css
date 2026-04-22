@@ -297,11 +297,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 2rem;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .game-intro__text {
-	flex: 1 1 24rem;
+	flex: 2 1 0;
+	min-width: 0;
 }
 
 .game-intro__text p {
@@ -309,14 +310,20 @@
 }
 
 .game-intro__media {
-	flex: 1 1 20rem;
+	flex: 1 1 0;
+	max-width: 18rem;
 }
 
 .game-intro__media img {
 	display: block;
 	width: 100%;
 	height: auto;
-	border-radius: 0.5rem;
+}
+
+.game-intro__media p {
+	margin-top: 0.75rem;
+	margin-bottom: 0;
+	font-size: 0.9rem;
 }
 /* =========================
    Media page
@@ -367,7 +374,7 @@ body {
 ========================= */
 
 #main > .posts > .portfolio-card {
-	padding: 2rem;
+	padding: 1.5rem;
 }
 
 .posts > .portfolio-card header h2 {
@@ -377,8 +384,8 @@ body {
 }
 
 .posts > .portfolio-card .image.fit {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .posts > .portfolio-card p {

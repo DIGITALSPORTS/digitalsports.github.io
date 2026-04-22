@@ -4,13 +4,13 @@ layout: project-text
 order: 8
 nav_section: portfolio
 portfolio_group: rogue-point
-subtitle: UE4 - Code
+subtitle: UE4 - Code (Core Systems)
 game: Rogue Point
 discipline: Code
 date_text: 2026
 hero_image: /images/rogue-point/level-layouts-01.jpg
 card_image: /images/rogue-point/level-layouts-01.jpg
-excerpt_text: A complex and twisting Oilrig at night.
+excerpt_text: An expandable object-oriented system for allowing different types of Rogue Point Level Layouts to be setup and behave in distinct ways.
 
 ---
 

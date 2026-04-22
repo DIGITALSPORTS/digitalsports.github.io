@@ -4,13 +4,13 @@ layout: project-text
 order: 10
 nav_section: portfolio
 portfolio_group: rogue-point
-subtitle: UE4 - Code
+subtitle: UE4 - Code (Editor)
 game: Rogue Point
 discipline: Code
 date_text: 2026
 hero_image: /images/rogue-point/viz-comp-01.jpg
 card_image: /images/rogue-point/viz-comp-01.jpg
-excerpt_text: A complex and twisting Oilrig at night.
+excerpt_text: A reusable editor visualization component for Rogue Point that designers can attach to any actor they have built, to have it draw visualisation shapes in the editor. Enables easy visual setup of actor properties.
 
 ---
 

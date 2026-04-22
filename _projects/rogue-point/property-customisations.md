@@ -4,13 +4,13 @@ layout: project-text
 order: 9
 nav_section: portfolio
 portfolio_group: rogue-point
-subtitle: UE4 - Code
+subtitle: UE4 - Code (Editor)
 game: Rogue Point
 discipline: Code
 date_text: 2026
 hero_image: /images/rogue-point/property-customisations-01.jpg
 card_image: /images/rogue-point/property-customisations-01.jpg
-excerpt_text: A complex and twisting Oilrig at night.
+excerpt_text: A series of simple editor customisations for Rogue Point to make it slightly easier to edit commonly used properties that would otherwise show up across multiple lines and nested menus.
 
 ---
 
