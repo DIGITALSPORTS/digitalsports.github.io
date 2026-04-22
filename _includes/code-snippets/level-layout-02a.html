@@ -1,0 +1,20 @@
+<pre class="code-block"><code><span class="code-keyword">void</span> <span class="code-class">UTangoMissionComponent</span><span class="code-punc">::</span><span class="code-func">RegisterRandomizationParams</span><span class="code-punc">(</span><span class="code-keyword">const</span> <span class="code-struct">FRandomStream</span><span class="code-operator">&amp;</span> <span class="code-var">InStream</span><span class="code-punc">,</span>
+                                                       <span class="code-keyword">const</span> <span class="code-struct">FRandomizationParams</span><span class="code-operator">&amp;</span> <span class="code-var">InParams</span><span class="code-punc">,</span>
+                                                       <span class="code-class">ATangoLevelLayout</span><span class="code-operator">*</span> <span class="code-var">InLayout</span><span class="code-punc">)</span>
+<span class="code-punc">{</span>
+  <span class="code-comment">// Initialize our local stream from the Randomization Manager's initial seed - we might need it later</span>
+  <span class="code-member">RandomStream</span><span class="code-punc">.</span><span class="code-func">Initialize</span><span class="code-punc">(</span><span class="code-var">InStream</span><span class="code-punc">.</span><span class="code-func">GetInitialSeed</span><span class="code-punc">());</span> 
+  <span class="code-member">RandomizationParams</span> <span class="code-operator">=</span> <span class="code-var">InParams</span><span class="code-punc">;</span>
+  <span class="code-member">ChosenLevelLayout</span> <span class="code-operator">=</span> <span class="code-var">InLayout</span><span class="code-punc">;</span>
+  <span class="code-func">OnRep_ChosenLevelLayout</span><span class="code-punc">();</span>
+
+  <span class="code-comment">// Only set the objective modes and mission description if any are relevant</span>
+  <span class="code-keyword">if</span><span class="code-punc">(</span><span class="code-var">InParams</span><span class="code-punc">.</span><span class="code-member">ObjectiveModes</span><span class="code-punc">.</span><span class="code-func">Num</span><span class="code-punc">()</span> <span class="code-operator">&gt;</span> <span class="code-number">0</span><span class="code-punc">)</span>
+  <span class="code-punc">{</span>
+    <span class="code-member">ChosenObjectiveModes</span> <span class="code-operator">=</span> <span class="code-var">InParams</span><span class="code-punc">.</span><span class="code-struct">ObjectiveModes</span><span class="code-punc">;</span>
+    <span class="code-func">OnRep_ChosenObjectiveModes</span><span class="code-punc">();</span>
+    <span class="code-member">MissionDescription</span> <span class="code-operator">=</span> <span class="code-func">GetOwner</span><span class="code-operator">&lt;</span><span class="code-class">ATangoObjectiveManager</span><span class="code-operator">&gt;</span><span class="code-punc">()</span><span class="code-operator">-&gt;</span><span class="code-func">GetDescriptionFromObjectiveModes</span><span class="code-punc">(</span><span class="code-member">ChosenObjectiveModes</span><span class="code-punc">);</span>
+    <span class="code-func">OnRep_MissionDescription</span><span class="code-punc">();</span>
+  <span class="code-punc">}</span>
+<span class="code-punc">}</span>
+</code></pre>

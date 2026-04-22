@@ -14,34 +14,47 @@ excerpt_text: A complex and twisting Oilrig at night.
 
 ---
 
-As we approached Rogue Point’s Early Access release, we started to find that the Level Layout system, while doing a lot of heavy lifting in terms of giving us many different level configurations across a limited variety of maps, was not doing enough to make a full campaign (a chained playthrough of 7 maps) feel varied and interesting. This led us to come up with the idea of a “Strike mission” and a “Raid mission”. These would be a different type of Level Layout that played fundamentally differently from the bulk of the levels and would inject a bit of spice and variety into a campaign playthrough.
+As we approached Rogue Point’s Early Access release, we found that the Level Layout system, was not doing enough to make a full campaign (a chained playthrough of 7 maps) feel varied and interesting. We thus came up with the idea of a “Strike mission” and a “Raid mission”, two different types of Level Layout that played fundamentally differently from the bulk of the levels and would inject a bit of variety into a campaign playthrough.
 
-My initial prototype was messy. I simply threw more variables into the existing Level Layout actors, and all the systems that used the Level Layout actors thus needed to understand the differences between the Layout Types. This created lots of aggravating scenarios where, for example, bugs in how I had written the Raid Level Layout would cause standard Level Layouts (the bulk of the game) to behave incorrectly. However, this prototype was sufficient for us to test the concept, and we found it added a lot to the game. We subsequently decided to solidify the system with a refactor.
+My initial prototype was messy, as I simply threw more variables into the existing Level Layout actors. This meant that code differentiating the Level Layout types was spread throughout the game, creating aggravating scenarios where, for example, bugs in the Raid Level Layout could cause Standard Level Layouts (the bulk of the game) to behave incorrectly. However, this prototype was sufficient for us to test the concept, and we found it added a lot to the game. We subsequently decided to solidify the system with a refactor.
 
 <div class="image main">
 	<img src="{{ '/images/rogue-point/level-layouts-01.jpg' | relative_url }}" alt="Oilrig at night" />
 </div>
 
-## Object-Oriented
+## Object-Oriented Design
 
-To implement the system properly, I went with the expected object-oriented approach. I rewrote the Level Layout actor from scratch, with the intention of subclassing it. We would thus store all the common variables and functions (such as spawn areas, or configuration variables for the Planning Screen) on the base Level Layout actor, and any which were specific to a Level Layout type would be stored on their relevant class instead. This also required me to entirely rewrite how the Randomization System handled randomizing the level. Previously, because we only had 1 unified way of randomizing the level, the Randomization Manager simply pulled variables from a Level Layout and handled everything in a bespoke way. Due to the different Level Layout Types needing to be randomized in different ways, I moved this code over to the Level Layout actor instead, with it simply reporting back to the Randomization Manager what it had randomized.  This worked amazingly well and allowed big changes with very little code.
+To implement the system properly, I went with the expected object-oriented approach. I rewrote the Level Layout actor from scratch, with the intention of subclassing it. I stored all the common variables and functions (such as spawn areas, or config variables for the Planning Screen) on the base Level Layout actor, and any which were specific to a Level Layout type would be stored on their relevant derived class instead. 
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/level-layouts-02.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+This also required me to entirely rewrite how the Randomization System randomized the level. Previously, because we only had 1 unified way of doing this, the Randomization Manager simply pulled needed variables from a Level Layout and handled everything in a bespoke way. Due to the different Level Layout Types needing to be randomized in different ways, I subsequently handled this code Level Layout actor instead, with it simply reporting back to the Randomization Manager what it had randomized. This worked amazingly well and allowed big changes with very little code.
 
-This was so effective because on the base Level Layout class, I was able to write a single randomization flow that all the levels would share by default. But this flow would call to many virtual functions that could be overridden in the child classes, such as RandomizeStartAreas(), RandomizeExtractionAreas(), RandomizeObjectives(), etc. This meant that, for example, if a new Level Layout Type mostly behaved the same as the default, but randomized its objectives in a different way, you would only need to override the RandomizeObjectives() function, and leave everything else alone, and you would automatically have the expected behaviour. This meant that the child Level Layout classes ended up being incredibly lightweight and easy to understand, which was exactly what I was hoping for. You could easily tell how they behaved differently to a standard Level Layout, simply by looking at which functions were overridden, or which unique functions were written for that class. It was incredibly elegant and is a solution that I am very proud of.
+On the base Level Layout class, I was able to write a single randomization flow that all the levels would share by default. But this flow would call to many virtual functions that could be overridden in the child classes, such as RandomizeStartAreas(), RandomizeExtractionAreas(), RandomizeObjectives(), etc. This meant that if a new Level Layout Type mostly behaved the same as the default, but randomized its objectives in a different way, you would only need to override its RandomizeObjectives() function, and leave everything else alone. 
 
-SNIPPET SHOWING A LAYOUT TYPE OVERRIDING
-{% include code-snippets/level-layout-01.html %}
+Consequently, child Level Layout classes were lightweight and easy to understand, which was the goal. You could easily tell where they behaved differently to a standard Level Layout, simply by looking at which functions were overridden, or which unique functions were written for that class. It was an incredibly elegant and effective solution.
 
+Here is a snippet from the Level Layout base class, showing the variety of ways I set it up to be potentially overridden:
 
-## Gameplay Tracking
+{% include code-snippets/level-layout-01a.html %}
 
-However, this was only half of the story! Beyond the Level Layouts knowing how to randomize themselves, the game also needed to understand how players progress through and beat each level type too! It felt like it made sense for the Level Layout actors to serve as the static level data, and for dynamic runtime calculations and logic for the mission to be handled elsewhere. The Objective Manager seemed the sensible choice for this. As such, I created a base component class called the MissionComponent, which I would then subclass into a different types of MissionComponent for each Level Layout type. The Objective Manager would then set its ActiveMissionComponent in response to the Chosen Level Layout, picking the appropriate Mission Component type to fit the Level Layout type. This was another rather elegant solution, as it meant that clients only needed to replicate one single variable (the pointer to the ActiveMissionComponent) to be able to start reliably tracking any necessary data about the mission on their UI in the correct way. In previous versions of this system, replicating information to clients was extremely difficult and tedious.
+And then here is a derived Raid Level Layout, and this is actually the entire class header! You can immediately tell at a glance that this Level Layout Type only handles the Objectives and Custom Objectives differently:
 
-SNIPPET SHOWING A MISSION COMPONENT
-{% include code-snippets/level-layout-02.html %}
+{% include code-snippets/level-layout-01b.html %}
+
+## Runtime Gameplay Tracking
+
+However, this was only half of the story! Beyond the Level Layouts knowing how to randomize themselves, the game also needed to track and show progress to players for each Level Layout Type! Design-wise, I felt it was logical for the Level Layout actors themselves to serve as static level data, and for runtime tracking of the mission to be handled in a different class: our Objective Manager. 
+
+In a similar vein to how the Level Layout actors are setup, I created a base component class called the MissionComponent, which I then subclassed into a different types of MissionComponent for each Level Layout type. The Objective Manager would then automatically set the appropriate ActiveMissionComponent in response to type of Chosen Level Layout. 
+
+This was another elegant solution, as it meant that clients only needed to replicate one single variable (the pointer to the ActiveMissionComponent) to be able to start reliably tracking any necessary data about the mission on their UI in the correct way. In previous versions of this system, replicating information to clients was extremely difficult and tedious.
+
+Here is a snippet from the base class, looking at the RegisteRandomizationParams() function which is called as the level is randomised on the server:
+
+{% include code-snippets/level-layout-02a.html %}
+
+And here is a derived class, for the Takedown mission (the very final mission of the game). We can see the mission setting its own unique state (TakedownState) and registering the RallyZone, which players must rally at to begin the boss fight. These things are replicated out to clients on their HUD.
+
+{% include code-snippets/level-layout-02b.html %}
 
 ## New Layout Types
 
@@ -49,7 +62,6 @@ Another major advantage of this system was that it became easy to add new Level 
 
 I was really proud of this system because it was a shining example of a successful ground-up rebuild incorporating lessons both on the design and the code front!
 
-
 <div class="image main">
-	<img src="{{ '/images/rogue-point/level-layouts-03.jpg' | relative_url }}" alt="Oilrig at night" />
+	<img src="{{ '/images/rogue-point/level-layouts-02.jpg' | relative_url }}" alt="Oilrig at night" />
 </div>

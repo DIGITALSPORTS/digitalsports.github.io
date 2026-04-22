@@ -1,0 +1,21 @@
+<pre class="code-block"><code>
+<span class="code-keyword">void</span> <span class="code-class">UTangoTakedownMissionComponent</span><span class="code-punc">::</span><span class="code-func">RegisterRandomizationParams</span><span class="code-punc">(</span><span class="code-keyword">const</span> <span class="code-struct">FRandomStream</span><span class="code-operator">&amp;</span> <span class="code-var">InStream</span><span class="code-punc">,</span>
+  <span class="code-keyword">const</span> <span class="code-struct">FRandomizationParams</span><span class="code-operator">&amp;</span> <span class="code-var">InParams</span><span class="code-punc">,</span> <span class="code-class">ATangoLevelLayout</span><span class="code-operator">*</span> <span class="code-var">InLayout</span><span class="code-punc">)</span>
+<span class="code-punc">{</span>
+  <span class="code-comment">// Initial setup</span>
+  <span class="code-class">Super</span><span class="code-punc">::</span><span class="code-func">RegisterRandomizationParams</span><span class="code-punc">(</span><span class="code-var">InStream</span><span class="code-punc">,</span> <span class="code-var">InParams</span><span class="code-punc">,</span> <span class="code-var">InLayout</span><span class="code-punc">);</span>
+  <span class="code-member">TakedownLevelLayout</span> <span class="code-operator">=</span> <span class="code-func">Cast</span><span class="code-operator">&lt;</span><span class="code-class">ATangoTakedownLevelLayout</span><span class="code-operator">&gt;</span><span class="code-punc">(</span><span class="code-var">InLayout</span><span class="code-punc">);</span>
+  <span class="code-func">SetTakedownState</span><span class="code-punc">(</span><span class="code-struct">ETakedownMissionState</span><span class="code-punc">::</span><span class="code-struct">PreRally</span><span class="code-punc">);</span>
+
+  <span class="code-comment">// Setup the Rally Zone</span>
+  <span class="code-member">RallyZone</span> <span class="code-operator">=</span> <span class="code-member">TakedownLevelLayout</span><span class="code-operator">-&gt;</span><span class="code-member">RallyZone</span><span class="code-punc">;</span>
+  <span class="code-keyword">if</span><span class="code-punc">(</span><span class="code-func">IsValid</span><span class="code-punc">(</span><span class="code-member">RallyZone</span><span class="code-punc">))</span>
+  <span class="code-punc">{</span>
+    <span class="code-member">RallyZone</span><span class="code-operator">-&gt;</span><span class="code-member">OnTriggered</span><span class="code-punc">.</span><span class="code-macro">AddUniqueDynamic</span><span class="code-punc">(</span><span class="code-keyword">this</span><span class="code-punc">,</span> <span class="code-operator">&amp;</span><span class="code-class">ThisClass</span><span class="code-punc">::</span><span class="code-func">DelayedRallyZoneTriggered</span><span class="code-punc">);</span>
+  <span class="code-punc">}</span>
+  <span class="code-keyword">else</span>
+  <span class="code-punc">{</span>
+    <span class="code-macro">UE_LOG</span><span class="code-punc">(</span><span class="code-var">LogTangoObjectives</span><span class="code-punc">,</span> <span class="code-struct">Error</span><span class="code-punc">,</span> <span class="code-macro">TEXT</span><span class="code-punc">(</span><span class="code-string">"%s Takedown Level Layout did not have a valid Rally Zone!"</span><span class="code-punc">),</span>
+      <span class="code-operator">*</span><span class="code-var">InParams</span><span class="code-punc">.</span><span class="code-struct">Layout</span><span class="code-punc">.</span><span class="code-func">Get</span><span class="code-punc">()</span><span class="code-operator">-&gt;</span><span class="code-member">Label</span><span class="code-punc">.</span><span class="code-func">ToString</span><span class="code-punc">())</span>
+  <span class="code-punc">}</span>
+<span class="code-punc">}</span></code></pre>

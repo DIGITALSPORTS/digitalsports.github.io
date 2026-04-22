@@ -1,0 +1,36 @@
+<pre class="code-block"><code><span class="code-macro">UCLASS</span><span class="code-punc">(</span><span class="code-specifier">Blueprintable</span><span class="code-punc">,</span> <span class="code-specifier">ClassGroup</span><span class="code-operator">=</span><span class="code-punc">(</span><span class="code-string">"Level Layouts"</span><span class="code-punc">))</span>
+<span class="code-keyword">class</span> <span class="code-macro">TANGO_API</span> <span class="code-class">ATangoRaidLevelLayout</span> <span class="code-punc">:</span> <span class="code-keyword">public</span> <span class="code-class">ATangoLevelLayout</span>
+<span class="code-punc">{</span>
+  <span class="code-macro">GENERATED_BODY</span><span class="code-punc">()</span>
+
+<span class="code-keyword">public</span><span class="code-punc">:</span>
+  <span class="code-func">ATangoRaidLevelLayout</span><span class="code-punc">();</span>
+
+  <span class="code-keyword">virtual</span> <span class="code-struct">FManagerPassResults</span> <span class="code-func">RandomizeObjectives</span><span class="code-punc">(</span><span class="code-keyword">const</span> <span class="code-struct">FRandomStream</span><span class="code-operator">&amp;</span> <span class="code-var">InStream</span><span class="code-punc">,</span> <span class="code-keyword">const</span> <span class="code-struct">FRandomizationParams</span><span class="code-operator">&amp;</span> <span class="code-var">InParams</span><span class="code-punc">,</span>
+    <span class="code-class">ATangoObjectiveManager</span><span class="code-operator">*</span> <span class="code-var">InObjectiveManager</span><span class="code-punc">)</span> <span class="code-keyword">override</span><span class="code-punc">;</span>
+
+  <span class="code-keyword">virtual</span> <span class="code-struct">FManagerPassResults</span> <span class="code-func">RandomizeCustomObjectives</span><span class="code-punc">(</span><span class="code-keyword">const</span> <span class="code-struct">FRandomStream</span><span class="code-operator">&amp;</span> <span class="code-var">InStream</span><span class="code-punc">,</span>
+                                                        <span class="code-keyword">const</span> <span class="code-struct">FRandomizationParams</span><span class="code-operator">&amp;</span> <span class="code-var">InParams</span><span class="code-punc">,</span>
+                                                        <span class="code-class">UTangoMissionComponent</span><span class="code-operator">*</span> <span class="code-var">InMissionComponent</span><span class="code-punc">)</span> <span class="code-keyword">override</span><span class="code-punc">;</span>
+
+  <span class="code-class">FText</span> <span class="code-func">GetDescriptionFromWaves</span><span class="code-punc">()</span> <span class="code-keyword">const</span><span class="code-punc">;</span>
+
+  <span class="code-comment">/** </span>
+  <span class="code-comment">* Gets the Level's valid list of Squad Role names from the Merc Manager.</span>
+  <span class="code-comment">* <span class="code-decorator">@return</span>                Names of all Squad Roles.</span>
+  <span class="code-comment">*/</span>
+  <span class="code-macro">UFUNCTION</span><span class="code-punc">(</span><span class="code-specifier">CallInEditor</span><span class="code-punc">)</span>
+  <span class="code-class">TArray</span><span class="code-operator">&lt;</span><span class="code-class">FName</span><span class="code-operator">&gt;</span> <span class="code-func">GetSquadRoles</span><span class="code-punc">();</span>
+
+  <span class="code-comment">/** Internal helper reference to the Merc Manager. */</span>
+  <span class="code-macro">UPROPERTY</span><span class="code-punc">()</span>
+  <span class="code-class">ATangoMercManager</span><span class="code-operator">*</span> <span class="code-member">MercManager</span> <span class="code-operator">=</span> <span class="code-keyword">nullptr</span><span class="code-punc">;</span>
+  
+  <span class="code-comment">/** If the Layout is a Raid Layout, this is the structure it will use for its waves. */</span>
+  <span class="code-macro">UPROPERTY</span><span class="code-punc">(</span><span class="code-specifier">EditInstanceOnly</span><span class="code-punc">,</span> <span class="code-specifier">BlueprintReadOnly</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Objectives"</span><span class="code-punc">,</span> <span class="code-specifier">Meta</span> <span class="code-operator">=</span> <span class="code-punc">(</span><span class="code-specifier">TitleProperty</span> <span class="code-operator">=</span> <span class="code-string">"Type"</span><span class="code-punc">))</span>
+  <span class="code-class">TArray</span><span class="code-operator">&lt;</span><span class="code-struct">FRaidWave</span><span class="code-operator">&gt;</span> <span class="code-member">Waves</span> <span class="code-operator">=</span> <span class="code-punc">{</span>
+    <span class="code-struct">FRaidWave</span><span class="code-punc">(</span><span class="code-number">15.f</span><span class="code-punc">,</span> <span class="code-struct">ERaidWaveType</span><span class="code-punc">::</span><span class="code-struct">MercWave</span><span class="code-punc">),</span> <span class="code-struct">FRaidWave</span><span class="code-punc">(</span><span class="code-struct">ERaidWaveType</span><span class="code-punc">::</span><span class="code-struct">MercWave</span><span class="code-punc">),</span>
+    <span class="code-struct">FRaidWave</span><span class="code-punc">(</span><span class="code-struct">ERaidWaveType</span><span class="code-punc">::</span><span class="code-struct">CustomObjective</span><span class="code-punc">),</span> <span class="code-struct">FRaidWave</span><span class="code-punc">(</span><span class="code-struct">ERaidWaveType</span><span class="code-punc">::</span><span class="code-struct">MercWave</span><span class="code-punc">)</span>
+  <span class="code-punc">};</span>
+
+<span class="code-punc">};</span></code></pre>
