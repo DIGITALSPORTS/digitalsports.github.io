@@ -22,4 +22,8 @@ As our level setups got quite complex and sprawling, it became quite had to unde
 	<img src="{{ '/images/rogue-point/property-customisations-01.jpg' | relative_url }}" alt="Oilrig at night" />
 </div>
 
-We were thus able to squeeze the FRandomRoll struct down onto one single line, which made it much cleaner to edit when nested or within a container such as a map. This does not sound like much, but it is just one example of making things nicer to work with in the editor for both designers and also for the modding community. Across an entire development, these slight inefficiencies and moments of confusion can add up!
+We were thus able to squeeze the FRandomRoll struct down onto one single line, which made it much cleaner to edit when nested or within a container such as a map. This does not sound like much, but it is just one example of making things nicer to work with in the editor for both designers and also for the modding community. Across an entire development, these slight inefficiencies and moments of confusion for every single developer can add up!
+
+Here is a snippet of the editor code enabling the single-line customisation for FRandomRoll:
+
+{% include code-snippets/property-customisations.html %}

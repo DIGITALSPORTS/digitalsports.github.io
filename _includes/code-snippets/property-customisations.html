@@ -1,0 +1,61 @@
+<pre class="code-block"><code><span class="code-keyword">void</span> <span class="code-class">FRandomRollStructCustomization</span><span class="code-punc">::</span><span class="code-func">CustomizeHeader</span><span class="code-punc">(</span><span class="code-class">TSharedRef</span><span class="code-operator">&lt;</span><span class="code-class">IPropertyHandle</span><span class="code-operator">&gt;</span> <span class="code-var">StructPropertyHandle</span><span class="code-punc">,</span>
+  <span class="code-class">FDetailWidgetRow</span><span class="code-operator">&amp;</span> <span class="code-var">HeaderRow</span><span class="code-punc">,</span> <span class="code-class">IPropertyTypeCustomizationUtils</span><span class="code-operator">&amp;</span> <span class="code-var">StructCustomizationUtils</span><span class="code-punc">)</span>
+<span class="code-punc">{</span>
+  <span class="code-comment">// Get and set the handles for each individual struct property, basic setup</span>
+  <span class="code-member">TypePropertyHandle</span> <span class="code-operator">=</span> <span class="code-var">StructPropertyHandle</span><span class="code-operator">-&gt;</span><span class="code-func">GetChildHandle</span><span class="code-punc">(</span><span class="code-macro">GET_MEMBER_NAME_CHECKED</span><span class="code-punc">(</span><span class="code-struct">FRandomRoll</span><span class="code-punc">,</span> <span class="code-struct">Type</span><span class="code-punc">));</span>
+  <span class="code-member">ChancePropertyHandle</span> <span class="code-operator">=</span> <span class="code-var">StructPropertyHandle</span><span class="code-operator">-&gt;</span><span class="code-func">GetChildHandle</span><span class="code-punc">(</span><span class="code-macro">GET_MEMBER_NAME_CHECKED</span><span class="code-punc">(</span><span class="code-struct">FRandomRoll</span><span class="code-punc">,</span> <span class="code-struct">Chance</span><span class="code-punc">));</span>
+  <span class="code-member">MinPropertyHandle</span> <span class="code-operator">=</span> <span class="code-var">StructPropertyHandle</span><span class="code-operator">-&gt;</span><span class="code-func">GetChildHandle</span><span class="code-punc">(</span><span class="code-macro">GET_MEMBER_NAME_CHECKED</span><span class="code-punc">(</span><span class="code-struct">FRandomRoll</span><span class="code-punc">,</span> <span class="code-struct">Min</span><span class="code-punc">));</span>
+  <span class="code-member">MaxPropertyHandle</span> <span class="code-operator">=</span> <span class="code-var">StructPropertyHandle</span><span class="code-operator">-&gt;</span><span class="code-func">GetChildHandle</span><span class="code-punc">(</span><span class="code-macro">GET_MEMBER_NAME_CHECKED</span><span class="code-punc">(</span><span class="code-struct">FRandomRoll</span><span class="code-punc">,</span> <span class="code-struct">Max</span><span class="code-punc">));</span>
+  <span class="code-macro">check</span><span class="code-punc">(</span><span class="code-member">TypePropertyHandle</span><span class="code-punc">.</span><span class="code-func">IsValid</span><span class="code-punc">()</span> <span class="code-operator">&amp;&amp;</span> <span class="code-member">ChancePropertyHandle</span><span class="code-punc">.</span><span class="code-func">IsValid</span><span class="code-punc">()</span> <span class="code-operator">&amp;&amp;</span> <span class="code-member">MinPropertyHandle</span><span class="code-punc">.</span><span class="code-func">IsValid</span><span class="code-punc">()</span> <span class="code-operator">&amp;&amp;</span> <span class="code-member">MaxPropertyHandle</span><span class="code-punc">.</span><span class="code-func">IsValid</span><span class="code-punc">());</span>
+
+  <span class="code-comment">// Create the box which all the properties will sit in</span>
+  <span class="code-class">TSharedPtr</span><span class="code-operator">&lt;</span><span class="code-class">SHorizontalBox</span><span class="code-operator">&gt;</span> <span class="code-var">HorizontalBox</span><span class="code-punc">;</span>
+  <span class="code-var">HeaderRow</span>
+    <span class="code-punc">.</span><span class="code-func">NameContent</span><span class="code-punc">()</span>
+    <span class="code-punc">[</span>
+      <span class="code-var">StructPropertyHandle</span><span class="code-operator">-&gt;</span><span class="code-func">CreatePropertyNameWidget</span><span class="code-punc">()</span>
+    <span class="code-punc">]</span>
+    <span class="code-punc">.</span><span class="code-func">ValueContent</span><span class="code-punc">()</span>
+    <span class="code-punc">.</span><span class="code-func">MinDesiredWidth</span><span class="code-punc">(</span><span class="code-number">500.f</span><span class="code-punc">)</span>
+    <span class="code-punc">.</span><span class="code-func">MaxDesiredWidth</span><span class="code-punc">(</span><span class="code-number">500.f</span><span class="code-punc">)</span>
+    <span class="code-punc">[</span>
+      <span class="code-macro">SAssignNew</span><span class="code-punc">(</span><span class="code-var">HorizontalBox</span><span class="code-punc">,</span> <span class="code-class">SHorizontalBox</span><span class="code-punc">)</span>
+    <span class="code-punc">];</span>
+
+  <span class="code-comment">// Type enum property, we bind to this later for some automatic changes</span>
+  <span class="code-var">HorizontalBox</span><span class="code-operator">-&gt;</span><span class="code-func">AddSlot</span><span class="code-punc">()</span>
+    <span class="code-punc">.</span><span class="code-func">Padding</span><span class="code-punc">(</span><span class="code-struct">FMargin</span><span class="code-punc">(</span><span class="code-member">PropertySpacing</span><span class="code-punc">,</span> <span class="code-number">0.f</span><span class="code-punc">))</span>
+    <span class="code-punc">[</span>
+      <span class="code-macro">SNew</span><span class="code-punc">(</span><span class="code-class">SVerticalBox</span><span class="code-punc">)</span>
+      <span class="code-operator">+</span> <span class="code-class">SVerticalBox</span><span class="code-punc">::</span><span class="code-func">Slot</span><span class="code-punc">()</span>
+      <span class="code-punc">.</span><span class="code-func">AutoHeight</span><span class="code-punc">()</span>
+      <span class="code-punc">[</span>
+        <span class="code-member">TypePropertyHandle</span><span class="code-operator">-&gt;</span><span class="code-func">CreatePropertyValueWidget</span><span class="code-punc">()</span>
+      <span class="code-punc">]</span>
+    <span class="code-punc">];</span>
+
+  <span class="code-comment">// Chance property</span>
+  <span class="code-var">HorizontalBox</span><span class="code-operator">-&gt;</span><span class="code-func">AddSlot</span><span class="code-punc">()</span>
+    <span class="code-punc">.</span><span class="code-func">Padding</span><span class="code-punc">(</span><span class="code-member">PropertySpacing</span><span class="code-punc">,</span> <span class="code-number">0.f</span><span class="code-punc">)</span>
+    <span class="code-punc">[</span>
+      <span class="code-func">CreateOverlayPropertyWidget</span><span class="code-punc">(</span><span class="code-member">ChancePropertyHandle</span><span class="code-punc">,</span> <span class="code-macro">TEXT</span><span class="code-punc">(</span><span class="code-string">"%"</span><span class="code-punc">),</span> <span class="code-member">ChancePropertyWidget</span><span class="code-punc">)</span>
+    <span class="code-punc">];</span>
+
+  <span class="code-comment">// Min property</span>
+  <span class="code-var">HorizontalBox</span><span class="code-operator">-&gt;</span><span class="code-func">AddSlot</span><span class="code-punc">()</span>
+    <span class="code-punc">.</span><span class="code-func">Padding</span><span class="code-punc">(</span><span class="code-member">PropertySpacing</span><span class="code-punc">,</span> <span class="code-number">0.f</span><span class="code-punc">)</span>
+    <span class="code-punc">[</span>
+      <span class="code-func">CreateOverlayPropertyWidget</span><span class="code-punc">(</span><span class="code-member">MinPropertyHandle</span><span class="code-punc">,</span> <span class="code-macro">TEXT</span><span class="code-punc">(</span><span class="code-string">"Min"</span><span class="code-punc">),</span> <span class="code-member">MinPropertyWidget</span><span class="code-punc">)</span>
+    <span class="code-punc">];</span>
+
+  <span class="code-comment">// Max property</span>
+  <span class="code-var">HorizontalBox</span><span class="code-operator">-&gt;</span><span class="code-func">AddSlot</span><span class="code-punc">()</span>
+    <span class="code-punc">.</span><span class="code-func">Padding</span><span class="code-punc">(</span><span class="code-member">PropertySpacing</span><span class="code-punc">,</span> <span class="code-number">0.f</span><span class="code-punc">)</span>
+    <span class="code-punc">[</span>
+      <span class="code-func">CreateOverlayPropertyWidget</span><span class="code-punc">(</span><span class="code-member">MaxPropertyHandle</span><span class="code-punc">,</span> <span class="code-macro">TEXT</span><span class="code-punc">(</span><span class="code-string">"Max"</span><span class="code-punc">),</span> <span class="code-member">MaxPropertyWidget</span><span class="code-punc">)</span>
+    <span class="code-punc">];</span>
+
+  <span class="code-comment">// Bind delegate to handle changes in the enum value</span>
+  <span class="code-member">TypePropertyHandle</span><span class="code-operator">-&gt;</span><span class="code-func">SetOnPropertyValueChanged</span><span class="code-punc">(</span><span class="code-class">FSimpleDelegate</span><span class="code-punc">::</span><span class="code-func">CreateSP</span><span class="code-punc">(</span><span class="code-keyword">this</span><span class="code-punc">,</span> <span class="code-operator">&amp;</span><span class="code-class">FRandomRollStructCustomization</span><span class="code-punc">::</span><span class="code-func">RollTypeValueChanged</span><span class="code-punc">));</span>
+  <span class="code-func">RollTypeValueChanged</span><span class="code-punc">();</span>
+<span class="code-punc">}</span></code></pre>
