@@ -3838,7 +3838,9 @@ input, select, textarea {
 			align-items: stretch;
 			text-align: center;
 			width: 100%;
-			padding: 0;
+			padding: 2rem;
+			gap: 2rem;
+			/*box-sizing: border-box;*/
 		}
 
 			#main > .posts > * {
@@ -3862,24 +3864,12 @@ input, select, textarea {
 			}
 
 			#main > .posts > article {
-				border-color: #eeeeee;
-				border-left-width: 2px;
-				border-style: solid;
-				border-top-width: 2px;
+				border: 1px solid rgba(255, 255, 255, 0.12);
+				background-color: rgba(255, 255, 255, 0.03);
 				text-align: center;
+				width: calc(50% - 1rem);
+				/*box-sizing: border-box;*/
 			}
-
-				#main > .posts > article > :last-child {
-					margin-bottom: 0;
-				}
-
-				#main > .posts > article:nth-child(2n - 1) {
-					border-left-width: 0;
-				}
-
-				#main > .posts > article:nth-child(-n + 2) {
-					border-top-width: 0;
-				}
 
 			@media screen and (max-width: 980px) {
 
@@ -3904,21 +3894,9 @@ input, select, textarea {
 					padding: 2rem;
 					width: 100%;
 				}
-
-				#main > .posts > article:nth-child(2n - 1) {
-					border-left-width: 2px;
-				}
-
-				#main > .posts > article:nth-child(-n + 2) {
-					border-top-width: 2px;
-				}
-
-				#main > .posts > article:nth-child(n) {
-					border-left-width: 0;
-				}
-
-				#main > .posts > article:nth-child(-n + 1) {
-					border-top-width: 0;
+				
+				#main > .posts > article {
+					width: 100%;
 				}
 
 				#main > .posts > article .image {
