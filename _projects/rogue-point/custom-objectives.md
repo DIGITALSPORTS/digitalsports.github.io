@@ -18,9 +18,10 @@ It became clear at a certain point in Rogue Point’s development that the core 
 
 I thus cobbled together the Custom Objective System. It is comprised of two parts, the Custom Objective actor itself, and then a Custom Objective component. The Custom Objective actor is where the bulk of the data for the Custom Objective is stored and setup, and the Objective Manager interacts with it to handle setup and anything else needed. The Custom Objective component is a component that designers can add to any other actor which we would want to use to communicate with the main Custom Objective actor itself.
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/custom-objectives-01.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/custom-objectives-01.jpg"
+	alt="Custom Objectives"
+	title="Custom Objectives" %}
 
 The way the Custom Objective actor works is extremely simple on the surface. It simply stores an array of “Objective Actors”, which are other actors that the Custom Objective cares about. When the Custom Objective is activated (which can happen in a variety of ways), it establishes a link with these Objective Actors and sets itself up to await a “completed” signal from them. Upon receipt, it adds them to its “Completed Actors” array and subsequently checks if all its Objective Actors have become completed. If they are, the Objective is thus completed. The Objective Actors themselves handle communication with the Custom Objective via their Custom Objective Component.
 
@@ -38,8 +39,9 @@ The Objective Manager innately understands how a Custom Objective works and can 
 
 Here is an example of how easy it was to implement Custom Objective logic on any actor we wanted. This is BP_Destroyable, which is a base class for an Actor which can be broken:
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/custom-objectives-02.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/custom-objectives-02.jpg"
+	alt="Custom Objectives"
+	title="Custom Objectives" %}
 
 Implementation required a mere 2 nodes!

@@ -22,7 +22,7 @@ Sitting at the top level of this system is the Level Layout actor class, which s
 
 {% include project-image.html
 	src="/images/rogue-point/randomisation-01.jpg"
-	alt="Oilrig at night"
+	alt="Modular Randomization System"
 	title="Modular Randomization System" %}
 
 ## Area Managers
@@ -33,7 +33,7 @@ Within the Level Layout actor, designers then simply specify how that layout sho
 
 {% include project-image.html
 	src="/images/rogue-point/randomisation-02.jpg"
-	alt="Oilrig at night"
+	alt="Modular Randomization System"
 	title="Modular Randomization System" %}
 
 ## Building a Layout

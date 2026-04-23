@@ -18,9 +18,10 @@ Rogue Point had several very commonly used data structures (structs) that we rel
 
 As our level setups got quite complex and sprawling, it became quite had to understand what was happening at a glance, because you would need to open several levels of menus and read across many lines to understand the values quickly. So I dug into how the engine handles property customisations, to create our own customisations for how these were displayed.
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/property-customisations-01.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/property-customisations-01.jpg"
+	alt="Property Customisations"
+	title="Property Customisations" %}
 
 We were thus able to squeeze the FRandomRoll struct down onto one single line, which made it much cleaner to edit when nested or within a container such as a map. This does not sound like much, but it is just one example of making things nicer to work with in the editor for both designers and also for the modding community. Across an entire development, these slight inefficiencies and moments of confusion for every single developer can add up!
 

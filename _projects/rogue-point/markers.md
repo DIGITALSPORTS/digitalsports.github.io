@@ -30,9 +30,10 @@ To update the basics of a marker's appearance, designers thus only need to call 
 
 Individual implementations for the 3 widget spaces then build off this base implementation, allowing flexible handling of the Marker Components, and keeping markers consistent between the 3 spaces. Furthermore, designers could create a marker for any actor simply by adding a Marker Component to it and populating the relevant properties, and it would immediately be fully supported by the Planning Screen, Compass and World.
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/planning-01.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/planning-01.jpg"
+	alt="Planning and Markers System"
+	title="Planning and Markers System" %}
 
 ## Planning Screen
 

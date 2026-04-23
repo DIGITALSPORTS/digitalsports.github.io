@@ -22,9 +22,10 @@ This component class started out with me diving into and exploring how the edito
 
 You could also specify a colour to draw the shape if so you desired (for ease of readability), and if you didn’t, the system would randomly cycle through the colours of the rainbow!
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/viz-comp-01.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/viz-comp-01.jpg"
+	alt="Viz Comp"
+	title="Viz Comp" %}
 
 We used this visualisation to help with lots of things that otherwise would prove hard to understand at a glance in the editor. For example:
 <ul>
@@ -35,6 +36,7 @@ We used this visualisation to help with lots of things that otherwise would prov
 <li>We had several AI points in the world which constrained their behaviour somehow, and needed a way to visualize the ranges of these objects.</li>
 </ul>
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/viz-comp-02.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/viz-comp-02.jpg"
+	alt="Viz Comp"
+	title="Viz Comp" %}

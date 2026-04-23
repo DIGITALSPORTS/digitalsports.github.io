@@ -18,9 +18,10 @@ Rogue Point is a challenging game to playtest using the default Unreal Engine fl
 
 For much of development, our solution was to allow designers to override variables on the Manager classes that would typically be populated by the system at runtime. For example, in a typical gameplay flow, the Randomization Manager’s “Chosen Level Layout” variable would be populated in one of two ways. Either the main menu would pass through a value for that variable ahead of loading the level, or the Randomization Manager would detect that a value hadn’t been preset and randomly pick a level layout from the map for the selected difficulty. Level Designers would also need to override certain variables on important blueprints such as Game State and sometimes Player State.
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/ld-menu-02.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/ld-menu-02.jpg"
+	alt="LD Menu"
+	title="LD Menu" %}
 
 ## Drawbacks of Overrides
 
@@ -30,10 +31,11 @@ On top of this, our artists often struggled with putting together test levels or
 
 My eventual solution to this was to build an extension to the editor’s “Play in Editor” (PIE) menu. This brought everything developers would need to configure for testing into one single centralised place; one which they were already using to test the game anyway. This also meant that if we needed to manually override anything in a level for testing in a cooked build, we could still do so.
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/ld-menu-01.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
-
+{% include project-image.html
+	src="/images/rogue-point/ld-menu-01.jpg"
+	alt="LD Menu"
+	title="LD Menu" %}
+	
 ## Extra Features
 
 The menu also featured an artist-friendly "barebones" mode, which would strip out anything related to our game from the initialization flow. The game would not attempt to pick Level Layouts, spawn enemies, or put you in the planning phase, it would just function as a barebones Unreal installation, spawning you into the level instantly at your editor camera location. This allowed artists to play in their test maps without having to do any boilerplate setup, and made testing the live maps much easier.

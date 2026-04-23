@@ -1,0 +1,18 @@
+.glightbox-clean .gslide-description {
+	border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.glightbox-clean .gslide-title {
+    font-size: 1em;
+    font-weight: 400;
+	font-family: "Lexend", Helvetica, sans-serif;
+    color: #ffffff;
+    margin: 0.5rem;
+    line-height: 1.4em;
+	text-align: center;
+}
+
+.glightbox-clean .gdesc-inner {
+    padding: 0;
+}

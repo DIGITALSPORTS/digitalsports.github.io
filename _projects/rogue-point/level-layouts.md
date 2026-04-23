@@ -18,9 +18,10 @@ As we approached Rogue Point’s Early Access release, we found that the Level L
 
 My initial prototype was messy, as I simply threw more variables into the existing Level Layout actors. This meant that code differentiating the Level Layout types was spread throughout the game, creating aggravating scenarios where, for example, bugs in the Raid Level Layout could cause Standard Level Layouts (the bulk of the game) to behave incorrectly. However, this prototype was sufficient for us to test the concept, and we found it added a lot to the game. We subsequently decided to solidify the system with a refactor.
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/level-layouts-01.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/level-layouts-01.jpg"
+	alt="Level Layouts"
+	title="Level Layouts" %}
 
 ## Object-Oriented Design
 
@@ -62,6 +63,7 @@ Another major advantage of this system was that it became easy to add new Level 
 
 I was really proud of this system because it was a shining example of a successful ground-up rebuild incorporating lessons both on the design and the code front!
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/level-layouts-02.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/level-layouts-02.jpg"
+	alt="Level Layouts"
+	title="Level Layouts" %}
