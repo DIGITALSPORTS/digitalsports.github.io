@@ -1,13 +1,15 @@
 /* =========================
    PROJECT HERO + TITLE BAR
 ========================= */
-#main > div.project-hero-full,
-#main > div.project-title-bar {
+#main > div.project-hero-full {
 	padding: 0 !important;
 	border-top: 0 !important;
 	margin: 0 !important;
 	width: 100%;
 	max-width: 90rem;
+}
+#main > div.project-title-bar {
+	padding: 0;
 }
 
 .project-hero-full {
@@ -30,12 +32,12 @@
 }
 
 #main > div.project-title-bar {
-	background: #161616;
-	color: #ffffff;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 #main > div.project-title-bar .project-title-bar-inner {
-	padding: 1.5rem 2rem !important;
+	padding: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
