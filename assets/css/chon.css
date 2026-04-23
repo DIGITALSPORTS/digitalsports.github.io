@@ -10,11 +10,23 @@
 	max-width: 90rem;
 }
 
-#main > div.project-hero-full img {
+.project-hero-full {
+	overflow: hidden;
+}
+
+.project-hero-full a {
+	display: block;
+}
+
+.project-hero-full img {
 	display: block;
 	width: 100%;
-	max-width: 100%;
 	height: auto;
+	transition: transform 0.35s ease;
+}
+
+.project-hero-full a:hover img {
+	transform: scale(1.02);
 }
 
 #main > div.project-title-bar {
