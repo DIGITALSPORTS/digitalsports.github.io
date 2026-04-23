@@ -223,3 +223,26 @@
 	font-size: 1.3rem;
 	line-height: 1.2;
 }
+
+/* =========================
+   PORTFOLIO GALLERY
+========================= */
+
+/* Ensure the container clips the zoom */
+.portfolio-gallery .image.fit {
+	display: block;
+	overflow: hidden;
+}
+
+/* Smooth animation */
+.portfolio-gallery .image.fit img {
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: transform 0.3s ease;
+}
+
+/* Zoom on hover */
+.portfolio-gallery .gallery-item a:hover img {
+	transform: scale(1.02);
+}
