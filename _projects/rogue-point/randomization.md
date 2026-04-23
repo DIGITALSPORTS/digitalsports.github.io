@@ -20,9 +20,10 @@ Crowbar Collective’s strength has always been in linear and directed level des
 
 Sitting at the top level of this system is the Level Layout actor class, which specifies the arrangement of the level's various areas and how to utilise them, as well as the randomisation constraints for said areas. When you start a mission in Rogue Point, the randomization system picks a random Level Layout from the pool that is valid for the current difficulty and map. It then loads up and randomizes this Level Layout using its designer-defined randomization parameters. Through this, we strike a unique balance between randomness/unpredictability and curated player direction that I haven't really seen any other game manage.
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/randomisation-01.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/randomisation-01.jpg"
+	alt="Oilrig at night"
+	title="Modular Randomization System" %}
 
 ## Area Managers
 
@@ -30,9 +31,10 @@ The system's modularity allows designers divide the level into smaller areas, us
 
 Within the Level Layout actor, designers then simply specify how that layout should use each given area. For example, every Level Layout allows designers to specify any number of “spawn areas”, one of which will be randomly selected to spawn players at. Designing any Level Layout then becomes a straightforward matter of specifying and arranging its areas like a set of conceptual building blocks, and putting any required additional constraints on these. Designers do not need to think about implementation details such as which specific spawners to use in an area, how to pick which doors to lock, how many enemies to spawn and where, and things like that. The system handles this logic for them. It avoids bespoke and complex setups.
 
-<div class="image main">
-	<img src="{{ '/images/rogue-point/randomisation-02.jpg' | relative_url }}" alt="Oilrig at night" />
-</div>
+{% include project-image.html
+	src="/images/rogue-point/randomisation-02.jpg"
+	alt="Oilrig at night"
+	title="Modular Randomization System" %}
 
 ## Building a Layout
 

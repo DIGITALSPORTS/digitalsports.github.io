@@ -260,3 +260,33 @@
 .portfolio-gallery .gallery-item a:hover img {
 	transform: scale(1.02);
 }
+
+/* =========================
+   PROJECT SINGLE IMAGES
+========================= */
+.project-inline-image {
+	overflow: hidden;
+}
+
+.project-inline-image a {
+	display: block;
+	overflow: hidden;
+}
+
+.project-inline-image img {
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: transform 0.35s ease;
+}
+
+.project-inline-image a:hover img {
+	transform: scale(1.04);
+}
+
+.project-inline-image-caption {
+	margin: 0.75rem 0 0 0;
+	text-align: center;
+	font-size: 0.9rem;
+	opacity: 0.8;
+}
