@@ -6,38 +6,32 @@ portfolio_group: all
 ---
 
 <section class="portfolio-home-intro">
-	<div class="portfolio-home-intro__copy">
-		<p class="portfolio-home-intro__eyebrow">Design-Focused Game Developer</p>
+	<header class="major portfolio-home-intro__heading">
 		<h1>Level Designer / Programmer</h1>
-		<p>
-			I’ve spent 13 years working in level design and 4 years programming in C++, contributing to two shipped FPS titles in Unreal Engine and Source.
-			My work focuses on building clear, readable gameplay spaces supported by robust systems, tools, and iteration.
-		</p>
-		<p>
-			Below you’ll find selected projects, technical breakdowns, and a copy of my CV.
-		</p>
-
-		<ul class="actions">
-			<li><a href="/assets/downloads/chon-kemp-cv.pdf" class="button primary icon solid fa-download">Download CV</a></li>
-		</ul>
-	</div>
-</section>
-
-<section class="portfolio-home-section">
-	<header class="major">
-		<h2>Shipped Games</h2>
 	</header>
 
-	<div class="game-overview-grid">
-		<a href="/portfolio/rogue-point/" class="game-overview-card__image"><img src="/images/rp-capsule.webp" alt="Rogue Point key art"></a>
-		<a href="/portfolio/black-mesa/" class="game-overview-card__image"><img src="/images/bms-capsule.webp" alt="Black Mesa key art"></a>
-	</div>
-</section>
+	<div class="portfolio-home-intro__split">
+		<div class="portfolio-home-intro__copy">
+			<p>I’ve spent 13 years working in level design and 4 years programming in C++, contributing to two shipped FPS titles in Unreal Engine and Source. My work focuses on building clear, readable gameplay spaces supported by robust systems, tools, and iteration.
+			</p>
+			<ul class="actions">
+				<li><a href="/assets/downloads/chon-kemp-cv.pdf" class="button primary icon solid fa-download">Download CV</a></li>
+			</ul>
+			<div class="facts">
+				<strong>Core Tech:</strong><p>Unreal Engine</p> <p>C++</p> <p>Blueprints</p> <p>UMG / Slate</p> <p>Multiplayer Networking</p>
+			</div>
+			<div class="facts">
+				<strong>Focus Areas:</strong><p>Level Design</p> <p>Gameplay Systems</p> <p>3D Blockouts</p> <p>Modular Assets</p> <p>Paintovers</p>
+			</div>	
+		</div>
 
-<section class="portfolio-home-section">
-	<header class="major">
-		<h2>Projects</h2>
-	</header>
+		<div class="portfolio-home-intro__games">
+			<div class="game-overview-grid">
+				<a href="/portfolio/rogue-point/" class="game-overview-card__image"><img src="/images/rp-capsule.webp" alt="Rogue Point key art"></a>
+				<a href="/portfolio/black-mesa/" class="game-overview-card__image"><img src="/images/bms-capsule.webp" alt="Black Mesa key art"></a>
+			</div>
+		</div>
+	</div>
 </section>
 
 {% include project-grid.html projects=site.projects %}

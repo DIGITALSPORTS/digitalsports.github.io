@@ -137,14 +137,14 @@
 	margin: 0 0 4rem 0;
 }
 
-.game-facts {
+.facts {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.75rem 1rem;
 	margin: 0 0 1.5rem 0;
 }
 
-.game-facts p {
+.facts p {
 	margin: 0;
 	padding: 0.4rem 0.75rem;
 	border: 1px solid rgba(255, 255, 255, 0.12);
@@ -289,4 +289,50 @@
 	text-align: center;
 	font-size: 0.9rem;
 	opacity: 0.8;
+}
+
+/* =========================
+   HOMEPAGE
+========================= */
+
+.portfolio-home-intro__heading {
+	margin-bottom: 2rem;
+}
+
+.portfolio-home-intro__split {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 3rem;
+	align-items: start;
+}
+
+.portfolio-home-intro__copy,
+.portfolio-home-intro__games {
+	width: 100%;
+}
+
+.portfolio-home-intro__games header {
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+.portfolio-home-intro__games h2 {
+	margin-bottom: 0;
+}
+
+.game-overview-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+}
+
+.game-overview-card__image {
+	display: block;
+	border-bottom: 0;
+}
+
+.game-overview-card__image img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
