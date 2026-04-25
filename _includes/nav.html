@@ -1,13 +1,16 @@
 <nav id="nav" class="site-nav">
 	<ul class="links">
-		<li{% if page.nav_section == 'portfolio' %} class="active"{% endif %}>
-			<a href="{{ '/' | relative_url }}">Portfolio</a>
+		<li{% if page.title == 'Home' %} class="active"{% endif %}>
+			<a href="{{ '/' | relative_url }}">All Works</a>
+		</li>
+		<li{% if page.portfolio_group == 'rogue-point' %} class="active"{% endif %}>
+			<a href="{{ '/portfolio/rogue-point' | relative_url }}">Rogue Point</a>
+		</li>
+		<li{% if page.portfolio_group == 'black-mesa' %} class="active"{% endif %}>
+			<a href="{{ '/portfolio/black-mesa' | relative_url }}">Black Mesa</a>
 		</li>
 		<li{% if page.nav_section == 'media' %} class="active"{% endif %}>
-			<a href="{{ '/media/' | relative_url }}">Media</a>
-		</li>
-		<li{% if page.nav_section == 'about' %} class="active"{% endif %}>
-			<a href="{{ '/about/' | relative_url }}">About</a>
+			<a href="{{ '/media/' | relative_url }}">Other Media</a>
 		</li>
 		<li{% if page.nav_section == 'contact' %} class="active"{% endif %}>
 			<a href="{{ '/contact/' | relative_url }}">Contact</a>
@@ -18,18 +21,4 @@
 		<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 		<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 	</ul>
-
-	{% if page.nav_section == 'portfolio' %}
-	<ul class="links subnav-links">
-		<li{% if page.portfolio_group == 'all' %} class="active"{% endif %}>
-			<a href="{{ '/' | relative_url }}">All</a>
-		</li>
-		<li{% if page.portfolio_group == 'black-mesa' %} class="active"{% endif %}>
-			<a href="{{ '/portfolio/black-mesa/' | relative_url }}">Black Mesa</a>
-		</li>
-		<li{% if page.portfolio_group == 'rogue-point' %} class="active"{% endif %}>
-			<a href="{{ '/portfolio/rogue-point/' | relative_url }}">Rogue Point</a>
-		</li>
-	</ul>
-	{% endif %}
 </nav>

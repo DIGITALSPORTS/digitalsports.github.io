@@ -295,44 +295,64 @@
    HOMEPAGE
 ========================= */
 
-.portfolio-home-intro__heading {
-	margin-bottom: 2rem;
-}
-
-.portfolio-home-intro__split {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 3rem;
-	align-items: start;
-}
-
-.portfolio-home-intro__copy,
-.portfolio-home-intro__games {
-	width: 100%;
-}
-
-.portfolio-home-intro__games header {
+.portfolio-home-intro__copy {
+	max-width: 58rem;
+	margin: 0 auto 2rem auto;
 	text-align: center;
-	margin-bottom: 1.5rem;
 }
 
-.portfolio-home-intro__games h2 {
-	margin-bottom: 0;
+.portfolio-home-intro__copy .actions {
+	justify-content: center;
+}
+
+.portfolio-home-facts {
+	gap: 1rem;
+	max-width: 70rem;
+	margin: 0 auto;
+}
+
+.portfolio-home-games {
+	margin-top: 3rem;
 }
 
 .game-overview-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 1.5rem;
+	gap: 2rem;
 }
 
-.game-overview-card__image {
+.game-overview-card {
 	display: block;
+	position: relative;
 	border-bottom: 0;
+	overflow: hidden;
+	background: #212931;
 }
 
-.game-overview-card__image img {
+.game-overview-card img {
 	display: block;
 	width: 100%;
 	height: auto;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.game-overview-card span {
+	display: block;
+	padding: 1rem;
+	background: #ffffff;
+	color: #212931;
+	font-family: "Lexend", Helvetica, sans-serif;
+	font-weight: 600;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.075em;
+}
+
+.game-overview-card:hover img {
+	transform: scale(1.03);
+	opacity: 0.85;
+}
+
+.game-overview-card:hover span {
+	background: #009966;
 }
