@@ -1,4 +1,8 @@
 <section class="posts">
+	<header>
+		<h2>Works</h2>
+	</header>
+	
 	{% assign sorted_projects = include.projects | sort: "order" | reverse %}
 	{% for project in sorted_projects %}
 	<article class="portfolio-card">
@@ -13,6 +17,10 @@
 		{% endif %}
 
 		<p>{{ project.excerpt_text }}</p>
+		
+		<ul class="actions special">
+		<li><a href="{{ project.url | relative_url }}" class="button">Read More</a></li>
+		</ul>
 	</article>
 	{% endfor %}
 </section>
