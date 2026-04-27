@@ -151,25 +151,36 @@
 	background: rgba(255, 255, 255, 0.03);
 	font-size: 0.9rem;
 	line-height: 1.4;
+	vertical-align: middle;
 }
 
-.game-summary {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) 15rem;
-	gap: 2.5rem;
-	align-items: start;
+.game-summary-box {
+	border: 1px solid rgba(33, 41, 49, 0.2);
+	padding: 2rem;
+	height: 100%;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
-.game-summary__main {
-	min-width: 0;
+.game-summary-box > header {
+	text-align: center;
+	margin-bottom: 1.5rem;
 }
 
-.game-summary__main p {
-	margin-bottom: 1.25rem;
+.game-summary-box > header h3 {
+	margin-bottom: 0;
 }
 
-.game-summary__side {
-	min-width: 0;
+.game-summary-box p {
+	margin-bottom: 1.5rem;
+}
+
+.game-summary-box .actions {
+	margin-bottom: 0;
+}
+
+.game-summary-box .image.fit {
+	margin-bottom: 0;
 }
 
 .game-card {
