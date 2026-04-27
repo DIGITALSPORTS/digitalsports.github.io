@@ -4505,11 +4505,12 @@ input, select, textarea {
 		#navPanelToggle.alt {
 			background-color: rgba(255, 255, 255, 0.875);
 			box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
-			color: #ffffff;
+			color: #212931;
 		}
 
 			#navPanelToggle.alt:hover {
-				background-color: #212931;
+				background-color: #009966;
+				color: #212931 !important;
 			}
 
 		@media screen and (max-width: 980px) {
