@@ -9,8 +9,39 @@ nav_section: contact
 	<header class="major">
 		<h1>Contact</h1>
 	</header>
-
-	<p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-	<p>LinkedIn: <a href="#">Your LinkedIn</a></p>
-	<p>ArtStation: <a href="#">Your ArtStation</a></p>
+	<p>Feel free to send me a message to discuss any potential work or just stuff and things innit.</p>
+	<form method="post" action="#">
+		<div class="row gtr-uniform">
+			<div class="col-6 col-12-xsmall">
+				<input type="text" name="name" id="name" value="" placeholder="Your Name" />
+			</div>
+			<div class="col-6 col-12-xsmall">
+				<input type="email" name="email" id="email" value="" placeholder="Your Email" />
+			</div>
+			<!-- Break -->
+			<div class="col-12 col-12-xsmall">
+			<input type="text" name="subject" id="subject" value="" placeholder="Subject" />
+			</div>
+			<!-- Break -->
+			<div class="col-6 col-12-small">
+				<input type="checkbox" id="email-copy" name="email-copy">
+				<label for="email-copy">Email me a copy</label>
+			</div>
+			<div class="col-6 col-12-small">
+				<input type="checkbox" id="is-human" name="is-human">
+				<label for="is-human">I am a human</label>
+			</div>
+			<!-- Break -->
+			<div class="col-12">
+				<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+			</div>
+			<!-- Break -->
+			<div class="col-12">
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="primary" /></li>
+					<li><input type="reset" value="Reset" /></li>
+				</ul>
+			</div>
+		</div>
+	</form>
 </article>

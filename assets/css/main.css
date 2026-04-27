@@ -3493,7 +3493,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		color: #212931;
+		color: #FFFFFF;
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
@@ -3515,8 +3515,8 @@ input, select, textarea {
 		-webkit-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
-		height: 20rem;
-		padding-bottom: 8rem;
+		height: 16rem;
+		padding-bottom: 7rem;
 		position: relative;
 		text-align: center;
 		z-index: 2;
@@ -3527,7 +3527,7 @@ input, select, textarea {
 		}
 
 		#header a {
-			color: #212931;
+			color: #FFFFFF;
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
 
@@ -3564,10 +3564,10 @@ input, select, textarea {
 			transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
 			pointer-events: auto;
 			border-style: solid;
-			border-color: #212931;
+			border-color: #FFFFFF;
 			border-width: 5px !important;
 			font-family: "Lexend", Helvetica, sans-serif;
-			font-size: 2.25rem;
+			font-size: 4rem;
 			font-weight: 900;
 			letter-spacing: 0.075em;
 			line-height: 1;
@@ -3730,7 +3730,7 @@ input, select, textarea {
 					}
 
 						#nav ul.links li.active a:hover {
-							color: #009966 !important;
+							/*color: #009966 !important;*/ /* -- Default Massively behaviour, looks bad with Chon dark mode */
 						}
 
 		#nav ul.icons {
