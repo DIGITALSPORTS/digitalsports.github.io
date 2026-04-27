@@ -7,7 +7,7 @@ nav_section: media
 media_items:
   - title: Noclip Documentary
     youtube_id: G_TcAxAKCAI
-    description:  Crowbar Collective talk about their 16 year journey rebuilding the original Half-Life.
+    description: Crowbar Collective talk about their 16 year journey rebuilding the original Half-Life.
 
   - title: Game Design Library
     youtube_id: ESx-s-fL6Lc
@@ -19,18 +19,17 @@ media_items:
 		<h1>Media</h1>
 	</header>
 
-	<p>Across my time at Crowbar Collective, I've had the fortune to be able to feature in some pretty cool media.</p>
+	<p>I've had the good fortune of being able to feature in a couple of bits of really cool media! Check them out here. I'll keep adding to this page as and when I end up in more!</p>
 
 	{% if page.media_items %}
-		<section class="posts media-posts">
-			{% for item in page.media_items %}
-				<article>
+		<div class="row gtr-uniform">
+	{% for item in page.media_items %}
+			<div class="col-6 col-12-medium">
+				<section>
 					<header>
 						<h2>{{ item.title }}</h2>
 					</header>
-					{% if item.description %}
-						<p>{{ item.description }}</p>
-					{% endif %}
+	
 					<div class="video-embed">
 						<iframe
 							src="https://www.youtube.com/embed/{{ item.youtube_id }}"
@@ -40,8 +39,13 @@ media_items:
 							allowfullscreen>
 						</iframe>
 					</div>
-				</article>
-			{% endfor %}
-		</section>
+	
+					{% if item.description %}
+						<p>{{ item.description }}</p>
+					{% endif %}
+				</section>
+			</div>
+	{% endfor %}
+</div>
 	{% endif %}
 </article>
