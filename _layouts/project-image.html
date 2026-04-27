@@ -3,19 +3,19 @@ layout: default
 ---
 
 {% if page.hero_image %}
-	<div class="project-hero-full">
-		<a
-			href="{{ page.hero_image | relative_url }}"
-			class="glightbox project-hero-lightbox"
-			data-gallery="{{ page.slug | default: page.title | slugify }}-hero"
-		>
-			<img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}" />
-		</a>
-	</div>
+<div class="project-hero-full">
+	<a
+		href="{{ page.hero_image | relative_url }}"
+		class="glightbox project-hero-lightbox"
+		data-gallery="{{ page.slug | default: page.title | slugify }}-hero"
+	>
+		<img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}" />
+	</a>
+</div>
 {% endif %}
 
-<div class="project-title-bar">
-	<div class="project-title-bar-inner">
+<article class="post project-page project-page-image">
+	<header class="box">
 		<h1>{{ page.title }}</h1>
 
 		{% if page.subtitle %}
@@ -23,12 +23,10 @@ layout: default
 		{% endif %}
 
 		{% if page.date_text %}
-			<p class="project-title-bar-subtitle">{{ page.date_text }}</span>
+			<p class="project-title-bar-subtitle">{{ page.date_text }}</p>
 		{% endif %}
-	</div>
-</div>
+	</header>
 
-<article class="post project-page project-page-image">
 	{% if page.summary or page.facts %}
 		<section class="project-meta-details">
 			{% if page.summary %}
@@ -54,6 +52,7 @@ layout: default
 			{% include gallery-scroll.html items=page.gallery %}
 		</section>
 	{% endif %}
+
 </article>
 
 {% include pagination.html %}

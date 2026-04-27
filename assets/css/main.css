@@ -2038,9 +2038,11 @@ input, select, textarea {
 /* Box */
 
 	.box {
-		border: solid 2px;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		background-color: rgba(255, 255, 255, 0.03);
 		margin-bottom: 2rem;
 		padding: 1.5rem;
+		
 	}
 
 		.box > :last-child,
@@ -2054,10 +2056,6 @@ input, select, textarea {
 			border-radius: 0;
 			padding: 0;
 		}
-
-	.box {
-		border-color: #eeeeee;
-	}
 
 /* Button */
 
@@ -3861,6 +3859,12 @@ input, select, textarea {
 			#main > .posts > * {
 				padding: 4rem;
 				width: 50%;
+			}
+		
+			#main > .posts > header {
+				padding: 0;
+				margin: 0;
+				width: 100%;
 			}
 
 			#main > .posts > article {
