@@ -2,19 +2,7 @@
 layout: default
 ---
 
-<div class="project-title-bar">
-	<div class="project-title-bar-inner">
-		<h1>{{ page.title }}</h1>
-
-		{% if page.subtitle %}
-			<p class="project-title-bar-subtitle">{{ page.subtitle }}</p>
-		{% endif %}
-
-		{% if page.date_text %}
-			<span class="date">{{ page.date_text }}</span>
-		{% endif %}
-	</div>
-</div>
+{% include project-title-bar.html %}
 
 <article class="post project-text">
 

@@ -31,12 +31,8 @@
 	transform: scale(1.02);
 }
 
-#main > div.project-title-bar {
-	border: 1px solid rgba(255, 255, 255, 0.12);
-    background-color: rgba(255, 255, 255, 0.03);
-}
-
-#main > div.project-title-bar .project-title-bar-inner {
+#main header.project-title-bar {
+	background-color: rgba(255, 255, 255, 0.03);
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -45,13 +41,13 @@
 	text-align: center !important;
 }
 
-#main > div.project-title-bar .project-title-bar-inner h1 {
+#main header.project-title-bar h1 {
 	margin: 0 0 0.5rem 0;
 	color: #ffffff;
 	text-align: center !important;
 }
 
-#main > div.project-title-bar .project-title-bar-subtitle {
+#main header.project-title-bar .project-title-bar-subtitle {
 	margin: 0 0 0.75rem 0;
 	color: rgba(255, 255, 255, 0.9);
 	text-align: center !important;
