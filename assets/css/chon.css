@@ -372,3 +372,41 @@
 .game-overview-card:hover span {
 	background: #009966;
 }
+
+/* =========================
+   CUSTOM LIL ICONS
+========================= */
+
+.button.rp-icon {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.button.rp-icon::before {
+	content: "";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-image: url('/images/icons/rp-icon.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.button.bms-icon {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.button.bms-icon::before {
+	content: "";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-image: url('/images/icons/bms-icon.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
