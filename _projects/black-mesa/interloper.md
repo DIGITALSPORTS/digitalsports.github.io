@@ -14,7 +14,7 @@ engine:
 date_text: 2019
 hero_image: /images/interloper/interloper-hero.jpg
 card_image: /images/interloper/interloper-hero.jpg
-excerpt_text: A deep slog through the guts of the mysterious Tower factory at the end of Gordon Freeman's lengthy Xenian adventure. Featuring large scripted combat encounters, and interesting traversal and exploration through an alien industrial environment.
+excerpt_text: A gruelling push through the guts of the Tower factory at the end of Gordon Freeman's Xenian journey. Features large-scale combat encounters and interesting traversal and exploration through an alien industrial environment.
 
 facts:
 
@@ -35,29 +35,39 @@ waste_processing_gallery:
 
 ---
 
-I was the chapter lead for Interloper, which was unfortunately the section of our vision of Xen that received the most mixed reception; a fact that taught me a lot about myself as a designer!
+I was the chapter lead for Interloper, which ended up receiving the most mixed reception of our Xen chapters, a fact that taught me a lot about myself as a designer.
 
-I personally built the Garg Chase and Tower Waste Processing levels (4 levels in total), as well as the chapter’s final Tower Portal set-piece. For the rest of the chapter, I was responsible for ensuring a smooth flow of gameplay ideas across its breadth, particularly with regards to puzzles and the “pacifist Vorts” mechanic, which I am particularly proud of. Artistically, across this chapter we attempted to convey the idea of progressing deeper into this mysterious giant living organism. We wanted to emphasise the “Interloper” aspect: that the player is behaving like a virus, an unwelcome foreign body rampaging around the factory and absolutely wrecking everything at every stage.
+I personally built the Garg Chase and Tower Waste Processing levels (four levels in total), as well as the chapter’s final Tower Portal set-piece. Across the rest of the chapter, I focused on maintaining a strong flow of puzzle and traversal ideas, while also layering and developing the “pacifist Vorts” mechanic, which I’m especially proud of.
+
+From an artistic and narrative perspective, we wanted to convey the feeling of progressing deeper into a vast, living organism. The player is the titular "Interloper": an invasive force rampaging through the factory, disrupting and destroying everything in their path.
 
 {% include youtube.html id="PJ512HkE99Q" %}
 
 <hr>
 
 ## Garg Chase
+This level was a great opportunity to build on existing ideas and push them further. In Half-Life, the Gargantua is a powerful enemy that can’t be defeated through conventional means, usually requiring a puzzle or environmental solution to overcome. However, the original game's chase encounters are fairly similar to one another.
 
-For the Garg Chase level, I feel this level illustrated how fun it can be to layer ideas across a game’s progression. In Half-Life, a Gargantua (Garg) is a massive enemy which chases you and cannot be defeated by conventional means, usually requiring a puzzle to overcome instead. In the original Half-Life, the 3 times you are embroiled in a Garg chase are reasonably similar, with little to differentiate them. We knew that for our version, we wanted Interloper’s Garg Chase to feel unique and extreme somehow, as a fitting send off to the Gargs. 
+For our version, we wanted to take this mechanic to a logical extreme. The idea was to overwhelm the player by introducing multiple Gargs in quick succession, making it feel like they’ve stumbled into a breeding ground or a lair.
 
-That was how I came up with the idea of using multiple Gargs, throwing new ones at you around every corner, like you have stumbled into a lair or breeding grounds of sorts. I am proud of how this level really feels like an absurd chase sequence from a movie; it is almost comical how each time you think you have escaped the pursuing Garg, you immediately encounter another one. Or two. It is thrilling to watch players scramble to find a way to escape the impending doom approaching them from both sides.
+I’m really happy with how this plays out, it feels almost absurd in the best way. Just as you think you’ve escaped, another Garg appears. Or two. Watching players scramble to escape threats from multiple directions is consistently chaotic and fun.
 
 {% include gallery.html items=page.garg_chase_gallery gallery_name="gargchase" %}
 
 <hr>
 
 ## Waste Processing
+For the Waste Processing section, we leaned heavily into the idea of the player as the “Interloper.” I’m particularly proud of the traversal and flow through these levels.
 
-For the tower’s Waste Processing section, we wanted to evoke this sense that the player is indeed an “Interloper,” as per the chapter’s namesake. I am especially proud of the flow of these levels. An inspired choice we made with each of the major rooms was to use a giant glowing red power core as a way of highlighting the main exit, so players would always subconsciously know where they needed to go. We also ensured that these cores would be framed perfectly in view as players entered the room. The framing of objectives is, I feel, one of the unsung heroes of the way we built Xen overall, and a strength I am proud of as a Level Designer. 
-
-Unfortunately, our version of Interloper received mixed reception. The most frequently levied criticism is its overlong nature, an aspect that I agree with. We had intended the chapter to feel like a bit of a slog, and for the subsequent boss fight with the Nihilanth to come as a “reward” after a tough grind, but we were too successful in this endeavour! At the time, I butted heads with our project lead Adam, who strongly suggested cutting a level or two from the final product. In hindsight I wish I had acquiesced! However, this development experience taught me a lesson about the importance of editing and snappy pacing. In retrospect I also wish that we had chosen a different base for the puzzles in the Waste Processing section; the community did not respond too well to our reuse / layering of the plug puzzles from earlier in Xen, feeling that the puzzles ended up feeling too repetitive as a result. This highlighted the precarity of balancing player familiarity with novelty, a balancing act that I think we did not quite nail with our vision of Interloper.
+One key decision that aided this was the use of large glowing red power cores at each room's main exit to guide players across the spaces. These cores acted as visual anchors, and we ensured they were framed clearly by the entrance of each space. This kind of objective framing became a core part of how we approached Xen, and this strength in player guidance is something I take great pride in as a level designer.
 
 {% include gallery.html items=page.waste_processing_gallery gallery_name="wasteprocessing" %}
 
+<hr>
+
+## Reception
+Unfortunately, Interloper received mixed reception, most notably for its length: a critique that I ultimately agree with. We wanted the chapter to feel like a slog, with the Nihilanth fight acting as a reward at the end, but we pushed that idea too far.
+
+At the time, I disagreed with our project lead's suggestions that we cut several levels from Interloper to save in development time and help pacing. In hindsight, I think that would have been the right call.
+
+This experience taught me an important lesson about editing and pacing. I also think we leaned too heavily on reusing and layering earlier puzzle mechanics (particularly the plug puzzles), which made sections feel repetitive. It highlighted how difficult it can be to balance familiarity with novelty, and how easy it is to miss that mark.

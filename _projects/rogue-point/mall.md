@@ -14,7 +14,7 @@ engine:
 date_text: 2026
 hero_image: /images/mall/mall-hero.jpg
 card_image: /images/mall/mall-hero.jpg
-excerpt_text: A sprawling and nuanced Mall complex that functions as several maps rolled into one. Supports the widest variety of level configurations in Rogue Point and beautifully showcases Rogue Point's engaging use of arena combat.
+excerpt_text: A sprawling Mall complex that functions as several maps rolled into one. It supports the widest variety of level configurations in Rogue Point and showcases the game's arena combat at its most flexible.
 
 mall_gallery_1:
   - image: /images/mall/mall-02.jpg
@@ -33,16 +33,20 @@ mall_gallery_2:
   - image: /images/mall/mall-13.jpg
 ---
 
-Checkpoint Mall is Rogue Point’s largest and most sprawling map, and the second oldest and most iterated. I was responsible for the map across its many developments, from building the initial blockouts to several rebuilds as the shape of the game started to take form.
+Checkpoint Mall is Rogue Point’s largest and most expansive map, and one of its oldest. I was responsible for the map across its many iterations, from the initial blockouts through several rebuilds as the shape of the game evolved.
 
-In many ways, Mall is the quintessential Rogue Point map.  Due to its vast size, it feels more like several maps, and this is actually how we use it. Each shop and main area serves as its own standalone map, so on Easy difficulty missions we constrain you to these areas individually. The level then really opens up on higher difficulties, where designers thread some of these smaller levels together in directed and interesting ways.
+In many ways, Mall is the quintessential Rogue Point map. Due to its scale, it effectively operates as several smaller maps stitched together, and that is exactly how we use it. Each shop and major area functions as a standalone space, allowing Easy missions to focus on these contained environments. On higher difficulties, these spaces are connected in more complex and directed ways, creating varied and unpredictable layouts.
 
 {% include gallery.html items=page.mall_gallery_1 gallery_name="mall1" %}
 
-The map had originally been built as a linear journey from the Car Park through the Mall, with subsequent difficulties forcing you deeper. Across testing however, this experience proved repetitive: a Medium difficulty mission would effectively be the Easy mission you may have already just played, plus an extra 30% at the end. This is where the [Modular Randomization System]({% link _projects/rogue-point/randomization.md %}) and its strengths began to take form, as we reconceptualized the Mall instead as a map which can be approached from a huge variety of angles and shapes. This let designers get truly creative with how layouts were built. 
+Originally, the map was built as a linear journey from the Car Park through the Mall, with higher difficulties pushing players further along the same route. In testing, this proved repetitive: Medium difficulty was effectively just replaying the Easy mission with an extra segment added on.
 
-One downside was that this change necessitated the propagation of lots of different “back hallways” and “back rooms” so that players could safely spawn in and navigate into the main spaces. These areas were not present in initial builds because they were not necessary for flow in the those versions, but these additions caused some tension between both design and art and proved to be quite the speedbump in development. Nonetheless, we navigated this challenge well and eventually the map became the most varied map in Rogue Point, and a bit of a fan favourite.
+This led to a shift in approach, and was where my [Modular Randomization System]({% link _projects/rogue-point/randomization.md %}) began to take shape. We reconceptualised the Mall as a space that could be approached from many different angles, allowing designers to construct a wide variety of layouts. This opened up much more creative freedom in how missions were structured.
 
-One aspect that I feel we particularly nailed is that all the different arenas in the map feel distinct from each other, especially on a visual level. We present you with a lot of options in any given arena. Combat feels different in each space, but we also give players interesting ways to circumvent combat and stealthily approach a situation. Unfortunately, the stealth aspect of our game never quite took off, but if it had, this map would have been ready for it.
+One downside of this change was the subsequent need to introduce a network of “back hallways” and “back rooms” to support spawning and traversal between these spaces. These weren’t part of the original design, and their addition created some friction between design and art, as well as slowing development. Despite this, the system ultimately paid off, and Mall became one of the most varied and well-received maps in the game.
 
 {% include gallery.html items=page.mall_gallery_2 gallery_name="mall2" %}
+
+One aspect I’m particularly happy with is how distinct each arena feels, especially visually. Each space offers different combat dynamics, while also giving players opportunities to approach encounters more carefully or avoid them entirely.
+
+The stealth side of the game didn’t fully come together in the end, but the map was designed to support it, and those options are still present in how spaces are structured.

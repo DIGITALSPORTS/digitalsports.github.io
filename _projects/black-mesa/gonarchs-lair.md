@@ -15,7 +15,7 @@ date_text: 2019
 
 hero_image: /images/gonarch/gonarch-hero.jpg
 card_image: /images/gonarch/gonarch-hero.jpg
-excerpt_text: An epic game of cat and mouse between Gordon Freeman and the tenacious and unstoppable Gonarch. A series of exciting scripted encounters culminating in a harrowing boss fight.
+excerpt_text: An epic game of cat and mouse between Gordon Freeman and the relentless Gonarch, featuring a series of exciting scripted encounters culminating in a harrowing boss fight.
 
 gonarch_gallery:
   - image: /images/gonarch/gonarch-02.jpg
@@ -32,12 +32,18 @@ Throughout the chapter Gonarch’s Lair I was responsible for polish and gamepla
 
 ## Finale
 
-The “finale” level is the one I was personally responsible for. I built the final blockout of this level from the ground-up and retrofit it with combat and puzzle encounters that the original versions of the level had been lacking, punching it up into what I feel is a tense and exciting set of varied sequences. I am proud of the pacing of this level, as it expertly weaves you through different tight and cavernous spaces with a great ebb and flow. You never know whether you’re next going to encounter a chase sequence, a combat encounter, a bit of loose exploration, or a puzzle.
+The finale level is the one I was personally responsible for. I built the final blockout from the ground up and layered in combat and puzzle encounters that earlier versions of the level had been lacking, turning it into a tense and varied sequence of gameplay moments.
 
-Pictures don’t convey the excitement of this level quite as well as video does, due to its highly scripted and chaotic nature, so feel free to check out my quick video run-through of the level to get an idea of what it is about:
+I’m particularly happy with this level's pacing, which unpredictably weaves the player through tight corridors and large cavernous spaces with a strong ebb and flow. You’re never quite sure what’s coming next: whether it will be a chase, a combat encounter, a moment of exploration, or a puzzle.
+
+Pictures don’t quite capture the energy of this level due to its highly scripted and chaotic nature, so I’ve included a short video run-through below to better showcase how it plays.
 
 VIDEO
 
-Building this level taught me a lot about the necessity of having interesting gameplay to fill your spaces with, and that this must be considered foundationally rather than retrofit. Previous versions of this level felt empty and hollow, having precious few interesting interaction with the Gonarch herself, as well as samey combat encounters. This gave the final boss fight almost no build-up whatsoever, with the rest of the level feeling like filler. When rebuilding this level, I used the previously built spaces as a guideline, but first and foremost thought about what kinds of encounters I wanted to include and how I wanted these to play, and made sure these had a progression and flow of their own. This design then informed how I built the spaces, rather than the other way around. It turned out really well as a result.
+Building this level taught me the importance of designing gameplay first, rather than trying to retrofit it into existing spaces. Prior versions of the level felt empty, with limited interaction with the Gonarch, repetitive combat encounters, and lengthy periods of nothingness. As a result, the final boss lacked any real build-up.
+
+When rebuilding the level, I used the existing spaces as a loose guide, but focused first on ensuring gameplay variety across the level. The layout was then shaped around that flow of ideas, rather than the other way around. This shift made a huge difference in how the level ultimately came together.
+
+One section I’m particularly fond of is the "slot canyon", where Gonarch can’t reach you but constantly bombards you with Bebcrabs, stabs through narrow gaps, and stalks you from above. It plays out like a horror movie!
 
 {% include gallery.html items=page.gonarch_gallery gallery_name="gonarch" %}

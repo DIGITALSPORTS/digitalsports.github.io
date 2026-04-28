@@ -14,7 +14,7 @@ engine:
 date_text: 2013
 hero_image: /images/gasworks/gasworks-hero.jpg
 card_image: /images/gasworks/gasworks-hero.jpg
-excerpt_text: A vast and vertical industrial multiplayer level with long-sight lines and varied combat, designed for larger player counts.
+excerpt_text: A vast, vertical industrial multiplayer level with long sightlines and varied combat, designed for larger player counts.
 
 gasworks_gallery:
   - image: /images/gasworks/gasworks-02.jpg
@@ -25,10 +25,10 @@ gasworks_gallery:
   - image: /images/gasworks/gasworks-07.jpg
 ---
 
-Gasworks was the first level I created for Crowbar Collective. It is considered one of the more iconic original Half-Life: Deathmatch maps, featuring a high degree of verticality and long sightlines within its variety of large outdoor and interior spaces.
+Gasworks was the first level I created for Black Mesa at Crowbar Collective. It was a tall order, having been considered one of the more iconic original Half-Life: Deathmatch maps! It features a high degree of verticality and long sightlines within its mixture of large outdoor and interior spaces.
 
-This map went through several ground-up rebuilds before settling on the version that would be the base for the final shipped level. My initial versions suffered from being too cluttered and complex, and across the development of this level I learned to lean into the “less is more” perspective of level design, particularly with some of the scathing criticism I received from several team members. Developing this level gave me invaluable experience, hardening me to criticism and laying the foundations for how I would build levels moving forwards.
+This map went through several ground-up rebuilds before arriving at the final shipped version. My early iterations were overly cluttered and complex, and developing this level taught me to lean into a “less is more” ethos. Some of the feedback from the team along the way was pretty brutal, but it forced me to improve quickly. This served as a turning point in how I approached level design, both in terms of understanding of gameplay readability and how I handle professional critique.
 
-A point of personal pride with Gasworks is how beautifully colourful the level is, balancing maximalism and minimalism to create a level that I think is both gorgeous but also extremely readable from a gameplay perspective. Targets never get lost in the mix. Areas feel distinct and moody.
+A point of personal pride with Gasworks is how beautifully colourful the level is, balancing maximalism and minimalism to create a level that is both gorgeous and readable. Targets never get lost in the mix, with each major area feeling distinct and moody.
 
 {% include gallery.html items=page.gasworks_gallery gallery_name="gasworks" %}

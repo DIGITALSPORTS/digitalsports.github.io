@@ -14,13 +14,13 @@ engine:
 date_text: 2026
 hero_image: /images/rogue-point/level-layouts-01.jpg
 card_image: /images/rogue-point/level-layouts-01.jpg
-excerpt_text: An expandable object-oriented system for allowing different types of Rogue Point Level Layouts to be setup and behave in distinct ways.
+excerpt_text: An expandable system for defining and running different types of Rogue Point Level Layouts, each with distinct behaviour and gameplay.
 
 ---
 
-As we approached Rogue Point’s Early Access release, we found that the Level Layout system, was not doing enough to make a full campaign (a chained playthrough of 7 maps) feel varied and interesting. We thus came up with the idea of a “Strike mission” and a “Raid mission”, two different types of Level Layout that played fundamentally differently from the bulk of the levels and would inject a bit of variety into a campaign playthrough.
+As we approached Rogue Point’s Early Access release, we found that the existing Level Layout system wasn’t doing enough to establish variety through full campaign runs. To address this, we introduced new Level Layout Types: “Strike” and “Raid” missions that played fundamentally differently from standard layouts.
 
-My initial prototype was messy, as I simply threw more variables into the existing Level Layout actors. This meant that code differentiating the Level Layout types was spread throughout the game, creating aggravating scenarios where, for example, bugs in the Raid Level Layout could cause Standard Level Layouts (the bulk of the game) to behave incorrectly. However, this prototype was sufficient for us to test the concept, and we found it added a lot to the game. We subsequently decided to solidify the system with a refactor.
+My initial prototype was messy. I extended the existing Level Layout actor by adding more variables, which led to logic for different layout types being spread throughout the codebase. This created issues where bugs in one layout type could affect others. Despite this, the prototype proved the concept worked well, so we committed to a proper refactor.
 
 {% include project-image.html
 	src="/images/rogue-point/level-layouts-01.jpg"
@@ -28,46 +28,46 @@ My initial prototype was messy, as I simply threw more variables into the existi
 	title="Level Layouts" %}
 
 ## Object-Oriented Design
+To formalise the system, I rebuilt the Level Layout actor around a clean object-oriented structure. The base class contains all shared data and behaviour, while each Level Layout Type is implemented as a derived class with its own specific or overridden behaviour. This allowed different layouts to behave independently without affecting one another.
 
-To implement the system properly, I went with the expected object-oriented approach. I rewrote the Level Layout actor from scratch, with the intention of subclassing it. I stored all the common variables and functions (such as spawn areas, or config variables for the Planning Screen) on the base Level Layout actor, and any which were specific to a Level Layout type would be stored on their relevant derived class instead. 
+I also reworked how randomisation was handled. Instead of a central manager driving all logic as before, each Level Layout became responsible for randomising itself and reporting the results back to the system. This made the system far more flexible and reduced the amount of bespoke code required for new layouts.
 
-This also required me to entirely rewrite how the Randomization System randomized the level. Previously, because we only had 1 unified way of doing this, the Randomization Manager simply pulled needed variables from a Level Layout and handled everything in a bespoke way. Due to the different Level Layout Types needing to be randomized in different ways, I subsequently handled this code Level Layout actor instead, with it simply reporting back to the Randomization Manager what it had randomized. This worked amazingly well and allowed big changes with very little code.
+A key part of this design was defining a shared randomisation flow in the base class, which calls a series of virtual functions:
 
-On the base Level Layout class, I was able to write a single randomization flow that all the levels would share by default. But this flow would call to many virtual functions that could be overridden in the child classes, such as RandomizeStartAreas(), RandomizeExtractionAreas(), RandomizeObjectives(), etc. This meant that if a new Level Layout Type mostly behaved the same as the default, but randomized its objectives in a different way, you would only need to override its RandomizeObjectives() function, and leave everything else alone. 
+<ul>
+<li>RandomizeStartAreas()</li>
+<li>RandomizeExtractionAreas()</li>
+<li>RandomizeObjectives()</li>
+</ul>
 
-Consequently, child Level Layout classes were lightweight and easy to understand, which was the goal. You could easily tell where they behaved differently to a standard Level Layout, simply by looking at which functions were overridden, or which unique functions were written for that class. It was an incredibly elegant and effective solution.
-
-Here is a snippet from the Level Layout base class, showing the variety of ways I set it up to be potentially overridden:
+Derived classes can override only the parts they need, allowing new layout types to stay lightweight and easy to reason about. This made it straightforward for coders and designers to see how each layout type differed: simply by looking at what had been added or overridden.
 
 {% include code-snippets/level-layout-01a.html %}
-
-And then here is a derived Raid Level Layout, and this is actually the entire class header! You can immediately tell at a glance that this Level Layout Type only handles the Objectives and Custom Objectives differently:
 
 {% include code-snippets/level-layout-01b.html %}
 
 ## Runtime Gameplay Tracking
+Beyond randomisation, the game also needed to track mission progress for each layout type. To handle this, I separated static level data (Level Layouts) from runtime state by introducing Mission Components to the Objective Manager. Each layout type was given a corresponding Mission Component class responsible for tracking progress and updating the UI.
 
-However, this was only half of the story! Beyond the Level Layouts knowing how to randomize themselves, the game also needed to track and show progress to players for each Level Layout Type! Design-wise, I felt it was logical for the Level Layout actors themselves to serve as static level data, and for runtime tracking of the mission to be handled in a different class: our Objective Manager. 
-
-In a similar vein to how the Level Layout actors are setup, I created a base component class called the MissionComponent, which I then subclassed into a different types of MissionComponent for each Level Layout type. The Objective Manager would then automatically set the appropriate ActiveMissionComponent in response to type of Chosen Level Layout. 
-
-This was another elegant solution, as it meant that clients only needed to replicate one single variable (the pointer to the ActiveMissionComponent) to be able to start reliably tracking any necessary data about the mission on their UI in the correct way. In previous versions of this system, replicating information to clients was extremely difficult and tedious.
-
-Here is a snippet from the base class, looking at the RegisteRandomizationParams() function which is called as the level is randomised on the server:
+At runtime, the Objective Manager simply selects the correct component based on the chosen layout. This approach simplified replication significantly: clients only need a reference to the active Mission Component to correctly display mission state and use the correct HUD layout.
 
 {% include code-snippets/level-layout-02a.html %}
 
-And here is a derived class, for the Takedown mission (the very final mission of the game). We can see the mission setting its own unique state (TakedownState) and registering the RallyZone, which players must rally at to begin the boss fight. These things are replicated out to clients on their HUD.
-
 {% include code-snippets/level-layout-02b.html %}
-
-## New Layout Types
-
-Another major advantage of this system was that it became easy to add new Level Layout types. Designers/programmers only needed to create a new subclass of the Level Layout actor and the Mission Component and then override any appropriate logic while implementing any necessary new logic. This would enable further experimentation and fast prototyping of new Level Layout types as we developed the game further and also allow the community more power in what they create.
-
-I was really proud of this system because it was a shining example of a successful ground-up rebuild incorporating lessons both on the design and the code front!
 
 {% include project-image.html
 	src="/images/rogue-point/level-layouts-02.jpg"
 	alt="Level Layouts"
 	title="Level Layouts" %}
+
+## Extensibility
+One of the biggest advantages of this system is how easy it is to extend. Adding a new layout type only requires:
+
+<ol>
+<li>A new Level Layout subclass</li>
+<li>A corresponding Mission Component</li>
+</ol>
+
+From there, behaviour can be customised by overriding only the necessary parts. This made prototyping new mission types fast and low-risk, and also opened the door for future expansion.
+
+I’m particularly proud of this system as it represents a clean refactor that incorporated lessons from both design and engineering. It made the game more flexible, more maintainable, and significantly easier to iterate on.

@@ -14,15 +14,18 @@ engine:
 date_text: 2026
 hero_image: /images/rogue-point/randomisation-01.jpg
 card_image: /images/rogue-point/randomisation-01.jpg
-excerpt_text: The core system for populating Rogue Point's levels and randomizing them, while maintaining player direction and linearity. Enabled speedy designer prototyping and iteration.
+excerpt_text: The core system behind Rogue Point’s level population and randomisation. Designed to balance unpredictability with strong player direction, while enabling rapid designer iteration.
 
 ---
 
-I built all of Rogue Point's foundational systems for how our levels are populated by designers. I created an entire core suite of actor classes and interconnected tools known as the Modular Randomization System: a designer-friendly way of building complex layouts in a quick and re-usable way. Designer propogation of this system allowed us to create (at the time of writing) 55 distinct but randomised arrangements out of a mere 4 levels.
+I built Rogue Point’s foundational system for how levels are populated and structured. The result was the Modular Randomization System: a suite of actor classes and tools that allow designers to build complex, reusable layouts in a quick and consistent way. It enabled us to create (at the time of writing) 55 distinct layouts from just 4 levels.
 
-Crowbar Collective’s strength has always been in linear and directed level design, and Rogue Point's positioning as a randomized rogue-lite shooter was at odds with this. Various logistical constraints also left us with limited bandwidth to create as many levels as desired, so we needed an effective method to extract more mileage from what was available. From this need, I created this “top-down” modular system for our levels, allowing us to create distinct arrangements (called Level Layouts) that were simultaneously randomised and also linear and directed. The system's modularity avoided repetitive and tedious setup for designers, enabling fast creation and iteration. 
+Rogue Point’s rogue-lite focus on randomisation was at odds with Crowbar Collective’s strength in linear, directed level design. Combined with our limited bandwidth for building new levels, we needed a way to extract more value from the content we had.
 
-Sitting at the top level of this system is the Level Layout actor class, which specifies the arrangement of the level's various areas and how to utilise them, as well as the randomisation constraints for said areas. When you start a mission in Rogue Point, the randomization system picks a random Level Layout from the pool that is valid for the current difficulty and map. It then loads up and randomizes this Level Layout using its designer-defined randomization parameters. Through this, we strike a unique balance between randomness/unpredictability and curated player direction that I haven't really seen any other game manage.
+## Level Layouts
+This led to me creating this “top-down” modular approach, where designers define <em>Level Layouts:</em> curated arrangements of areas that are randomised within controlled constraints. This allows each playthrough to feel different, while still maintaining clear direction and pacing. The system's modularity avoided repetitive and tedious setup for designers, and enabled fast creation and iteration.
+
+At runtime, the system selects a valid Level Layout based on the current map and difficulty, then applies designer-defined parameters to populate and configure it.
 
 {% include project-image.html
 	src="/images/rogue-point/randomisation-01.jpg"
@@ -30,10 +33,11 @@ Sitting at the top level of this system is the Level Layout actor class, which s
 	title="Modular Randomization System" %}
 
 ## Area Managers
+Levels are divided into smaller areas using <em>Area Manager</em> actors. Each Area Manager is assigned a gameplay tag, which acts as its unique identifier.
 
-The system's modularity allows designers divide the level into smaller areas, using an actor class called an Area Manager. Designers assign the Area Manager a custom gameplay tag, which becomes its unique identifier. Designers then place area-relevant gameplay actors such as: enemy spawners, objective spawners, blocker spawners, doors, etc, and allocate them to that Area Manager by setting their tag to match the desired manager. Setting up an individual area is consequently very resource efficient, as setup only needs to be handled once for that area, and it can then be utilised by any layout in any relevant way.
+Designers can then place relevant gameplay actors: enemy spawners, objectives, doors, blockers, and assign them to their Area Manager simply by matching tags. This means each area only needs to be set up once, and can then be reused across multiple layouts.
 
-Within the Level Layout actor, designers then simply specify how that layout should use each given area. For example, every Level Layout allows designers to specify any number of “spawn areas”, one of which will be randomly selected to spawn players at. Designing any Level Layout then becomes a straightforward matter of specifying and arranging its areas like a set of conceptual building blocks, and putting any required additional constraints on these. Designers do not need to think about implementation details such as which specific spawners to use in an area, how to pick which doors to lock, how many enemies to spawn and where, and things like that. The system handles this logic for them. It avoids bespoke and complex setups.
+Within a Level Layout, designers can then specify how these areas are used: for example, defining possible spawn locations, objective areas, or enemy zones. The system handles the underlying logic, removing the need for bespoke setup.
 
 {% include project-image.html
 	src="/images/rogue-point/randomisation-02.jpg"
@@ -41,17 +45,16 @@ Within the Level Layout actor, designers then simply specify how that layout sho
 	title="Modular Randomization System" %}
 
 ## Building a Layout
-
-Here is an example of the typical setup flow a designer might adopt when building a map using this system:
+A typical workflow for designers looks like this:
 <ol>
-<li>Mentally break the level up into different "areas", create a gameplay tag for each of these.</li>
-<li>Place Area Managers within each area, give them a unique tag identifier.</li>
-<li>Place relevant gameplay actors that you might want to use in that area, give them their manager's tag so they automatically register with the Manager.</li>
-<li>Place a Level Layout actor and set up its unique properties.</li>
-<li>Specify the different areas to use for that layout - such as a spawn area, extraction area, areas in which to spawn objectives, areas in which to spawn enemies, etc.</li>
-<li>Refine the layout, adjusting areas or their managers as needed, tightening up parameters, testing and iterating.</li>
+<li>Define areas and create gameplay tags</li>
+<li>Place Area Managers and assign them their tags</li>
+<li>Populate areas with gameplay actors and tag them accordingly</li>
+<li>Create a Level Layout and define its properties</li>
+<li>Specify how areas are used (spawn, objectives, enemies, etc.)</li>
+<li>Iterate and refine</li>
 </ol>
 
-Creating subsequent layouts becomes very easy because you then only need to repeat steps 4 to 6, assuming the areas in the level have been previously and correctly setup already. I feel this system was a key part of Rogue Point's success and a key point of interest and variety in the game.
+Once areas are set up, creating new layouts becomes quick and lightweight, requiring only steps 4–6.
 
-As we neared the Early Access release of Rogue Point, I further expanded this system by introducing the concept of different [Level Layout Types]({% link _projects/rogue-point/level-layouts.md %}). This further solidified the Modular Randomization System as a pillar of Rogue Point's gameplay design, and took things to the next level!
+As development progressed, I expanded the system further with the introduction of different [Level Layout Types]({% link _projects/rogue-point/level-layouts.md %}). This reinforced the system as a core pillar of Rogue Point’s design and pushed its flexibility even further.

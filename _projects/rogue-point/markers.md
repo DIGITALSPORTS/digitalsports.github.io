@@ -14,25 +14,23 @@ engine:
 date_text: 2026
 hero_image: /images/rogue-point/planning-01.jpg
 card_image: /images/rogue-point/planning-01.jpg
-excerpt_text: A centralised and designer-friendly system for managing the many ways we show Rogue Point's UI markers to players, and display them on the Planning Screen.
+excerpt_text: A centralised system for managing Rogue Point’s UI markers across the Planning Screen, Compass, and World, designed to keep behaviour consistent while simplifying iteration.
 
 ---
+Rogue Point uses a wide range of UI markers to help players navigate the world and track resources and objectives. These markers appear in three spaces: the <em>Planning Screen</em>, the <em>Compass</em>, and the <em>World</em>.
 
-Rogue Point has a robust system of user interface markers that we show to players, to help them orient themselves in the world and stay aware of the locations of important resources and objectives. These markers are shown to players in 3 "spaces": the <strong>Planning Screen</strong>, the <strong>Compass</strong>, and in the <strong>World</strong>. Initially, we were handling these in a bespoke way (a unique implementation for each space. At roughly the halfway point in development, it became clear that this approach necessitated too high a code cost, as implementing new features and changing marker behaviours became very complex, particularly as we continued to iterate the Planning Screen and Intel system.
+Originally, each of these systems was implemented separately. As development progressed, this became difficult to maintain and extend. Adding new features or adjusting behaviour required changes across multiple systems, and iteration slowed significantly.
 
 ## Marker Component
+To address this, I refactored the system into a single centralised actor component: the Marker Component. All marker types now bind to this component and respond to its state in their own way. This provides a single, consistent API for both designers and programmers, while keeping implementation details appropriately abstracted away.
 
-While building the version of the Planning Screen that we would ship with the game, I decided to refactor these disparate systems into a single centralised actor component class called the Marker Component. This meant that the 3 different types of marker widgets would be able to bind to this centralised component in a consistent way, and all respond to any of its changes as they individually needed. This would mean that designers/code would only need to learn and interact with one single API (that of the Marker Component itself) and the way that the individual types of markers responded would be abstracted away as an implementation detail.
-
-For example, here is the core code for changing the basics of a marker's appearance. It is extremely straightforward:
+Designers can create a fully functional marker simply by adding a Marker Component to an actor and configuring its properties. The system handles how that marker is displayed across all three spaces automatically.
 
 {% include code-snippets/marker-component-01.html %}
 
-To update the basics of a marker's appearance, designers thus only need to call this very simple SetMarkerAppearance() function. The 3 individual marker widgets will be listening for this change, which passes through the new "Appearance" struct in a way that is replicated for clietns too. Here is an example from the Marker Widget base class, which is called when the widget is first instantiated:
-
 {% include code-snippets/marker-component-02.html %}
 
-Individual implementations for the 3 widget spaces then build off this base implementation, allowing flexible handling of the Marker Components, and keeping markers consistent between the 3 spaces. Furthermore, designers could create a marker for any actor simply by adding a Marker Component to it and populating the relevant properties, and it would immediately be fully supported by the Planning Screen, Compass and World.
+This approach ensures that marker behaviour remains consistent across the Planning Screen, Compass, and World, while making it much easier to extend or modify.
 
 {% include project-image.html
 	src="/images/rogue-point/planning-01.jpg"
@@ -40,12 +38,12 @@ Individual implementations for the 3 widget spaces then build off this base impl
 	title="Planning and Markers System" %}
 
 ## Planning Screen
+I also built Rogue Point's Planning Screen, in conjunction with this marker system. While doing so, I devised a static method of reliably calculating marker positions for the Planning Screen.
 
-As this system was built in conjunction with the Planning Screen, I also incorporated a statically baked system for calculating the widget location of the markers. Initial versions of the Planning Screen calculated the location of these markers locally as each client's screen was initializing. This caused some issues with marker positions being out of sync between clients, and I also did not like this design in principle. The Planning Cameras and the location of all Marker Components are information that is inherently baked into the level, so it would make sense for their locations to be static information that clients could simply load from disk, saving network traffic and potential for errors.
+Previously, each client calculated marker positions locally when the Planning Screen was initialised. This led to unreliability as well as inconsistencies between clients and unnecessary runtime work. My baked system allowed each Marker Component to store a set of precomputed “Planning Locations,” representing its screen-space position for each Planning Camera. These are calculated once in-editor and saved as part of the level data.
 
-My simple solution to this was for every Marker Component to store a TMap of “Planning Locations”. When calculating this variable, we would iterate every Planning Camera in the level. For each Planning Camera, we calculated mathematically if it was possible for that Marker Component to appear within its view. If it was, we used some math to create a 2D screen space position for it, using a range of 0,0 (top left) -> 1,1 (bottom right). We then just had a simple utility within the level’s Planning Phase Manager to run this calculation and save the data from it. Here are some simplified excerpts of how I accomplished that:
+At runtime, clients simply read this data, avoiding recalculation and ensuring consistency across all players. This data is stored as a (0,1) position, so it will work for any player regardless of their screen resolution.
 
 {% include code-snippets/marker-component-03.html %}
 
-This worked amazingly because it meant that clients loading into the level needed to only replicate and rely on one single variable (the Chosen Level Layout) to be able to fully populate the Planning Screen with the relevant markers for that layout. They would also need to populate any spawned actors dynamically (such as objectives), but this was as simple as using another replicated actor TArray within the Chosen Level Layout.
-
+This approach reduced network complexity and ensured that the Planning Screen could be populated reliably using minimal replicated data: requiring only the chosen Level Layout and any dynamically spawned actors.

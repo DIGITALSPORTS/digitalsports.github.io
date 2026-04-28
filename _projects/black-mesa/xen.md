@@ -14,7 +14,7 @@ engine:
 date_text: 2019
 hero_image: /images/xen/xen-hero.jpg
 card_image: /images/xen/xen-hero.jpg
-excerpt_text: The legendary introduction to Gordon Freeman's singleplayer journey across a mysterious and beautiful alien dimension. Packed full of exploration, puzzles, interesting traversal, and deep environmental storytelling.
+excerpt_text: The legendary introduction to Gordon Freeman's singleplayer journey across a mysterious and beautiful alien dimension. Packed with exploration, puzzles, interesting traversal, and environmental storytelling.
 
 islands_gallery:
   - image: /images/xen/xen-02.jpg
@@ -29,18 +29,24 @@ puffball_gallery:
 
 ---
 
-My involvement in the development of Black Mesa's Xen chapter was in polish and scripting, though I also contributed to the blockouts and core gameplay design of several of the levels. 
+My involvement in the development of Black Mesa’s Xen chapter focused primarily on polish and scripting, though I also contributed to the blockouts and core gameplay design of several levels.
 
 ## Islands
 
-For the introductory Islands level, I rearranged several aspects of the blockouts at multiple points in development to ensure adequate pacing and effectively teaching the player about the various game mechanics that get drip-fed throughout. I also did a lot of work on the framing of important views and integrating finished VFX into the level, which was a much more tedious and lengthy process than one might expect! This level is one of the clear highlights of our version of Xen, and I am incredibly proud of it!
+For the introductory Islands level, I iterated on several aspects of the blockout throughout development to improve pacing and better teach the player the core gameplay mechanics, which are introduced gradually over time.
+
+I also did extensive work on framing key views and integrating finished VFX into the level, which was more time-consuming than it might seem. This level is in many ways the single biggest standout moment in our version of Xen, and I’m very proud of how it turned out.
 
 {% include gallery.html items=page.islands_gallery gallery_name="islands" %}
 
 ## Puffball Tree
 
-The Puffball Tree is a level that I blocked out and was fully responsible for. I built it as a way of culminating our Leaf Door idea, which was seeded in several ways throughout previous Xen Swamp level. The tree serves as a visually striking central hub with a locked exit door, from which the player can explore outwards into 3 distinct outer arenas, within which they must solve puzzles and fight through unique combat scenarios to unlock the exit door. This was inspired by old school key-finding shooters such as Descent and Doom. 
+Puffball Tree is a level I blocked out and owned from start to finish. It was designed as a culmination of the Leaf Door mechanic, which is introduced in various ways throughout the earlier Xen Swamp level.
 
-I feel this level does quite a lot with relatively little, moving you through a variety of spaces in different ways that feel distinct and interesting. You've seen everything that it offers before in Xen already, but this level makes good use of space and combat within the arenas and their shapes to hold players' attention. I am particularly proud of the way that players must thread themselves around the main space, and how infrequently in video playthroughs I see players get lost, despite its vast and winding nature. I was quite careful to ensure that whenever players would unlock one section of the exit, they were always placed in a position where they could easily return to the hub in one jump, and immediately see the effect of what they had just done.
+The tree acts as a visually striking central hub with a locked exit, from which the player explores three distinct outer arenas. Each arena presents a mix of puzzles and combat encounters that must be completed to unlock the exit. The structure draws inspiration from classic key-hunting shooters like Descent and Doom.
+
+This level does a lot with relatively little, reusing familiar mechanics but presenting them in interesting spaces and unique combat contexts to keep things engaging. I’m particularly happy with how players are guided through the space; despite its scale and complexity, players rarely get lost.
+
+I ensured this strong player direction by always smoothly returning players to the exit door after each arena, forcing them to immediately see the result of their actions.
 
 {% include gallery.html items=page.puffball_gallery gallery_name="puffball" %}

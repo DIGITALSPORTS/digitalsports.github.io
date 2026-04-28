@@ -14,38 +14,49 @@ engine:
 date_text: 2026
 hero_image: /images/rogue-point/custom-objectives-01.jpg
 card_image: /images/rogue-point/custom-objectives-01.jpg
-excerpt_text: A framework for allowing Rogue Point's designers to populate bespoke mission objectives in a simple and reusable way.
+excerpt_text: A framework that allows designers to create bespoke mission objectives in a simple and reusable way.
 
 ---
+As Rogue Point developed, it became clear that our core objective types (Hostages, Bombs, Laptops, etc.) became repetitive across multiple playthroughs. We wanted a way for designers to introduce more bespoke, level-specific scenarios, closer to the kind of “unlocking the level” moments seen in Half-Life, while still fitting within a modular framework.
 
-It became clear at a certain point in Rogue Point’s development that the core objective systems (Hostages, Bombs, Laptops, etc) were repetitive and lost their lustre after a few playthroughs. We wanted an easy way for designers to recapture a bit of that bespoke “unlocking the level” magic that Half-Life brought to the table, while using some common framework that our modular game logic could easily understand.
+To solve this, I built the Custom Objective system, which consists of two parts:
+<ol>
+<li>A Custom Objective actor, which defines the objective itself</li>
+<li>A Custom Objective component, which allows other actors to participate in that objective</li>
+</ol>
 
-I thus cobbled together the Custom Objective System. It is comprised of two parts, the Custom Objective actor itself, and then a Custom Objective component. The Custom Objective actor is where the bulk of the data for the Custom Objective is stored and setup, and the Objective Manager interacts with it to handle setup and anything else needed. The Custom Objective component is a component that designers can add to any other actor which we would want to use to communicate with the main Custom Objective actor itself.
+The Objective Manager interacts with the Custom Objective actor, while individual actors communicate through their components.
 
 {% include project-image.html
 	src="/images/rogue-point/custom-objectives-01.jpg"
 	alt="Custom Objectives"
 	title="Custom Objectives" %}
 
-The way the Custom Objective actor works is extremely simple on the surface. It simply stores an array of “Objective Actors”, which are other actors that the Custom Objective cares about. When the Custom Objective is activated (which can happen in a variety of ways), it establishes a link with these Objective Actors and sets itself up to await a “completed” signal from them. Upon receipt, it adds them to its “Completed Actors” array and subsequently checks if all its Objective Actors have become completed. If they are, the Objective is thus completed. The Objective Actors themselves handle communication with the Custom Objective via their Custom Objective Component.
+At its core, the system is intentionally simple. The Custom Objective tracks an array of <em>Objective Actors</em>. When activated, it listens for completion signals from those actors' Custom Objective components. Once all required actors are complete, the objective itself is finished.
+
+This lightweight structure makes it easy to build a wide variety of scenarios with minimal setup.
 
 {% include code-snippets/custom-objective.html %}
 
-Through this simple and reusable framework, we were able to create a variety of basic but interesting level layout specific scenarios that added a bunch of variety to mission structures, with very minimal code required to get these set up and fully workable in a layout. Some examples include:
+## Example Objectives
+Using this system, designers were able to quickly create a range of varied interactions, such as:
 <ul>
-<li>Activate circuit breakers for an elevator and ride it up to the top floor of the Oilrig</li>
-<li>Deactivate a security gate locking up the Un Denni shop in Mall</li>
-<li>Destroy several crypto currency servers in the tunnel of Office</li>
-<li>Search several computers for a crypto wallet, a randomly chosen one contains it, and once you find it, the objective is complete</li>
+<li>Activating circuit breakers to power an elevator on the Oilrig</li>
+<li>Disabling a security gate in the Mall</li>
+<li>Destroying cryptocurrency servers in Office</li>
+<li>Searching computers for a file hidden in one at random</li>
 </ul>
+These added meaningful variation to missions without requiring bespoke systems for each case.
 
-The Objective Manager innately understands how a Custom Objective works and can treat it as either a primary or an optional objective, based on how the designer has set it up. Due to centralising and baking all the information into one single actor, we are also able to replicate this information to clients through just two variables (the ActiveCustomObjective on the Objective Manager, and then the CompletedActors on the Custom Objective itself), so we can display up-to-date information about it on their UI.
+## Networking
+Because the system centralises its data, it also simplifies replication. Only a small amount of information needs to be synchronised: the active objective and its completion state, allowing the UI to stay fully up to date across clients.
 
-Here is an example of how easy it was to implement Custom Objective logic on any actor we wanted. This is BP_Destroyable, which is a base class for an Actor which can be broken:
+## Ease of Implementation
+Here’s an example of how little work was required to integrate this into existing actors:
 
 {% include project-image.html
 	src="/images/rogue-point/custom-objectives-02.jpg"
 	alt="Custom Objectives"
 	title="Custom Objectives" %}
 
-Implementation required a mere 2 nodes!
+Implementation required just two nodes!

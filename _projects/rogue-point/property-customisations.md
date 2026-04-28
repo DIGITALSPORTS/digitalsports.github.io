@@ -14,21 +14,22 @@ engine:
 date_text: 2026
 hero_image: /images/rogue-point/property-customisations-01.jpg
 card_image: /images/rogue-point/property-customisations-01.jpg
-excerpt_text: A series of simple editor customisations for Rogue Point to make it slightly easier to edit commonly used properties that would otherwise show up across multiple lines and nested menus.
+excerpt_text: A set of editor customisations designed to make commonly used data structures easier to read and edit, especially when nested or used in containers.
 
 ---
+Rogue Point relied heavily on a number of commonly used data structures. One example is <code>FRandomRoll</code>, which defines the chance for a given number of items to be selected.
 
-Rogue Point had several very commonly used data structures (structs) that we relied on heavily.  For example, FRandomRoll, which represented the random chance for x number of a thing to be picked. We would often nest these properties within up to 2 levels of another struct, or within containers (such as an array or a map), to give designers fine-grained control over randomization.
+These structures were often nested inside other structs or containers such as arrays and maps, giving designers fine-grained control over randomisation, but also making them increasingly difficult to read and work with.
 
-As our level setups got quite complex and sprawling, it became quite had to understand what was happening at a glance, because you would need to open several levels of menus and read across many lines to understand the values quickly. So I dug into how the engine handles property customisations, to create our own customisations for how these were displayed.
+As our level setups became more complex, understanding these values at a glance became a challenge. Important information was buried behind multiple layers of dropdowns and spread across several lines. To address this, I implemented a series of custom property layouts using Unreal’s property customisation system.
 
 {% include project-image.html
 	src="/images/rogue-point/property-customisations-01.jpg"
 	alt="Property Customisations"
 	title="Property Customisations" %}
 
-We were thus able to squeeze the FRandomRoll struct down onto one single line, which made it much cleaner to edit when nested or within a container such as a map. This does not sound like much, but it is just one example of making things nicer to work with in the editor for both designers and also for the modding community. Across an entire development, these slight inefficiencies and moments of confusion for every single developer can add up!
+For example, I condensed the <code>FRandomRoll</code> struct into a single-line representation. This made it far easier to read and edit when used in nested structures or containers.
 
-Here is a snippet of the editor code enabling the single-line customisation for FRandomRoll:
+While a small change in isolation, improvements like this significantly reduced friction when working in the editor, especially across large, complex datasets like those used by the [Modular Randomization System]({% link _projects/rogue-point/randomization.md %}).
 
 {% include code-snippets/property-customisations.html %}
