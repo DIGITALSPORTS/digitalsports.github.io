@@ -3407,6 +3407,12 @@ input, select, textarea {
 				opacity: 0;
 				visibility: hidden;
 			}
+			
+			#intro + #header .imagelogo {
+			display: block;
+			margin: 0;
+			width: 100%;
+		}
 
 		#intro.hidden {
 			pointer-events: none;
@@ -3513,8 +3519,9 @@ input, select, textarea {
 		-webkit-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
-		height: 16rem;
-		padding-bottom: 7rem;
+		margin: 0 auto;
+		width: 50%;
+		padding: 2rem 0;
 		position: relative;
 		text-align: center;
 		z-index: 2;
@@ -3554,6 +3561,13 @@ input, select, textarea {
 		#header hr {
 			border-bottom-color: #212931;
 		}
+		
+		#header img {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
 
 		#header .logo {
 			-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
@@ -3582,8 +3596,9 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			#header {
-				height: 14rem;
-				padding-bottom: 4rem;
+				/*height: 14rem;
+				padding-bottom: 4rem;*/
+				width: 70%;
 			}
 
 		}
@@ -3591,7 +3606,8 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding-bottom: 3rem;
+				/*padding-bottom: 3rem;*/
+				width: 85%
 			}
 
 				#header .logo {
@@ -3616,7 +3632,7 @@ input, select, textarea {
 		background: rgba(255, 255, 255, 0.6);
 		height: 4rem;
 		line-height: 4rem;
-		margin: -4rem auto 0 auto;
+		margin: 0 auto 0 auto;
 		overflow: hidden;
 		padding: 0 2rem 0 0;
 		position: relative;
@@ -4478,7 +4494,7 @@ input, select, textarea {
 		top: 0.75rem;
 		right: 0.75rem;
 		border: 0;
-		color: #212931;
+		color: #FFFFFF;
 		font-family: "Lexend", Helvetica, sans-serif;
 		font-size: 0.9rem;
 		font-weight: 900;
