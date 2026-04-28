@@ -252,6 +252,12 @@
 	line-height: 1.6;
 }
 
+@media screen and (max-width: 736px) {
+	.game-summary-box .image {
+		max-width: 16rem;
+		margin: 0 auto;
+	}
+}
 @media screen and (max-width: 980px) {
 	.game-summary {
 		grid-template-columns: 1fr;
