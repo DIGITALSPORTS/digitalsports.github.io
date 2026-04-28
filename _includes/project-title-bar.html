@@ -10,22 +10,41 @@
 	{% endif %}
 </header>
 
-{% if page.facts %}
-	<ul class="facts">
+<ul class="facts">
+	{% if page.role %}
+		<li>
+			<strong>Role:</strong> {{ page.role }}
+		</li>
+	{% endif %}
+
+	{% if page.discipline %}
+		<li>
+			<strong>Discipline:</strong> {{ page.discipline }}
+		</li>
+	{% endif %}
+
+	{% if page.engine %}
+		<li>
+			<strong>Engine:</strong> {{ page.engine.name }}
+			{% if page.engine.icon %}
+				<img class="facts-icon" src="{{ page.engine.icon | relative_url }}" alt="" aria-hidden="true">
+			{% endif %}
+		</li>
+	{% endif %}
+
+	{% if page.facts %}
 		{% for fact in page.facts %}
-			<li>	
+			<li>
 				{% if fact.label %}
 					<strong>{{ fact.label }}:</strong>
 				{% endif %}
-
 				{{ fact.value }}
-				
 				{% if fact.icon %}
 					<img class="facts-icon" src="{{ fact.icon | relative_url }}" alt="" aria-hidden="true">
 				{% endif %}
 			</li>
 		{% endfor %}
-	</ul>
-{% endif %}
+	{% endif %}
+</ul>
 
 <hr />

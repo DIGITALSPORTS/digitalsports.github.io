@@ -6,18 +6,18 @@ nav_section: portfolio
 portfolio_group: black-mesa
 subtitle: Source Engine - Singleplayer Level Design
 game: Black Mesa
-discipline: Level Design
+role: Chapter Lead
+discipline: Singleplayer Level Design
+engine:
+  name: Source
+  icon: /images/icons/source-icon.png
 date_text: 2019
 hero_image: /images/interloper/interloper-hero.jpg
 card_image: /images/interloper/interloper-hero.jpg
 excerpt_text: A deep slog through the guts of the mysterious Tower factory at the end of Gordon Freeman's lengthy Xenian adventure. Featuring large scripted combat encounters, and interesting traversal and exploration through an alien industrial environment.
 
 facts:
-  - label: Role
-    value: Chapter Lead
-  - label: Engine
-    value: Source
-    icon: /images/icons/source-icon.png
+
 
 garg_chase_gallery:
   - image: /images/interloper/interloper-02.jpg

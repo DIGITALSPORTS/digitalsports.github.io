@@ -6,7 +6,11 @@ nav_section: portfolio
 portfolio_group: rogue-point
 subtitle: UE4 - Code (Core Systems)
 game: Rogue Point
-discipline: Code
+role: Programmer
+discipline: Code (Systems)
+engine:
+  name: Unreal
+  icon: /images/icons/ue4-icon.png
 date_text: 2026
 hero_image: /images/rogue-point/planning-01.jpg
 card_image: /images/rogue-point/planning-01.jpg

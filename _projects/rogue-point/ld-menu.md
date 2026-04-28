@@ -6,7 +6,11 @@ nav_section: portfolio
 portfolio_group: rogue-point
 subtitle: UE4 - Code (Editor)
 game: Rogue Point
-discipline: Code
+role: Programmer
+discipline: Code (Editor / Tools)
+engine:
+  name: Unreal
+  icon: /images/icons/ue4-icon.png
 date_text: 2026
 hero_image: /images/rogue-point/ld-menu-01.jpg
 card_image: /images/rogue-point/ld-menu-01.jpg

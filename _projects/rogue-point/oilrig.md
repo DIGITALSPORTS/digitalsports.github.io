@@ -6,7 +6,11 @@ nav_section: portfolio
 portfolio_group: rogue-point
 subtitle: UE4 - Cooperative Level Design
 game: Rogue Point
-discipline: Level Design
+role: Level Designer
+discipline: Co-op Level Design
+engine:
+  name: Unreal
+  icon: /images/icons/ue4-icon.png
 date_text: 2026
 hero_image: /images/oilrig/oilrig-hero.jpg
 card_image: /images/oilrig/oilrig-hero.jpg

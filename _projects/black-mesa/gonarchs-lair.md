@@ -6,8 +6,13 @@ nav_section: portfolio
 portfolio_group: black-mesa
 subtitle: Source Engine - Singleplayer Level Design
 game: Black Mesa
-discipline: Level Design
+role: Level Designer
+discipline: Singleplayer Level Design
+engine:
+  name: Source
+  icon: /images/icons/source-icon.png
 date_text: 2019
+
 hero_image: /images/gonarch/gonarch-hero.jpg
 card_image: /images/gonarch/gonarch-hero.jpg
 excerpt_text: An epic game of cat and mouse between Gordon Freeman and the tenacious and unstoppable Gonarch. A series of exciting scripted encounters culminating in a harrowing boss fight.

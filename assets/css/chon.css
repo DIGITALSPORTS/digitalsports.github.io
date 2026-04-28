@@ -152,6 +152,7 @@
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	justify-content: center;
 }
 
 .facts li {

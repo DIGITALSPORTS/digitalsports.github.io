@@ -6,7 +6,11 @@ nav_section: portfolio
 portfolio_group: black-mesa
 subtitle: Source Engine - Singleplayer Level Design
 game: Black Mesa
-discipline: Level Design
+role: Level Designer
+discipline: Singleplayer Level Design
+engine:
+  name: Source
+  icon: /images/icons/source-icon.png
 date_text: 2015
 hero_image: /images/stu/stu-hero.jpg
 card_image: /images/stu/stu-hero.jpg
