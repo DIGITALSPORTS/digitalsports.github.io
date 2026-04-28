@@ -15,31 +15,8 @@ layout: default
 {% endif %}
 
 <article class="post project-page project-page-image">
-	<header class="major">
-		{% if page.date_text %}
-			<span class="date">{{ page.date_text }}</span>
-		{% endif %}
 
-		<h1>{{ page.title }}</h1>
-
-		{% if page.excerpt_text %}
-			<p>{{ page.excerpt_text }}</p>
-		{% endif %}
-	</header>
-
-	{% if page.summary %}
-		<p class="project-summary">{{ page.summary }}</p>
-	{% endif %}
-
-	{% if page.facts %}
-		<ul class="facts">
-			{% for fact in page.facts %}
-				<li><strong>{{ fact.label }}:</strong> {{ fact.value }}</li>
-			{% endfor %}
-		</ul>
-	{% endif %}
-
-	<hr />
+{% include project-title-bar.html %}
 
 	<div class="project-body">
 		{{ content }}

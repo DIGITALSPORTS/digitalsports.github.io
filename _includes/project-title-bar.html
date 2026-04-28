@@ -1,10 +1,31 @@
-<header class="project-title-bar">
+<header class="major">
+	{% if page.date_text %}
+		<span class="date">{{ page.date_text }}</span>
+	{% endif %}
+
 	<h1>{{ page.title }}</h1>
 
-	{% if page.subtitle %}
-		<p>{{ page.subtitle }}</p>
-	{% endif %}
-	{% if page.date_text %}
-		<p>{{ page.date_text }}</p>
+	{% if page.excerpt_text %}
+		<p>{{ page.excerpt_text }}</p>
 	{% endif %}
 </header>
+
+{% if page.facts %}
+	<ul class="facts">
+		{% for fact in page.facts %}
+			<li>	
+				{% if fact.label %}
+					<strong>{{ fact.label }}:</strong>
+				{% endif %}
+
+				{{ fact.value }}
+				
+				{% if fact.icon %}
+					<img class="facts-icon" src="{{ fact.icon | relative_url }}" alt="" aria-hidden="true">
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}
+
+<hr />

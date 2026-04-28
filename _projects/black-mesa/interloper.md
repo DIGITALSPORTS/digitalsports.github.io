@@ -14,11 +14,10 @@ excerpt_text: A deep slog through the guts of the mysterious Tower factory at th
 
 facts:
   - label: Role
-    value: Lead Level Designer
+    value: Chapter Lead
   - label: Engine
     value: Source
-  - label: Focus
-    value: Systems Design, Tooling, Gameplay Logic
+    icon: /images/icons/source-icon.png
 
 garg_chase_gallery:
   - image: /images/interloper/interloper-02.jpg
