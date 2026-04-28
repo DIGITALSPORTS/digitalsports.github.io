@@ -374,39 +374,33 @@
 }
 
 /* =========================
-   CUSTOM LIL ICONS
+   BASE ICON STYLE
 ========================= */
 
-.button.rp-icon {
+.button.icon-img {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
 }
 
-.button.rp-icon::before {
+.button.icon-img::before {
 	content: "";
 	display: inline-block;
 	width: 1em;
 	height: 1em;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* =========================
+   PER-ICON OVERRIDES
+========================= */
+
+.icon-rp::before {
 	background-image: url('/images/icons/rp-icon.png');
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
-.button.bms-icon {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-.button.bms-icon::before {
-	content: "";
-	display: inline-block;
-	width: 1em;
-	height: 1em;
+.icon-bms::before {
 	background-image: url('/images/icons/bms-icon.png');
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
 }
