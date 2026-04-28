@@ -252,11 +252,6 @@
 	line-height: 1.6;
 }
 
-.game-page-cover {
-	max-width: 22rem;
-	margin: 0 auto;
-}
-
 @media screen and (max-width: 980px) {
 	.game-summary {
 		grid-template-columns: 1fr;
