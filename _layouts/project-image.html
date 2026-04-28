@@ -14,24 +14,32 @@ layout: default
 </div>
 {% endif %}
 
-{% include project-title-bar.html %}
-
 <article class="post project-page project-page-image">
-	{% if page.summary or page.facts %}
-		<section class="project-meta-details">
-			{% if page.summary %}
-				<p class="project-summary">{{ page.summary }}</p>
-			{% endif %}
+	<header class="major">
+		{% if page.date_text %}
+			<span class="date">{{ page.date_text }}</span>
+		{% endif %}
 
-			{% if page.facts %}
-				<ul class="project-facts">
-					{% for fact in page.facts %}
-						<li><strong>{{ fact.label }}:</strong> {{ fact.value }}</li>
-					{% endfor %}
-				</ul>
-			{% endif %}
-		</section>
+		<h1>{{ page.title }}</h1>
+
+		{% if page.excerpt_text %}
+			<p>{{ page.excerpt_text }}</p>
+		{% endif %}
+	</header>
+
+	{% if page.summary %}
+		<p class="project-summary">{{ page.summary }}</p>
 	{% endif %}
+
+	{% if page.facts %}
+		<ul class="facts">
+			{% for fact in page.facts %}
+				<li><strong>{{ fact.label }}:</strong> {{ fact.value }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	<hr />
 
 	<div class="project-body">
 		{{ content }}
@@ -42,7 +50,6 @@ layout: default
 			{% include gallery-scroll.html items=page.gallery %}
 		</section>
 	{% endif %}
-
 </article>
 
 {% include pagination.html %}

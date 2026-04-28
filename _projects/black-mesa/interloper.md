@@ -12,6 +12,14 @@ hero_image: /images/interloper/interloper-hero.jpg
 card_image: /images/interloper/interloper-hero.jpg
 excerpt_text: A deep slog through the guts of the mysterious Tower factory at the end of Gordon Freeman's lengthy Xenian adventure. Featuring large scripted combat encounters, and interesting traversal and exploration through an alien industrial environment.
 
+facts:
+  - label: Role
+    value: Lead Level Designer
+  - label: Engine
+    value: Source
+  - label: Focus
+    value: Systems Design, Tooling, Gameplay Logic
+
 garg_chase_gallery:
   - image: /images/interloper/interloper-02.jpg
   - image: /images/interloper/interloper-03.jpg
@@ -34,6 +42,8 @@ I personally built the Garg Chase and Tower Waste Processing levels (4 levels in
 
 {% include youtube.html id="PJ512HkE99Q" %}
 
+<hr>
+
 ## Garg Chase
 
 For the Garg Chase level, I feel this level illustrated how fun it can be to layer ideas across a game’s progression. In Half-Life, a Gargantua (Garg) is a massive enemy which chases you and cannot be defeated by conventional means, usually requiring a puzzle to overcome instead. In the original Half-Life, the 3 times you are embroiled in a Garg chase are reasonably similar, with little to differentiate them. We knew that for our version, we wanted Interloper’s Garg Chase to feel unique and extreme somehow, as a fitting send off to the Gargs. 
@@ -41,6 +51,8 @@ For the Garg Chase level, I feel this level illustrated how fun it can be to lay
 That was how I came up with the idea of using multiple Gargs, throwing new ones at you around every corner, like you have stumbled into a lair or breeding grounds of sorts. I am proud of how this level really feels like an absurd chase sequence from a movie; it is almost comical how each time you think you have escaped the pursuing Garg, you immediately encounter another one. Or two. It is thrilling to watch players scramble to find a way to escape the impending doom approaching them from both sides.
 
 {% include gallery.html items=page.garg_chase_gallery gallery_name="gargchase" %}
+
+<hr>
 
 ## Waste Processing
 

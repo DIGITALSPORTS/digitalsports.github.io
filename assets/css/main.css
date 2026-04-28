@@ -2337,9 +2337,9 @@ input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background: transparent;
+		background: rgba(255, 255, 255, 0.03);
 		border-radius: 0;
-		border: solid 2px;
+		border: 1px solid rgba(255, 255, 255, 0.12);;
 		color: inherit;
 		display: block;
 		outline: 0;
