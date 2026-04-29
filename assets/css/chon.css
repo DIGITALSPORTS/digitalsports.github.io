@@ -18,6 +18,7 @@
 
 .project-hero-full a {
 	display: block;
+	border-bottom: none;
 }
 
 .project-hero-full img {
