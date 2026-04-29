@@ -1,5 +1,5 @@
 ---
-title: Editor Visualization Component
+title: Viz Component
 layout: project-text
 order: 10
 nav_section: portfolio

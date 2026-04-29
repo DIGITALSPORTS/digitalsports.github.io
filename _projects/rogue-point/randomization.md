@@ -1,5 +1,5 @@
 ---
-title: Modular Randomization System
+title: Randomization System
 layout: project-text
 order: 13
 nav_section: portfolio
@@ -18,7 +18,7 @@ excerpt_text: The core system behind Rogue Point’s level population and random
 
 ---
 
-I built Rogue Point’s foundational system for how levels are populated and structured. The result was the <em>Modular Randomization System:</em> a suite of actor classes and tools that allow designers to build complex, reusable layouts in a quick and consistent way. It enabled us to create (at the time of writing) 55 distinct layouts from just 4 levels.
+I built Rogue Point’s foundational system for how levels are populated and structured. The result was the <em>Randomization System:</em> a suite of actor classes and tools that allow designers to build complex, reusable layouts in a quick and consistent way. It enabled us to create (at the time of writing) 55 distinct layouts from just 4 levels.
 
 Rogue Point’s rogue-lite focus on randomisation was at odds with Crowbar Collective’s strength in linear, directed level design. Combined with our limited bandwidth for building new levels, we needed a way to extract more value from the content we had.
 
@@ -29,8 +29,8 @@ At runtime, the system selects a valid Level Layout based on the current map and
 
 {% include project-image.html
 	src="/images/rogue-point/randomisation-01.jpg"
-	alt="Modular Randomization System"
-	title="Modular Randomization System" %}
+	alt="Randomization System"
+	title="Randomization System" %}
 	
 <hr>
 
@@ -43,8 +43,8 @@ Within a Level Layout, designers can then specify how these areas are used, such
 
 {% include project-image.html
 	src="/images/rogue-point/randomisation-02.jpg"
-	alt="Modular Randomization System"
-	title="Modular Randomization System" %}
+	alt="Randomization System"
+	title="Randomization System" %}
 	
 <hr>
 

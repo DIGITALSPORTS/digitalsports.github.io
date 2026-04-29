@@ -7,7 +7,7 @@ portfolio_group: rogue-point
 subtitle: UE4 - Code (Editor)
 game: Rogue Point
 role: Programmer
-discipline: Code (Editor / Tools)
+discipline: Code (Editor)
 engine:
   name: Unreal
   icon: /images/icons/ue4-icon.png

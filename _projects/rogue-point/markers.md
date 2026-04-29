@@ -1,5 +1,5 @@
 ---
-title: Planning and Markers System
+title: Planning & Markers
 layout: project-text
 order: 12
 nav_section: portfolio

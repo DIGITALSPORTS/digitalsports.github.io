@@ -7,7 +7,7 @@ portfolio_group: rogue-point
 subtitle: UE4 - Cooperative Level Design
 game: Rogue Point
 role: Level Designer
-discipline: Co-op Level Design
+discipline: Multiplayer Level Design
 engine:
   name: Unreal
   icon: /images/icons/ue4-icon.png

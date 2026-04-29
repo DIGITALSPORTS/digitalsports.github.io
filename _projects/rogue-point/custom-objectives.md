@@ -1,5 +1,5 @@
 ---
-title: Custom Objective System
+title: Custom Objectives
 layout: project-text
 order: 11
 nav_section: portfolio
