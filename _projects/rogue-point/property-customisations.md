@@ -30,7 +30,7 @@ As our level setups became more complex, understanding these values at a glance 
 
 For example, I condensed the <code>FRandomRoll</code> struct into a single-line representation. This made it far easier to read and edit when used in nested structures or containers.
 
-While a small change in isolation, improvements like this significantly reduced friction when working in the editor, especially across large, complex datasets like those used by the [Modular Randomization System]({% link _projects/rogue-point/randomization.md %}).
+While a small change in isolation, improvements like this significantly reduced friction when working in the editor, especially across large, complex datasets like those used by the [Randomization System]({% link _projects/rogue-point/randomization.md %}).
 
 Here is a function within the <code>FRandomRoll</code> struct customisation:
 
