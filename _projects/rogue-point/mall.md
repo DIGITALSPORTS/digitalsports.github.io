@@ -41,7 +41,7 @@ In many ways, Mall is the quintessential Rogue Point map. Due to its scale, it e
 
 Originally, the map was built as a linear journey from the Car Park through the Mall, with higher difficulties pushing players further along the same route. In testing, this proved repetitive: Medium difficulty was effectively just replaying the Easy mission with an extra segment added on.
 
-This led to a shift in approach, and was where my [Modular Randomization System]({% link _projects/rogue-point/randomization.md %}) began to take shape. We reconceptualised the Mall as a space that could be approached from many different angles, allowing designers to construct a wide variety of layouts. This opened up much more creative freedom in how missions were structured.
+This led to a shift in approach, and was where my [Randomization System]({% link _projects/rogue-point/randomization.md %}) began to take shape. We reconceptualised the Mall as a space that could be approached from many different angles, allowing designers to construct a wide variety of layouts. This opened up much more creative freedom in how missions were structured.
 
 One downside of this change was the subsequent need to introduce a network of “back hallways” and “back rooms” to support spawning and traversal between these spaces. These weren’t part of the original design, and their addition created some friction between design and art, as well as slowing development. Despite this, the system ultimately paid off, and Mall became one of the most varied and well-received maps in the game.
 
