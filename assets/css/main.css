@@ -3520,7 +3520,7 @@ input, select, textarea {
 		-ms-user-select: none;
 		user-select: none;
 		margin: 0 auto;
-		width: 50%;
+		width: 40%;
 		padding: 2rem 0;
 		position: relative;
 		text-align: center;
