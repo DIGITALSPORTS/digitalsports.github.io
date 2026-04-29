@@ -1,6 +1,4 @@
-<pre class="code-block"><code><span class="code-macro">DECLARE_DYNAMIC_MULTICAST_DELEGATE</span><span class="code-punc">(</span><span class="code-func">FOnLayoutChosenSignature</span><span class="code-punc">);</span>
-
-<span class="code-macro">UCLASS</span><span class="code-punc">(</span><span class="code-specifier">Abstract</span><span class="code-punc">)</span>
+<pre class="code-block"><code><span class="code-macro">UCLASS</span><span class="code-punc">(</span><span class="code-specifier">Abstract</span><span class="code-punc">)</span>
 <span class="code-keyword">class</span> <span class="code-macro">TANGO_API</span> <span class="code-class">ATangoLevelLayout</span> <span class="code-punc">:</span> <span class="code-keyword">public</span> <span class="code-class">AActor</span>
 <span class="code-punc">{</span>
 <span class="code-keyword">public</span><span class="code-punc">:</span>
@@ -22,9 +20,4 @@
   <span class="code-keyword">virtual</span> <span class="code-struct">FTangoMissionLayoutData</span> <span class="code-func">GetMissionLayoutData</span><span class="code-punc">()</span> <span class="code-keyword">const</span><span class="code-punc">;</span>
   
   <span class="code-keyword">virtual</span> <span class="code-keyword">float</span> <span class="code-func">GetMissionTimer</span><span class="code-punc">(</span><span class="code-keyword">const</span> <span class="code-struct">ETangoDifficultyMode</span> <span class="code-var">InDifficulty</span><span class="code-punc">)</span> <span class="code-keyword">const</span><span class="code-punc">;</span>
-  
-  <span class="code-comment">/** Delegate fired when the Level Layout has been chosen and Randomization was finished. */</span>
-  <span class="code-macro">UPROPERTY</span><span class="code-punc">(</span><span class="code-specifier">BlueprintAssignable</span><span class="code-punc">,</span> <span class="code-specifier">Category</span> <span class="code-operator">=</span> <span class="code-string">"Level Layout Basics"</span><span class="code-punc">)</span>
-  <span class="code-class">FOnLayoutChosenSignature</span> <span class="code-member">OnLayoutChosen</span><span class="code-punc">;</span>
-  
-<span class="code-punc">}</span></code></pre>
+</code></pre>

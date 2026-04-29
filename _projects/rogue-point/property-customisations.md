@@ -32,4 +32,6 @@ For example, I condensed the <code>FRandomRoll</code> struct into a single-line 
 
 While a small change in isolation, improvements like this significantly reduced friction when working in the editor, especially across large, complex datasets like those used by the [Modular Randomization System]({% link _projects/rogue-point/randomization.md %}).
 
+Here is a function within the <code>FRandomRoll</code> struct customisation:
+
 {% include code-snippets/property-customisations.html %}

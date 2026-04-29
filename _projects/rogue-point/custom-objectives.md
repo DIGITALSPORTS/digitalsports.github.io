@@ -38,6 +38,8 @@ This lightweight structure makes it easy to build a wide variety of scenarios wi
 
 {% include code-snippets/custom-objective.html %}
 
+<hr>
+
 ## Example Objectives
 Using this system, designers were able to quickly create a range of varied interactions, such as:
 <ul>

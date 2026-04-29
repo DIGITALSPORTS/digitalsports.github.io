@@ -25,12 +25,12 @@ lambdabunker_gallery:
   - image: /images/lambdabunker/lambdabunker-07.jpg
 ---
 
-Lambdabunker in Half-Life: Deathmatch has the dubious distinction of being a 1:1 copy of the opening level from the singleplayer chapter “Forget About Freeman”. As such, we weren't initially sure whether to include it in multiplayer at all, and the version we had cooked up was similarly our own copy of the singleplayer level.
+Lambdabunker in Half-Life: Deathmatch has the dubious distinction of being a 1:1 copy of the opening level from the singleplayer chapter “Forget About Freeman”. As such, we weren't initially sure whether to include it in multiplayer at all, and the version we had previously cooked up was similarly our own duplicate of the singleplayer level.
 
-I wanted to flesh out our multiplayer map roster, so I rebuilt this level from the ground up and gave it the proper multiplayer treatment: respecting the shape of the original but adapting it into a flowing multiplayer layout. I also decided to differentiate my interpretation artistically. The singleplayer level takes place during the destruction of the Black Mesa facility by artillery strikes. I decided to set the multiplayer adaptation in this event's aftermath: a change in setting that gives the level an eerily calm tone, contrasting nicely with the chaos of multiplayer gameplay.
+I wanted to flesh out our multiplayer map roster, so I rebuilt this level from the ground up and gave it the proper multiplayer treatment: respecting the shape of the original but adapting it into a flowing multiplayer layout. I also decided to differentiate my interpretation artistically. The singleplayer level takes place during the destruction of the Black Mesa facility by artillery strikes. I decided to set the multiplayer adaptation in this event's aftermath: a change in setting that gives the level an eerily calm and desolate tone, contrasting nicely with the chaos of multiplayer gameplay.
 
 This map taught me a lot about multiplayer combat flow. The original layout had many dead-ends that needed to be removed or reworked to enable smooth and uninterrupted combat. Sometimes I solved this with simple connecting routes; other times it meant building entirely new spaces to preserve balance. 
 
-I’m particularly happy with how the final layout flows. You can loop through the level naturally, gathering resources and engaging in fights in a fluid way that wasn't possible in the original. One of the tougher decisions was cutting the original sewer section entirely, as it worked against the tight, looping structure of the rest of the map.
+I’m particularly happy with how the final layout flows. You can loop through the level naturally, gathering resources and engaging in fights in a fluid way that wasn't possible in the original. One of my tougher decisions was cutting the original sewer section entirely, as it worked against the tight, looping structure of the rest of the map.
 
 {% include gallery.html items=page.lambdabunker_gallery gallery_name="lamdabunker" %}

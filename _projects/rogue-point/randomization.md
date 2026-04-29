@@ -18,7 +18,7 @@ excerpt_text: The core system behind Rogue Point’s level population and random
 
 ---
 
-I built Rogue Point’s foundational system for how levels are populated and structured. The result was the Modular Randomization System: a suite of actor classes and tools that allow designers to build complex, reusable layouts in a quick and consistent way. It enabled us to create (at the time of writing) 55 distinct layouts from just 4 levels.
+I built Rogue Point’s foundational system for how levels are populated and structured. The result was the <em>Modular Randomization System:</em> a suite of actor classes and tools that allow designers to build complex, reusable layouts in a quick and consistent way. It enabled us to create (at the time of writing) 55 distinct layouts from just 4 levels.
 
 Rogue Point’s rogue-lite focus on randomisation was at odds with Crowbar Collective’s strength in linear, directed level design. Combined with our limited bandwidth for building new levels, we needed a way to extract more value from the content we had.
 
@@ -31,28 +31,32 @@ At runtime, the system selects a valid Level Layout based on the current map and
 	src="/images/rogue-point/randomisation-01.jpg"
 	alt="Modular Randomization System"
 	title="Modular Randomization System" %}
+	
+<hr>
 
 ## Area Managers
 Levels are divided into smaller areas using <em>Area Manager</em> actors. Each Area Manager is assigned a gameplay tag, which acts as its unique identifier.
 
 Designers can then place relevant gameplay actors: enemy spawners, objectives, doors, blockers, and assign them to their Area Manager simply by matching tags. This means each area only needs to be set up once, and can then be reused across multiple layouts.
 
-Within a Level Layout, designers can then specify how these areas are used: for example, defining possible spawn locations, objective areas, or enemy zones. The system handles the underlying logic, removing the need for bespoke setup.
+Within a Level Layout, designers can then specify how these areas are used, such as: defining possible spawn areas, objective areas, or enemy areas. The system handles the underlying logic of setting up each specified area, removing the need for bespoke setup.
 
 {% include project-image.html
 	src="/images/rogue-point/randomisation-02.jpg"
 	alt="Modular Randomization System"
 	title="Modular Randomization System" %}
+	
+<hr>
 
 ## Building a Layout
 A typical workflow for designers looks like this:
 <ol>
 <li>Define areas and create gameplay tags</li>
 <li>Place Area Managers and assign them their tags</li>
-<li>Populate areas with gameplay actors and tag them accordingly</li>
+<li>Populate areas with gameplay actors and tag them accordingly to register with an area</li>
 <li>Create a Level Layout and define its properties</li>
-<li>Specify how areas are used (spawn, objectives, enemies, etc.)</li>
-<li>Iterate and refine</li>
+<li>Specify how the layout uses its areas (spawn, objectives, enemies, etc.)</li>
+<li>Iterate, test and refine the layout</li>
 </ol>
 
 Once areas are set up, creating new layouts becomes quick and lightweight, requiring only steps 4–6.

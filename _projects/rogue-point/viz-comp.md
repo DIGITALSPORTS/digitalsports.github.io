@@ -36,7 +36,7 @@ Each shape can be assigned a colour manually for clarity, or left unset to cycle
 This made it much easier to understand and debug complex setups at a glance. Some examples include:
 <ul>
 <li>Visualising links between spawners by drawing lines between them</li>
-<li>Highlighting Squad Trigger areas with boxes to show where AI can be activated</li>
+<li>Highlighting squad triggers with boxes to show where AI can be activated for a squad</li>
 <li>Showing Planning Camera coverage using a grid overlay</li>
 <li>Representing constrained spectator camera cones</li>
 <li>Displaying ranges for various AI-related systems</li>

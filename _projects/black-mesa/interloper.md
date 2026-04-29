@@ -37,7 +37,7 @@ waste_processing_gallery:
 
 I was the chapter lead for Interloper, which ended up receiving the most mixed reception of our Xen chapters, a fact that taught me a lot about myself as a designer.
 
-I personally built the Garg Chase and Tower Waste Processing levels (four levels in total), as well as the chapter’s final Tower Portal set-piece. Across the rest of the chapter, I focused on maintaining a strong flow of puzzle and traversal ideas, while also layering and developing the “pacifist Vorts” mechanic, which I’m especially proud of.
+I built the Garg Chase and Tower Waste Processing levels (four levels in total), as well as the chapter’s final Tower Portal set-piece. Across the rest of the chapter, I focused on maintaining a strong flow of puzzle and traversal ideas, while also layering and developing the “pacifist Vorts” mechanic, which I’m especially proud of.
 
 From an artistic and narrative perspective, we wanted to convey the feeling of progressing deeper into a vast, living organism. The player is the titular "Interloper": an invasive force rampaging through the factory, disrupting and destroying everything in their path.
 
@@ -70,4 +70,4 @@ Unfortunately, Interloper received mixed reception, most notably for its length:
 
 At the time, I disagreed with our project lead's suggestions that we cut several levels from Interloper to save in development time and help pacing. In hindsight, I think that would have been the right call.
 
-This experience taught me an important lesson about editing and pacing. I also think we leaned too heavily on reusing and layering earlier puzzle mechanics (particularly the plug puzzles), which made sections feel repetitive. It highlighted how difficult it can be to balance familiarity with novelty, and how easy it is to miss that mark.
+This experience taught me an important lesson about editing and pacing. I also think we leaned too heavily on reusing and layering earlier puzzle mechanics (particularly the plug puzzles), which made sections feel repetitive. It highlighted how difficult it can be for designers to balance familiarity with novelty, and how easy it is to miss that mark.
