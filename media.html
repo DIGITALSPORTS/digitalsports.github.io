@@ -14,38 +14,36 @@ media_items:
     description: An interview with the game developers behind Black Mesa, the remake of Half-Life, on their next game Rogue Point.
 ---
 
-<article class="post">
+<section>
 	<header class="major">
 		<h1>Media</h1>
 	</header>
 
-	<p>I've had the good fortune of being able to feature in a couple of bits of really cool media! Check them out here. I'll keep adding to this page as and when I end up in more!</p>
+	<p>I’ve had the chance to feature in a few cool interviews and videos over the years. Here’s a selection of them; I’ll keep this page updated as more come up!</p>
+</section>
 
+<section class="posts">
 	{% if page.media_items %}
-		<div class="row gtr-uniform">
-	{% for item in page.media_items %}
-			<div class="col-6 col-12-medium">
-				<section>
-					<header>
-						<h2>{{ item.title }}</h2>
-					</header>
-	
-					<div class="video-embed">
-						<iframe
-							src="https://www.youtube.com/embed/{{ item.youtube_id }}"
-							title="{{ item.title }}"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen>
-						</iframe>
-					</div>
-	
-					{% if item.description %}
-						<p>{{ item.description }}</p>
-					{% endif %}
-				</section>
-			</div>
-	{% endfor %}
-		</div>
+		{% for item in page.media_items %}
+			<article>
+				<header>
+					<h2>{{ item.title }}</h2>
+				</header>
+		
+				<div class="video-embed">
+					<iframe
+						src="https://www.youtube.com/embed/{{ item.youtube_id }}"
+						title="{{ item.title }}"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen>
+					</iframe>
+				</div>
+		
+				{% if item.description %}
+					<p>{{ item.description }}</p>
+				{% endif %}
+			</article>
+		{% endfor %}
 	{% endif %}
-</article>
+</section>
