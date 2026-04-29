@@ -213,6 +213,23 @@
 	margin-bottom: 0;
 }
 
+@media screen and (min-width: 1680px) {
+	.game-summary-content {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+	}
+
+	.game-summary-content h3 {
+		margin-top: 0;
+	}
+
+	.game-summary-content .actions {
+		margin-top: auto;
+		margin-bottom: 0;
+	}
+}
+
 .game-card {
 	text-align: center;
 	padding: 0;
@@ -253,19 +270,18 @@
 	line-height: 1.6;
 }
 
-@media screen and (max-width: 736px) {
-	.game-summary-box .image {
-		max-width: 16rem;
-		margin: 0 auto;
-	}
-}
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1680px) {
 	.game-summary {
 		grid-template-columns: 1fr;
 	}
 
 	.game-summary__side {
 		max-width: 16rem;
+	}
+	
+	.game-summary-box .image {
+		max-width: 16rem;
+		margin: 0 auto;
 	}
 }
 /* =========================
