@@ -16,7 +16,9 @@
 		<div id="wrapper">
 
 			<header id="header">
-				<img src="/images/chon-logo.png" alt="Chon Kemp Logo">
+				<a href="{{ '/' | relative_url }}" class="logo" aria-label="Home">
+					<img src="{{ '/images/chon-logo.png' | relative_url }}" alt="Chon Kemp Logo">
+				</a>
 			</header>
 
 			{% include nav.html %}
