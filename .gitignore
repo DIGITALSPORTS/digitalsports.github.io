@@ -1,2 +1,3 @@
 run_jekyll.bat
 /_site
+.zed/settings.json
